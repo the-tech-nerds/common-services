@@ -1,75 +1,76 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+## Common Services
 
-[travis-image]: https://api.travis-ci.org/nestjs/nest.svg?branch=master
-[travis-url]: https://travis-ci.org/nestjs/nest
-[linux-image]: https://img.shields.io/travis/nestjs/nest/master.svg?label=linux
-[linux-url]: https://travis-ci.org/nestjs/nest
-  
-  <p align="center">A progressive <a href="http://nodejs.org" target="blank">Node.js</a> framework for building efficient and scalable server-side applications, heavily inspired by <a href="https://angular.io" target="blank">Angular</a>.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore"><img src="https://img.shields.io/npm/dm/@nestjs/core.svg" alt="NPM Downloads" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://api.travis-ci.org/nestjs/nest.svg?branch=master" alt="Travis" /></a>
-<a href="https://travis-ci.org/nestjs/nest"><img src="https://img.shields.io/travis/nestjs/nest/master.svg?label=linux" alt="Linux" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#5" alt="Coverage" /></a>
-<a href="https://gitter.im/nestjs/nestjs?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge"><img src="https://badges.gitter.im/nestjs/nestjs.svg" alt="Gitter" /></a>
-<a href="https://opencollective.com/nest#backer"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec"><img src="https://img.shields.io/badge/Donate-PayPal-dc3d53.svg"/></a>
-  <a href="https://twitter.com/nestframework"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This is the common hub for all our reusable code/scripts. This
+is a must to include in any microservices before starting work.
 
-## Description
+## Installations in other microservices
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Add the following dependencies in your package.json
 
-## Installation
-
-```bash
-$ npm install
+```
+"@technerds/common-services": "git@github.com:the-tech-nerds/common-services.git#73ccca6",
 ```
 
-## Running the app
+We can see the commit number is added at last (after # sign) to 
+make sure the version of this package we are using.
 
-```bash
-# development
-$ npm run start
+As it is a shared package all services that will use 
+this package must have some common dependencies. This 
+common dependencies must be added both as `peerDependencies`
+and `devDependencies` in this package and as `devDependencies`
+for the host services.
 
-# watch mode
-$ npm run start:dev
+For example: this service requires `nest-common` and other 
+dependencies, but all our services are also using nest-common.
+So, we can add this as `peerDepenecy` so that whenever it is 
+installed in a host service, it can resolve the dependencies
+from the host services:
 
-# production mode
-$ npm run start:prod
+```json
+// package.json of common-service
+"peerDependencies": {
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/platform-express": "^7.0.0",
+    "cache-manager": "^3.4.0",
+    "cache-manager-redis-store": "^2.0.0",
+    "reflect-metadata": "^0.1.13"
+}
+
+"devDependencies": {
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/platform-express": "^7.0.0",
+    "cache-manager": "^3.4.0",
+    "cache-manager-redis-store": "^2.0.0",
+    "reflect-metadata": "^0.1.13",
+    ...other dependencies
+}
 ```
 
-## Test
 
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```json
+// package.json of host service
+"devDependencies": {
+    "@nestjs/common": "^7.0.0",
+    "@nestjs/core": "^7.0.0",
+    "@nestjs/platform-express": "^7.0.0",
+    "cache-manager": "^3.4.0",
+    "cache-manager-redis-store": "^2.0.0",
+    "reflect-metadata": "^0.1.13",
+    ...other dependencies
+}
 ```
 
-## Support
+## Publishing Common Service
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+As we are using this service as a git npm dependency,
+we have to build this each time before we commit this. 
+To do so, build it buy:
 
-## Stay in touch
+```
+    npm run build
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
+Also dont forget to add the latest commit hash in the `package
+-json` to use the latest version of this package.

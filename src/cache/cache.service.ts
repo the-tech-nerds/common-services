@@ -8,10 +8,10 @@ export class CacheService {
   ) {}
 
   async get(key) {
-    await this.cache.get(key);
+    return this.cache.get(key);
   }
 
   async set(key, value) {
-    await this.cache.set(key, value);
+    return this.cache.set(key, value);
   }
 }
