@@ -10,5 +10,4 @@ export async function setBootstrap(app: any) {
     }),
   );
   app.setGlobalPrefix('api/v1');
-  app.setGlobalPrefix('api/v1');
 }
