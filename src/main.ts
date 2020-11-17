@@ -1,13 +1,9 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { SecurityService } from './security/security.service';
+import { setBootstrap } from './app.bootstrap';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const securityService = app.get<SecurityService>(SecurityService);
-  await securityService.setHelmet(app);
-  await securityService.setCors(app);
-  await securityService.setRateLimit(app);
-  await securityService.setGlobalPrefix(app);
+  await setBootstrap(app);
   await app.listen(3000);
 }
 bootstrap();
