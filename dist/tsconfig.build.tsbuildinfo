@@ -1487,7 +1487,7 @@
         "affectsGlobalScope": false
       },
       "../src/security/security.service.ts": {
-        "version": "ea25d72cca01289410fc1b326a974f419345e3b99561ab7eef839ccb656fd590",
+        "version": "bb24adb52983158de3b89ecd1a2569efe1c36ebd9862360732a4a36d9edef405",
         "signature": "e4ef971ea98c934e5e44935825277c78026c748b57118491308f1a8d31bc5f82",
         "affectsGlobalScope": false
       },
@@ -1502,8 +1502,8 @@
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "68ced42b96d6bd16aba3b150f00dc4f307bb3fdfe04b3c9999cdbabd842613a5",
-        "signature": "249a7672c9bf7769e56999cbac0928680a6e0e772cd0e768e5376ad669771fe7",
+        "version": "a7c6fefbdb11c9049c0ee5887ff6f285f092108850a579c6c75ba4ff831b0c49",
+        "signature": "384b18568162c30fe44bf2448d4433e1a66bcabf05246eee809500cc645d96a8",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -3363,7 +3363,9 @@
       ],
       "../src/index.ts": [
         "../src/cache/cache.module.ts",
-        "../src/cache/cache.service.ts"
+        "../src/cache/cache.service.ts",
+        "../src/security/security.module.ts",
+        "../src/security/security.service.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
@@ -4698,7 +4700,9 @@
       ],
       "../src/index.ts": [
         "../src/cache/cache.module.ts",
-        "../src/cache/cache.service.ts"
+        "../src/cache/cache.service.ts",
+        "../src/security/security.module.ts",
+        "../src/security/security.service.ts"
       ]
     },
     "semanticDiagnosticsPerFile": []

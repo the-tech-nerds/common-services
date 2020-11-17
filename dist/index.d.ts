@@ -1,3 +1,5 @@
 import { CacheModule } from './cache/cache.module';
 import { CacheService } from './cache/cache.service';
-export { CacheModule, CacheService };
+import { SecurityModule } from './security/security.module';
+import { SecurityService } from './security/security.service';
+export { CacheModule, CacheService, SecurityModule, SecurityService };
