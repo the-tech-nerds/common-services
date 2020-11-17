@@ -3,9 +3,7 @@ import { Cache } from 'cache-manager';
 
 @Injectable()
 export class CacheService {
-  constructor(
-    @Inject(CACHE_MANAGER) private readonly cache: Cache,
-  ) {}
+  constructor(@Inject(CACHE_MANAGER) private readonly cache: Cache) {}
 
   async get(key) {
     return this.cache.get(key);
