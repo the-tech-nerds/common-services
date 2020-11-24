@@ -18,7 +18,7 @@ CacheModule = __decorate([
             common_1.CacheModule.registerAsync({
                 useFactory: async () => ({
                     store: redisStore,
-                    host: 'redis',
+                    host: '127.0.0.1',
                     port: 6379,
                 }),
             }),

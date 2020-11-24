@@ -7,7 +7,7 @@ import { CacheService } from './cache.service';
     CommonCacheModule.registerAsync({
       useFactory: async () => ({
         store: redisStore,
-        host: 'redis',
+        host: '127.0.0.1',
         port: 6379,
       }),
     }),

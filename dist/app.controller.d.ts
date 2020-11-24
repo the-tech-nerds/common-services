@@ -1,6 +1,8 @@
 import { AppService } from './app.service';
+import { GatewayService } from "./gateway/gateway.service";
 export declare class AppController {
     private readonly appService;
-    constructor(appService: AppService);
-    getHello(): string;
+    private readonly gatewayService;
+    constructor(appService: AppService, gatewayService: GatewayService);
+    getHello(): Promise<string>;
 }
