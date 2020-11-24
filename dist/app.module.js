@@ -17,12 +17,14 @@ let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [cache_module_1.CacheModule,
+        imports: [
+            cache_module_1.CacheModule,
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
                 load: [common_config_1.default],
                 envFilePath: '.common.env',
-            }),],
+            }),
+        ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })

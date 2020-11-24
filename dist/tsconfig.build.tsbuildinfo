@@ -1557,13 +1557,13 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "37d4905157564826f3a93c7694627c24e5cbcf1b956398d0ffaad1f96fd0d25c",
+        "version": "3069e4b8ea1c242110bf838b495a81985e3c609d8eaf379200fafbc0ffaf5500",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "29719d90005ddb319a67d6a4a6c0c76ce5d52a04d8e8b5dfdafbfe106f943c7a",
-        "signature": "d630724ad6f80564af2d9e39aa81bc73125c9ef61e9d75f978f952b6063f0491",
+        "version": "1f25ce3da438ce7c9c1c6bd76030e352880279cfeb5d562d838d356e5820c015",
+        "signature": "fae9ecb0362286d133ba19ec23bdc5c5fc60ad94021672d6d0aec24dc3e40d5d",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -3459,7 +3459,6 @@
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/index.ts": [
-        "../node_modules/@nestjs/config/index.d.ts",
         "../src/app.bootstrap.ts",
         "../src/cache/cache.module.ts",
         "../src/cache/cache.service.ts",
@@ -4822,7 +4821,6 @@
         "../src/app.service.ts"
       ],
       "../src/index.ts": [
-        "../node_modules/@nestjs/config/index.d.ts",
         "../src/app.bootstrap.ts",
         "../src/cache/cache.module.ts",
         "../src/cache/cache.service.ts",

@@ -1,8 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.commonConfig = exports.ConfigModule = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
-const config_1 = require("@nestjs/config");
-Object.defineProperty(exports, "ConfigModule", { enumerable: true, get: function () { return config_1.ConfigModule; } });
+exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
 const cache_module_1 = require("./cache/cache.module");
 Object.defineProperty(exports, "CacheModule", { enumerable: true, get: function () { return cache_module_1.CacheModule; } });
 const cache_service_1 = require("./cache/cache.service");
