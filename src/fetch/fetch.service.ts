@@ -53,6 +53,7 @@ export class FetchService {
       method,
       headers: {
         'Content-Type': 'application/json',
+        userId: reqUserId,
         ...requestHeaders,
       },
       body: body ? JSON.stringify(body) : undefined,

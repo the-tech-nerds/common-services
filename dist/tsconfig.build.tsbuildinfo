@@ -1572,7 +1572,7 @@
         "affectsGlobalScope": false
       },
       "../src/fetch/fetch.service.ts": {
-        "version": "2095dc05a34c93839a4c0a3406c6e9655d231f9a0d7a41b7b4ac47e782bdfa72",
+        "version": "6de29521407ede33f003cff97cf094c0d8c445b5dab38b3ada7d5a2e76eb22b3",
         "signature": "ffd85e602c8b6adda6dce6c1193efcbd321189ff594facf1e3e6bc911a304f2e",
         "affectsGlobalScope": false
       },
@@ -5383,7 +5383,37 @@
       "../src/cache/cache.service.ts",
       "../src/config/common-config.ts",
       "../src/fetch/fetch.module.ts",
-      "../src/fetch/fetch.service.ts",
+      [
+        "../src/fetch/fetch.service.ts",
+        [
+          {
+            "file": "../src/fetch/fetch.service.ts",
+            "start": 1406,
+            "length": 7,
+            "code": 2322,
+            "category": 1,
+            "messageText": {
+              "messageText": "Type '{ 'Content-Type': string; userId: number; }' is not assignable to type 'HeadersInit'.",
+              "category": 1,
+              "code": 2322,
+              "next": [
+                {
+                  "messageText": "Types of property 'userId' are incompatible.",
+                  "category": 1,
+                  "code": 2326,
+                  "next": [
+                    {
+                      "messageText": "Type 'number' is not assignable to type 'string'.",
+                      "category": 1,
+                      "code": 2322
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      ],
       "../src/gateway/fetch-access-code.service.ts",
       "../src/gateway/fetch-access-token.service.ts",
       "../src/gateway/gateway.d.ts",
