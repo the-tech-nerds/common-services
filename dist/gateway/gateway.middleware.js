@@ -11,20 +11,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GatewayMiddleware = void 0;
 const common_1 = require("@nestjs/common");
-const gateway_service_1 = require("./gateway.service");
+const __1 = require("..");
 let GatewayMiddleware = class GatewayMiddleware {
-    constructor(gatewayService) {
-        this.gatewayService = gatewayService;
+    constructor(cacheService) {
+        this.cacheService = cacheService;
     }
-    use(req, res, next) {
-        console.log('Request...');
-        res.send("Unauthorized");
-        next();
+    async use(req, res, next) {
+        if (req.header('client_access_token')) {
+            const requestFrom = req.header('client_name');
+            const redisKey = `client-access-token-${requestFrom}`;
+            const data = await this.cacheService.get(redisKey);
+            if (data) {
+                next();
+            }
+            else {
+                throw new common_1.UnauthorizedException();
+            }
+        }
+        else {
+            throw new common_1.UnauthorizedException();
+        }
     }
 };
 GatewayMiddleware = __decorate([
     common_1.Injectable(),
-    __metadata("design:paramtypes", [gateway_service_1.GatewayService])
+    __metadata("design:paramtypes", [__1.CacheService])
 ], GatewayMiddleware);
 exports.GatewayMiddleware = GatewayMiddleware;
 //# sourceMappingURL=gateway.middleware.js.map

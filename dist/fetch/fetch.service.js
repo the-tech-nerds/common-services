@@ -11,11 +11,12 @@ class FetchService {
         if (!path) {
             throw new common_1.HttpException('Specific path is required to execute a fetch call', common_1.HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        const query = (qs && Object.keys(qs).length > 0)
+        const query = qs && Object.keys(qs).length > 0
             ? queryString.stringify(Object.assign({}, qs)).replace(/%2C/g, ',')
             : '';
         const url = `${path}?${query}`;
-        const requestHeaders = optionToken ? Object.assign(Object.assign({}, headers), { access_token: optionToken }) : headers;
+        const requestHeaders = optionToken
+            ? Object.assign(Object.assign({}, headers), { access_token: optionToken }) : headers;
         let startTime;
         if (process.env.NODE_ENV === 'development') {
             startTime = Date.now();
@@ -30,9 +31,11 @@ class FetchService {
         });
         const responseTime = `${Date.now() - startTime || 0}ms`;
         const log = debug('fetch');
-        log(`[fetchService] ${method.toUpperCase()} ${url}\n  payload: ${body ? JSON.stringify(body, null, 2) : '{}'}\n  response: ${resp.status} ${resp.ok ? '' : resp.statusText}\n  took ${responseTime}`);
+        if (process.env.NODE_ENV === 'development') {
+            log(`[fetchService] ${method.toUpperCase()} ${url}\n  payload: ${body ? JSON.stringify(body, null, 2) : '{}'}\n  response: ${resp.status} ${resp.ok ? '' : resp.statusText}\n  took ${responseTime}`);
+        }
         if (!resp.ok) {
-            throw new common_1.HttpException(`Failed making ${method} request to ${path}: ${await resp.text()}`, resp.status);
+            throw new common_1.HttpException(`Failed making ${method} request to ${path}: ${await resp.json()}`, resp.status);
         }
         return resp.json();
     }

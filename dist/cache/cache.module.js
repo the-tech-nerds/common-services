@@ -10,17 +10,19 @@ exports.CacheModule = void 0;
 const common_1 = require("@nestjs/common");
 const redisStore = require("cache-manager-redis-store");
 const cache_service_1 = require("./cache.service");
+const config_1 = require("@nestjs/config");
 let CacheModule = class CacheModule {
 };
 CacheModule = __decorate([
     common_1.Module({
         imports: [
             common_1.CacheModule.registerAsync({
-                useFactory: async () => ({
+                useFactory: async (configService) => ({
                     store: redisStore,
-                    host: '127.0.0.1',
-                    port: 6379,
+                    host: configService.get('redis_global_host'),
+                    port: configService.get('redis_global_port'),
                 }),
+                inject: [config_1.ConfigService],
             }),
         ],
         providers: [cache_service_1.CacheService],

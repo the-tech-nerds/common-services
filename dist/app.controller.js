@@ -19,8 +19,11 @@ let AppController = class AppController {
         this.gatewayService = gatewayService;
     }
     async getHello() {
-        await this.gatewayService.execute("p", {});
-        return "data";
+        const products = await this.gatewayService.execute('product', {
+            path: '/api/v1/products',
+        });
+        console.log(products);
+        return products;
     }
 };
 __decorate([

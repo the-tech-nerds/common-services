@@ -12,12 +12,19 @@ const gateway_service_1 = require("./gateway.service");
 const ip_resolver_service_1 = require("./ip-resolver.service");
 const __1 = require("..");
 const fetch_module_1 = require("../fetch/fetch.module");
+const fetch_access_code_service_1 = require("./fetch-access-code.service");
+const fetch_access_token_service_1 = require("./fetch-access-token.service");
 let GatewayModule = class GatewayModule {
 };
 GatewayModule = __decorate([
     common_1.Module({
         imports: [common_1.HttpModule, __1.CacheModule, fetch_module_1.FetchModule],
-        providers: [gateway_service_1.GatewayService, ip_resolver_service_1.IpResolverService],
+        providers: [
+            gateway_service_1.GatewayService,
+            ip_resolver_service_1.IpResolverService,
+            fetch_access_code_service_1.FetchAccessCodeService,
+            fetch_access_token_service_1.FetchAccessTokenService,
+        ],
         exports: [gateway_service_1.GatewayService, ip_resolver_service_1.IpResolverService],
     })
 ], GatewayModule);
