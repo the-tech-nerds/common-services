@@ -13,14 +13,12 @@ const app_service_1 = require("./app.service");
 const cache_module_1 = require("./cache/cache.module");
 const config_1 = require("@nestjs/config");
 const common_config_1 = require("./config/common-config");
-const gateway_module_1 = require("./gateway/gateway.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
         imports: [
             cache_module_1.CacheModule,
-            gateway_module_1.GatewayModule,
             config_1.ConfigModule.forRoot({
                 isGlobal: true,
                 load: [common_config_1.default],

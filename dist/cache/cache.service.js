@@ -8,27 +8,29 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppController = void 0;
+exports.CacheService = void 0;
 const common_1 = require("@nestjs/common");
-const app_service_1 = require("./app.service");
-let AppController = class AppController {
-    constructor(appService) {
-        this.appService = appService;
+const cache_manager_1 = require("cache-manager");
+let CacheService = class CacheService {
+    constructor(cache) {
+        this.cache = cache;
     }
-    async getHello() {
-        return this.appService.getHello();
+    async get(key) {
+        return this.cache.get(key);
+    }
+    async set(key, value, ttl = 100 * 60 * 60) {
+        return this.cache.set(key, value, { ttl: ttl });
     }
 };
-__decorate([
-    common_1.Get('/hello'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], AppController.prototype, "getHello", null);
-AppController = __decorate([
-    common_1.Controller(),
-    __metadata("design:paramtypes", [app_service_1.AppService])
-], AppController);
-exports.AppController = AppController;
-//# sourceMappingURL=app.controller.js.map
+CacheService = __decorate([
+    common_1.Injectable(),
+    __param(0, common_1.Inject(common_1.CACHE_MANAGER)),
+    __metadata("design:paramtypes", [typeof (_a = typeof cache_manager_1.Cache !== "undefined" && cache_manager_1.Cache) === "function" ? _a : Object])
+], CacheService);
+exports.CacheService = CacheService;
+//# sourceMappingURL=cache.service.js.map

@@ -23,7 +23,7 @@ class FetchService {
         }
         const resp = await fetch(url, {
             method,
-            headers: Object.assign({ 'Content-Type': 'application/json', userId: reqUserId }, requestHeaders),
+            headers: Object.assign({ 'Content-Type': 'application/json', userId: `${reqUserId}` }, requestHeaders),
             body: body ? JSON.stringify(body) : undefined,
             cache: 'no-cache',
             redirect: 'follow',

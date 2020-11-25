@@ -1536,14 +1536,9 @@
         "signature": "653711fba8904aa27fd8911b63cf526e7b334e13a292da4cefdbbe179ac3f3f2",
         "affectsGlobalScope": false
       },
-      "../src/gateway/gateway.services.ts": {
-        "version": "201d15cd58ce7aaac44d5081c0f59d66df38bb95664b1a0586775c9de8d0b3ca",
-        "signature": "90daeaad33b349f6753841f915e0b8676a8298f08c5bfa86d7cb1934a8c49adb",
-        "affectsGlobalScope": false
-      },
-      "../src/gateway/ip-resolver.service.ts": {
-        "version": "9cb82ea7df7aa1f2942e7923ec9e4fd44e020bf114602968de90d924e1e3c087",
-        "signature": "dbf401940060b1a22dcec7ca6d1168a786633e2c87e7e8ef4be1377e38f7994a",
+      "../src/app.controller.ts": {
+        "version": "d5b4693476fe89d7289a1cd981f517633aea99f8dfb49c82af00886490c08232",
+        "signature": "02a1417b663f86ad3c22873cc741e28ff15ac59fe4a43938b170124375d05fb2",
         "affectsGlobalScope": false
       },
       "../src/cache/cache.service.ts": {
@@ -1561,6 +1556,21 @@
         "signature": "a25b8e6069b40fe7f4461e1ffe74d427c9054ea44627a48a258c4c5f14bf0c86",
         "affectsGlobalScope": false
       },
+      "../src/app.module.ts": {
+        "version": "3069e4b8ea1c242110bf838b495a81985e3c609d8eaf379200fafbc0ffaf5500",
+        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
+        "affectsGlobalScope": false
+      },
+      "../src/gateway/gateway.services.ts": {
+        "version": "201d15cd58ce7aaac44d5081c0f59d66df38bb95664b1a0586775c9de8d0b3ca",
+        "signature": "90daeaad33b349f6753841f915e0b8676a8298f08c5bfa86d7cb1934a8c49adb",
+        "affectsGlobalScope": false
+      },
+      "../src/gateway/ip-resolver.service.ts": {
+        "version": "9cb82ea7df7aa1f2942e7923ec9e4fd44e020bf114602968de90d924e1e3c087",
+        "signature": "dbf401940060b1a22dcec7ca6d1168a786633e2c87e7e8ef4be1377e38f7994a",
+        "affectsGlobalScope": false
+      },
       "../node_modules/query-string/index.d.ts": {
         "version": "c4f8dfea457dd5825a16f19a970e73dab40a031e0bc1b043a9795a0bc099e05e",
         "signature": "c4f8dfea457dd5825a16f19a970e73dab40a031e0bc1b043a9795a0bc099e05e",
@@ -1572,13 +1582,8 @@
         "affectsGlobalScope": false
       },
       "../src/fetch/fetch.service.ts": {
-        "version": "6de29521407ede33f003cff97cf094c0d8c445b5dab38b3ada7d5a2e76eb22b3",
+        "version": "4d308ccb4a60f83ac844bdfe283bc324e0d1af7406a4fe47dc90e8f9c47f36fe",
         "signature": "ffd85e602c8b6adda6dce6c1193efcbd321189ff594facf1e3e6bc911a304f2e",
-        "affectsGlobalScope": false
-      },
-      "../src/fetch/fetch.module.ts": {
-        "version": "713816822b6d3aa336002e9c2f3c945f99edd139b06963bad50588b5c0086d0c",
-        "signature": "8dc743fc0c35d452904a6dec667aa67d18004e8eb97565dd1c6f8ae4172df280",
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.d.ts": {
@@ -1594,6 +1599,16 @@
       "../src/gateway/fetch-access-token.service.ts": {
         "version": "1d63b9b0ab447f38ae4f5e8f14bfeeb86adaa35c7d95357800c00707ab600e4d",
         "signature": "dd71cc796b4f7f90b51d6bf4b076b916283c10f5acd2d022f97b34c3994c57d9",
+        "affectsGlobalScope": false
+      },
+      "../src/gateway/gateway.service.ts": {
+        "version": "3a0eaf9dac04e02bb8d4745a8ede415a11f6d91fac6549dbb1b7dfd5ca79ba11",
+        "signature": "7431ae2277103c586a8a53fef41250b3181bf448aa588bf8cdf8d7d774c166e1",
+        "affectsGlobalScope": false
+      },
+      "../src/fetch/fetch.module.ts": {
+        "version": "713816822b6d3aa336002e9c2f3c945f99edd139b06963bad50588b5c0086d0c",
+        "signature": "8dc743fc0c35d452904a6dec667aa67d18004e8eb97565dd1c6f8ae4172df280",
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.module.ts": {
@@ -1649,21 +1664,6 @@
       "../src/index.ts": {
         "version": "a78d032263ee2a9e5910920f6ac6e9136ef13eb14d542c03c458f6ca58081ad8",
         "signature": "66de446f940bc36d07f8e3756c6e9bf4cd866ccad6f17d6369b7afd3424db3cb",
-        "affectsGlobalScope": false
-      },
-      "../src/gateway/gateway.service.ts": {
-        "version": "3a0eaf9dac04e02bb8d4745a8ede415a11f6d91fac6549dbb1b7dfd5ca79ba11",
-        "signature": "7431ae2277103c586a8a53fef41250b3181bf448aa588bf8cdf8d7d774c166e1",
-        "affectsGlobalScope": false
-      },
-      "../src/app.controller.ts": {
-        "version": "b950dde0a06ee4f71b1c9df8ce6627a99e0ce4fb61b8cd6ceeb557fd04b19bb7",
-        "signature": "bdddffaa3e8e2ba5a20e638c7d40f25f9bfbcf8b38ecdfef22fc07a0a000cd59",
-        "affectsGlobalScope": false
-      },
-      "../src/app.module.ts": {
-        "version": "bd6d53dc01b3be21cbccf1166a4d244963c6a314e897e97d76b70ac4bcb33870",
-        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/core/adapters/http-adapter.d.ts": {
@@ -3500,8 +3500,7 @@
       ],
       "../src/app.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/app.service.ts",
-        "../src/gateway/gateway.service.ts"
+        "../src/app.service.ts"
       ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -3509,8 +3508,7 @@
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/cache/cache.module.ts",
-        "../src/config/common-config.ts",
-        "../src/gateway/gateway.module.ts"
+        "../src/config/common-config.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -4935,8 +4933,7 @@
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/app.controller.ts": [
-        "../src/app.service.ts",
-        "../src/gateway/gateway.service.ts"
+        "../src/app.service.ts"
       ],
       "../src/gateway/fetch-access-code.service.ts": [
         "../src/fetch/fetch.service.ts"
@@ -5383,37 +5380,7 @@
       "../src/cache/cache.service.ts",
       "../src/config/common-config.ts",
       "../src/fetch/fetch.module.ts",
-      [
-        "../src/fetch/fetch.service.ts",
-        [
-          {
-            "file": "../src/fetch/fetch.service.ts",
-            "start": 1406,
-            "length": 7,
-            "code": 2322,
-            "category": 1,
-            "messageText": {
-              "messageText": "Type '{ 'Content-Type': string; userId: number; }' is not assignable to type 'HeadersInit'.",
-              "category": 1,
-              "code": 2322,
-              "next": [
-                {
-                  "messageText": "Types of property 'userId' are incompatible.",
-                  "category": 1,
-                  "code": 2326,
-                  "next": [
-                    {
-                      "messageText": "Type 'number' is not assignable to type 'string'.",
-                      "category": 1,
-                      "code": 2322
-                    }
-                  ]
-                }
-              ]
-            }
-          }
-        ]
-      ],
+      "../src/fetch/fetch.service.ts",
       "../src/gateway/fetch-access-code.service.ts",
       "../src/gateway/fetch-access-token.service.ts",
       "../src/gateway/gateway.d.ts",
