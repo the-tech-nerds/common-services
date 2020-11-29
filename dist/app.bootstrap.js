@@ -3,14 +3,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.setBootstrap = void 0;
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
+const config_1 = require("@nestjs/config");
 async function setBootstrap(app) {
+    const configService = app.get(config_1.ConfigService);
     app.use(helmet());
     app.enableCors();
     app.use(rateLimit({
-        windowMs: 15 * 60 * 1000,
-        max: 100,
+        windowMs: configService.get('api_rate_limit_time') * 60 * 1000,
+        max: configService.get('api_rate_limit_max'),
     }));
-    app.setGlobalPrefix('api/v1');
 }
 exports.setBootstrap = setBootstrap;
 //# sourceMappingURL=app.bootstrap.js.map

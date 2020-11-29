@@ -16,15 +16,15 @@ let AppController = class AppController {
     constructor(appService) {
         this.appService = appService;
     }
-    getHello() {
+    async getHello() {
         return this.appService.getHello();
     }
 };
 __decorate([
-    common_1.Get(),
+    common_1.Get('/hello'),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", String)
+    __metadata("design:returntype", Promise)
 ], AppController.prototype, "getHello", null);
 AppController = __decorate([
     common_1.Controller(),

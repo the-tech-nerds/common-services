@@ -23,8 +23,8 @@ let CacheService = class CacheService {
     async get(key) {
         return this.cache.get(key);
     }
-    async set(key, value) {
-        return this.cache.set(key, value);
+    async set(key, value, ttl = 100 * 60 * 60) {
+        return this.cache.set(key, value, { ttl: ttl });
     }
 };
 CacheService = __decorate([
