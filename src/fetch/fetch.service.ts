@@ -77,7 +77,9 @@ export class FetchService {
 
     if (!resp.ok) {
       throw new HttpException(
-        `Failed making ${method} request to ${path}: ${await resp.json()}`,
+        `Failed making ${method} request to ${path}: ${JSON.stringify(
+          await resp.json(),
+        )}`,
         resp.status,
       );
     }
