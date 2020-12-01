@@ -13,7 +13,7 @@ export interface GatewayRequest {
     qs?: {
         [s: string]: string | Array<string | number>;
     };
-    body?: Record<string, unknown>;
+    body?: any;
     userId?: number;
     token?: string;
 }

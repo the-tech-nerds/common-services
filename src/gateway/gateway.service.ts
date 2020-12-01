@@ -11,7 +11,7 @@ export interface GatewayRequest {
   path?: string;
   headers?: { [s: string]: string };
   qs?: { [s: string]: string | Array<string | number> };
-  body?: Record<string, unknown>;
+  body?: any;
   userId?: number;
   token?: string;
 }

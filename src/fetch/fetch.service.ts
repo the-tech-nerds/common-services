@@ -7,7 +7,7 @@ export interface Request {
   method?: 'POST' | 'GET' | 'PUT' | 'DELETE' | 'PATCH';
   headers?: { [s: string]: string };
   qs?: { [s: string]: string | Array<string | number> };
-  body?: Record<string, unknown>;
+  body?: any;
   userId?: number;
   domain?: string;
   hosts?: string;
