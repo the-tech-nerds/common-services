@@ -7,7 +7,7 @@ export interface Request {
   method?: 'POST' | 'GET' | 'PUT' | 'DELETE' | 'PATCH';
   headers?: { [s: string]: string };
   qs?: { [s: string]: string | Array<string | number> };
-  body?: Record<string, unknown>;
+  body?: any;
   userId?: number;
   domain?: string;
   hosts?: string;
@@ -77,7 +77,9 @@ export class FetchService {
 
     if (!resp.ok) {
       throw new HttpException(
-        `Failed making ${method} request to ${path}: ${await resp.json()}`,
+        `Failed making ${method} request to ${path}: ${JSON.stringify(
+          await resp.json(),
+        )}`,
         resp.status,
       );
     }

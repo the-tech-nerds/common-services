@@ -35,7 +35,7 @@ class FetchService {
             log(`[fetchService] ${method.toUpperCase()} ${url}\n  payload: ${body ? JSON.stringify(body, null, 2) : '{}'}\n  response: ${resp.status} ${resp.ok ? '' : resp.statusText}\n  took ${responseTime}`);
         }
         if (!resp.ok) {
-            throw new common_1.HttpException(`Failed making ${method} request to ${path}: ${await resp.json()}`, resp.status);
+            throw new common_1.HttpException(`Failed making ${method} request to ${path}: ${JSON.stringify(await resp.json())}`, resp.status);
         }
         return resp.json();
     }

@@ -5,5 +5,8 @@ import commonConfig from './config/common-config';
 import { GatewayModule } from './gateway/gateway.module';
 import { GatewayService } from './gateway/gateway.service';
 import { GatewayMiddleware } from './gateway/gateway.middleware';
+import { FetchModule } from './fetch/fetch.module';
+import { FetchService } from './fetch/fetch.service';
 export { CacheModule, CacheService, setBootstrap, commonConfig };
+export { FetchModule, FetchService };
 export { GatewayModule, GatewayService, GatewayMiddleware };

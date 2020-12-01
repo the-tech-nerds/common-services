@@ -6,7 +6,7 @@ export interface Request {
     qs?: {
         [s: string]: string | Array<string | number>;
     };
-    body?: Record<string, unknown>;
+    body?: any;
     userId?: number;
     domain?: string;
     hosts?: string;

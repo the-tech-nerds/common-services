@@ -11,7 +11,7 @@ export interface GatewayRequest {
   path?: string;
   headers?: { [s: string]: string };
   qs?: { [s: string]: string | Array<string | number> };
-  body?: Record<string, unknown>;
+  body?: any;
   userId?: number;
   token?: string;
 }
@@ -74,7 +74,13 @@ export class GatewayService {
       token = await this.cacheService.set(key, accessToken);
     }
 
-    const { path, method, headers, token: userAccessToken } = gatewayRequest;
+    const {
+      path,
+      method,
+      headers,
+      token: userAccessToken,
+      body = {},
+    } = gatewayRequest;
 
     const url = `${ip}${path}`;
     return this.fetchService.execute(url, {
@@ -85,6 +91,7 @@ export class GatewayService {
         client_access_token: token,
         user_access_token: userAccessToken,
       },
+      body,
     });
   }
 }
