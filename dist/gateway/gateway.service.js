@@ -61,7 +61,8 @@ let GatewayService = class GatewayService {
         const url = `${ip}${path}`;
         return this.fetchService.execute(url, {
             method,
-            headers: Object.assign(Object.assign({}, headers), { client_name: appName, client_access_token: token, user_access_token: userAccessToken, body }),
+            headers: Object.assign(Object.assign({}, headers), { client_name: appName, client_access_token: token, user_access_token: userAccessToken }),
+            body,
         });
     }
 };
