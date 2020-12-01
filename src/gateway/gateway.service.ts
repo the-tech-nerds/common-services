@@ -90,8 +90,8 @@ export class GatewayService {
         client_name: appName,
         client_access_token: token,
         user_access_token: userAccessToken,
-        body,
       },
+      body,
     });
   }
 }
