@@ -91,7 +91,7 @@ export class GatewayService {
         client_access_token: token,
         user_access_token: userAccessToken,
       },
-      body,
+      body: body ? body : undefined,
     });
   }
 }
