@@ -1602,7 +1602,7 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "c9c333d3faa517a6a831980dafb8710cd58ad9bf4121b7e31aee035c6509078b",
+        "version": "a440e1be18998e53f616b06e98878cd02023c2b09108798e7b3a1567d1605715",
         "signature": "090277fe10b082b5e22d8f511d20b7d03ab6a582da3ae4e0ea34dc67b6110df2",
         "affectsGlobalScope": false
       },
