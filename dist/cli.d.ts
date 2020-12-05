@@ -1,2 +1,2 @@
 import { INestApplication } from '@nestjs/common';
-export declare const commandRegistration: (module: INestApplication) => Promise<void>;
+export declare const commandRegistration: (app: INestApplication) => Promise<void>;
