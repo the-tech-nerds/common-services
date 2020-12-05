@@ -1582,7 +1582,7 @@
         "affectsGlobalScope": false
       },
       "../src/fetch/fetch.service.ts": {
-        "version": "d2c692cd1b08750dea34375ef10389136ed65b7a7650396aa652d7e860e4ef83",
+        "version": "04cb57d02ae5a8ebab9a3516a01bf87ab8db859ed091f92c802d3dc6712140a7",
         "signature": "baf646f38d79122bb245113b007ec0ef9ad56f36e28b46a6750c6d2f91ca334d",
         "affectsGlobalScope": false
       },
@@ -1602,7 +1602,7 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "a440e1be18998e53f616b06e98878cd02023c2b09108798e7b3a1567d1605715",
+        "version": "379a83a845578c4fb960e66c1d7a4560e4829743a11d90ef22dd7a11077b3f0d",
         "signature": "090277fe10b082b5e22d8f511d20b7d03ab6a582da3ae4e0ea34dc67b6110df2",
         "affectsGlobalScope": false
       },
