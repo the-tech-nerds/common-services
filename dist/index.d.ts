@@ -7,6 +7,7 @@ import { GatewayService } from './gateway/gateway.service';
 import { GatewayMiddleware } from './gateway/gateway.middleware';
 import { FetchModule } from './fetch/fetch.module';
 import { FetchService } from './fetch/fetch.service';
-export { CacheModule, CacheService, setBootstrap, commonConfig };
+import { commandRegistration } from './cli';
+export { CacheModule, CacheService, setBootstrap, commonConfig, commandRegistration };
 export { FetchModule, FetchService };
 export { GatewayModule, GatewayService, GatewayMiddleware };

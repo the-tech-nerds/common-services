@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
+exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commandRegistration = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
 const cache_module_1 = require("./cache/cache.module");
 Object.defineProperty(exports, "CacheModule", { enumerable: true, get: function () { return cache_module_1.CacheModule; } });
 const cache_service_1 = require("./cache/cache.service");
@@ -19,4 +19,6 @@ const fetch_module_1 = require("./fetch/fetch.module");
 Object.defineProperty(exports, "FetchModule", { enumerable: true, get: function () { return fetch_module_1.FetchModule; } });
 const fetch_service_1 = require("./fetch/fetch.service");
 Object.defineProperty(exports, "FetchService", { enumerable: true, get: function () { return fetch_service_1.FetchService; } });
+const cli_1 = require("./cli");
+Object.defineProperty(exports, "commandRegistration", { enumerable: true, get: function () { return cli_1.commandRegistration; } });
 //# sourceMappingURL=index.js.map
