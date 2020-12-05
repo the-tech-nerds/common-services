@@ -80,6 +80,7 @@ export class GatewayService {
       headers,
       token: userAccessToken,
       body = undefined,
+      qs = {},
     } = gatewayRequest;
 
     const url = `${ip}${path}`;
@@ -92,6 +93,7 @@ export class GatewayService {
         user_access_token: userAccessToken,
       },
       body: body ? body : undefined,
+      qs,
     });
   }
 }
