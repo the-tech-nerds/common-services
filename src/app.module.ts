@@ -4,6 +4,7 @@ import { AppService } from './app.service';
 import { CacheModule } from './cache/cache.module';
 import { ConfigModule } from '@nestjs/config';
 import commonConfig from './config/common-config';
+import { CommandModule } from 'nestjs-command';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import commonConfig from './config/common-config';
       load: [commonConfig],
       envFilePath: '.common.env',
     }),
+    CommandModule,
   ],
   controllers: [AppController],
   providers: [AppService],
