@@ -1782,7 +1782,7 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "746d08f22286657b36436e76ad341c772c785b64d590ac4e8f88f3a0a7f7b1da",
+        "version": "902a40ff1694b8668769c5478104938ba122b86acaf381e04dd5064268fb60c6",
         "signature": "210ee8e9987f787730f956d72c8077d060499767fee6decc77d6f71c5dc3ae74",
         "affectsGlobalScope": false
       },

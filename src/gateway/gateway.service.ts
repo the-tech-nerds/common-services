@@ -36,7 +36,6 @@ export class GatewayService {
   ) {}
 
   prepareFetchTokenData() {
-    console.log(this.request);
     const clientId = this.configService.get('app_client_id');
     const clientSecret = this.configService.get('app_client_secret');
 
@@ -93,13 +92,16 @@ export class GatewayService {
     } = gatewayRequest;
 
     const url = `${ip}${path}`;
+    const requestHeaders: any = this.request.headers;
+    const accessTokenFromRequestHeader =
+      requestHeaders.access_token || undefined;
     return this.fetchService.execute(url, {
       method,
       headers: {
         ...headers,
         client_name: appName,
         client_access_token: token,
-        user_access_token: userAccessToken,
+        access_token: headers.access_token ?? accessTokenFromRequestHeader,
       },
       body: body ? body : undefined,
       qs,
