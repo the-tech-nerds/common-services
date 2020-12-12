@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
+exports.User = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
 const cache_module_1 = require("./cache/cache.module");
 Object.defineProperty(exports, "CacheModule", { enumerable: true, get: function () { return cache_module_1.CacheModule; } });
 const cache_service_1 = require("./cache/cache.service");
@@ -23,4 +23,10 @@ const permissions_guard_1 = require("./guards/permissions/permissions.guard");
 Object.defineProperty(exports, "PermissionsGuard", { enumerable: true, get: function () { return permissions_guard_1.PermissionsGuard; } });
 const user_guard_1 = require("./guards/user/user.guard");
 Object.defineProperty(exports, "UserGuard", { enumerable: true, get: function () { return user_guard_1.UserGuard; } });
+const permissions_decorator_1 = require("./guards/meta-data/permissions/permissions.decorator");
+Object.defineProperty(exports, "HasPermissions", { enumerable: true, get: function () { return permissions_decorator_1.HasPermissions; } });
+const permission_type_enum_1 = require("./enum/permission-type.enum");
+Object.defineProperty(exports, "PermissionTypeEnum", { enumerable: true, get: function () { return permission_type_enum_1.PermissionTypeEnum; } });
+const user_decorator_1 = require("./decorators/user.decorator");
+Object.defineProperty(exports, "User", { enumerable: true, get: function () { return user_decorator_1.User; } });
 //# sourceMappingURL=index.js.map

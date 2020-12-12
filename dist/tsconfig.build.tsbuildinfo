@@ -1946,9 +1946,19 @@
         "signature": "3b29dbf02b63defddc949255d97ffbd02dae9ab800692a6f72724be7e6654180",
         "affectsGlobalScope": false
       },
+      "../src/guards/meta-data/permissions/permissions.decorator.ts": {
+        "version": "a9599a3ec857b8e0639d5a7fa70d413a66ec7eca3609e6b5ac0995fa07b8014a",
+        "signature": "f6e9125a76729713eacdc18f6e47a7d19ef74a0327d39e94d932e53de8e54740",
+        "affectsGlobalScope": false
+      },
+      "../src/decorators/user.decorator.ts": {
+        "version": "3c4766983d4c8425193c4dd5bcbc199dfee3b21c2701905cfdb653528424a65a",
+        "signature": "059e1bbbfd545d251d1fa5f593630b34af6a760ae56604ae532cf5a2243cc78f",
+        "affectsGlobalScope": false
+      },
       "../src/index.ts": {
-        "version": "23bad4849a5b00975082759c263c38096098263512115e39bb0680b56ccaca18",
-        "signature": "7815c9bca659d713c9b0bde1bb23cefac352da4fe4c5dc8341b415e202a4a615",
+        "version": "dcddf878b4d7e5114593534664d7ca2cbecf5fa75ac555b9c63a59adbc6a86f7",
+        "signature": "6c6c93cc414a2eb188197c3cd1f5ce5797f334dcdfa7bdf6591f8b8bb8134f3d",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
@@ -1959,11 +1969,6 @@
       "../src/enum/roles-type.enum.ts": {
         "version": "d996e5abda90561c3a4105fdf0da1263273133311369d2d5bac29ee14ab749df",
         "signature": "c44577a2b6ca35935cbe78c0ca1c952673c7dd1945d771ee29d872c24d6c0717",
-        "affectsGlobalScope": false
-      },
-      "../src/guards/meta-data/permissions/permissions.decorator.ts": {
-        "version": "a9599a3ec857b8e0639d5a7fa70d413a66ec7eca3609e6b5ac0995fa07b8014a",
-        "signature": "f6e9125a76729713eacdc18f6e47a7d19ef74a0327d39e94d932e53de8e54740",
         "affectsGlobalScope": false
       },
       "../src/guards/meta-data/roles/roles.decorator.ts": {
@@ -3716,6 +3721,9 @@
       "../src/cache/cache.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
+      "../src/decorators/user.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
       "../src/fetch/fetch.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/fetch/fetch.service.ts"
@@ -3791,11 +3799,14 @@
         "../src/cache/cache.module.ts",
         "../src/cache/cache.service.ts",
         "../src/config/common-config.ts",
+        "../src/decorators/user.decorator.ts",
+        "../src/enum/permission-type.enum.ts",
         "../src/fetch/fetch.module.ts",
         "../src/fetch/fetch.service.ts",
         "../src/gateway/gateway.middleware.ts",
         "../src/gateway/gateway.module.ts",
         "../src/gateway/gateway.service.ts",
+        "../src/guards/meta-data/permissions/permissions.decorator.ts",
         "../src/guards/permissions/permissions.guard.ts",
         "../src/guards/user/user.guard.ts"
       ],
@@ -5227,6 +5238,9 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
+      "../src/decorators/user.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
       "../src/gateway/fetch-access-code.service.ts": [
         "../src/fetch/fetch.service.ts"
       ],
@@ -5271,11 +5285,14 @@
         "../src/cache/cache.module.ts",
         "../src/cache/cache.service.ts",
         "../src/config/common-config.ts",
+        "../src/decorators/user.decorator.ts",
+        "../src/enum/permission-type.enum.ts",
         "../src/fetch/fetch.module.ts",
         "../src/fetch/fetch.service.ts",
         "../src/gateway/gateway.middleware.ts",
         "../src/gateway/gateway.module.ts",
         "../src/gateway/gateway.service.ts",
+        "../src/guards/meta-data/permissions/permissions.decorator.ts",
         "../src/guards/permissions/permissions.guard.ts",
         "../src/guards/user/user.guard.ts"
       ]
