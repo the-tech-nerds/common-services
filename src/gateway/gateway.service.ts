@@ -86,7 +86,7 @@ export class GatewayService {
       path,
       method,
       headers = {},
-      token: userAccessToken,
+      token: userAccessToken = null,
       body = undefined,
       qs = {},
     } = gatewayRequest;
@@ -101,7 +101,8 @@ export class GatewayService {
         ...headers,
         client_name: appName,
         client_access_token: token,
-        access_token: headers.access_token ?? accessTokenFromRequestHeader,
+        access_token: userAccessToken ?? accessTokenFromRequestHeader,
+        Authorization: `Bearer ${accessTokenFromRequestHeader}`,
       },
       body: body ? body : undefined,
       qs,
