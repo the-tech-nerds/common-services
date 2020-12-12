@@ -1,10 +1,17 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Inject,
+  Injectable,
+  Scope,
+} from '@nestjs/common';
 import { IpResolverService } from './ip-resolver.service';
 import { CacheService } from '..';
 import { FetchService } from '../fetch/fetch.service';
 import { ConfigService } from '@nestjs/config';
 import { FetchAccessCodeService } from './fetch-access-code.service';
 import { FetchAccessTokenService } from './fetch-access-token.service';
+import { REQUEST } from '@nestjs/core';
 
 export interface GatewayRequest {
   method?: 'POST' | 'GET' | 'PUT' | 'DELETE' | 'PATCH';
@@ -16,7 +23,7 @@ export interface GatewayRequest {
   token?: string;
 }
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class GatewayService {
   constructor(
     private readonly ipResolverService: IpResolverService,
@@ -25,9 +32,11 @@ export class GatewayService {
     private readonly configService: ConfigService,
     private readonly fetchAccessCodeService: FetchAccessCodeService,
     private readonly fetchAccessTokenService: FetchAccessTokenService,
+    @Inject(REQUEST) private request: Request,
   ) {}
 
   prepareFetchTokenData() {
+    console.log(this.request);
     const clientId = this.configService.get('app_client_id');
     const clientSecret = this.configService.get('app_client_secret');
 
