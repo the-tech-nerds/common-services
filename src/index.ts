@@ -8,6 +8,7 @@ import { GatewayMiddleware } from './gateway/gateway.middleware';
 import { FetchModule } from './fetch/fetch.module';
 import { FetchService } from './fetch/fetch.service';
 import { PermissionsGuard } from './guards/permissions/permissions.guard';
+import { UserGuard } from './guards/user/user.guard';
 
 export { CacheModule, CacheService, setBootstrap, commonConfig };
 
@@ -15,4 +16,4 @@ export { FetchModule, FetchService };
 
 export { GatewayModule, GatewayService, GatewayMiddleware };
 
-export { PermissionsGuard };
+export { UserGuard, PermissionsGuard };

@@ -1882,38 +1882,8 @@
         "affectsGlobalScope": false
       },
       "../src/guards/permissions/permissions.guard.ts": {
-        "version": "0cc56addc4a9275ebeb7cc807dcc1149b85efc616cffa23ea0088428cad5fa7a",
+        "version": "d6c4122c7906e37ec88c2b9daa231197ad94e634d9eb9726dfc084fe970e5239",
         "signature": "6625ba2a0844c03d9f91b348e14d11b58761b86662f9e1bb57841af0630eb482",
-        "affectsGlobalScope": false
-      },
-      "../src/index.ts": {
-        "version": "46c7489b2b91ff595b665d99e3a05c0872b6780c7f626c0b56ea583b24fd0695",
-        "signature": "8e1fb2eb1cc284164e1cbfa7a58120e4c35e727bc67ed11a152efa908ce76a84",
-        "affectsGlobalScope": false
-      },
-      "../src/main.ts": {
-        "version": "9e6b3b06e07a8f8b59c3c4e3542043bf1662e8e45c1f701ab6ef354367b5fb62",
-        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
-      "../src/enum/roles-type.enum.ts": {
-        "version": "d996e5abda90561c3a4105fdf0da1263273133311369d2d5bac29ee14ab749df",
-        "signature": "c44577a2b6ca35935cbe78c0ca1c952673c7dd1945d771ee29d872c24d6c0717",
-        "affectsGlobalScope": false
-      },
-      "../src/guards/meta-data/permissions/permissions.decorator.ts": {
-        "version": "f8cac9ea2c27e0c5d158984c9719bf47916745ec7b8f0e0c1570aac6fd0e5d12",
-        "signature": "f6e9125a76729713eacdc18f6e47a7d19ef74a0327d39e94d932e53de8e54740",
-        "affectsGlobalScope": false
-      },
-      "../src/guards/meta-data/roles/roles.decorator.ts": {
-        "version": "987493e1c29988c06083d4364f377deba622c85bec9a0d038d89ea46388cc86c",
-        "signature": "f50c3c7e32fae298d3673b12aaa7113682715aaf869692f3fdb8eab85b53ff8c",
-        "affectsGlobalScope": false
-      },
-      "../src/guards/roles/roles.guard.ts": {
-        "version": "ba8e29a75b029cb86bfcadd15db2de2e72082a3d422148c26fc9c354f59dfec2",
-        "signature": "0cf0a03bcdb26d5eb0053163aea1984be09693a3af677986cea1055899f82f39",
         "affectsGlobalScope": false
       },
       "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
@@ -1974,6 +1944,36 @@
       "../src/guards/user/user.guard.ts": {
         "version": "aae0de5ce5f1a5acaaf29fc54b7caa2df949f0bad097c2b92eb5453fe0f67218",
         "signature": "3b29dbf02b63defddc949255d97ffbd02dae9ab800692a6f72724be7e6654180",
+        "affectsGlobalScope": false
+      },
+      "../src/index.ts": {
+        "version": "23bad4849a5b00975082759c263c38096098263512115e39bb0680b56ccaca18",
+        "signature": "7815c9bca659d713c9b0bde1bb23cefac352da4fe4c5dc8341b415e202a4a615",
+        "affectsGlobalScope": false
+      },
+      "../src/main.ts": {
+        "version": "9e6b3b06e07a8f8b59c3c4e3542043bf1662e8e45c1f701ab6ef354367b5fb62",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      },
+      "../src/enum/roles-type.enum.ts": {
+        "version": "d996e5abda90561c3a4105fdf0da1263273133311369d2d5bac29ee14ab749df",
+        "signature": "c44577a2b6ca35935cbe78c0ca1c952673c7dd1945d771ee29d872c24d6c0717",
+        "affectsGlobalScope": false
+      },
+      "../src/guards/meta-data/permissions/permissions.decorator.ts": {
+        "version": "a9599a3ec857b8e0639d5a7fa70d413a66ec7eca3609e6b5ac0995fa07b8014a",
+        "signature": "f6e9125a76729713eacdc18f6e47a7d19ef74a0327d39e94d932e53de8e54740",
+        "affectsGlobalScope": false
+      },
+      "../src/guards/meta-data/roles/roles.decorator.ts": {
+        "version": "987493e1c29988c06083d4364f377deba622c85bec9a0d038d89ea46388cc86c",
+        "signature": "f50c3c7e32fae298d3673b12aaa7113682715aaf869692f3fdb8eab85b53ff8c",
+        "affectsGlobalScope": false
+      },
+      "../src/guards/roles/roles.guard.ts": {
+        "version": "85dbc222eef1d041013dd8c2cf47fd64f713b81ad1d0e6e028d78f6f94366645",
+        "signature": "0cf0a03bcdb26d5eb0053163aea1984be09693a3af677986cea1055899f82f39",
         "affectsGlobalScope": false
       },
       "../src/strategies/jwt.strategy.ts": {
@@ -3796,7 +3796,8 @@
         "../src/gateway/gateway.middleware.ts",
         "../src/gateway/gateway.module.ts",
         "../src/gateway/gateway.service.ts",
-        "../src/guards/permissions/permissions.guard.ts"
+        "../src/guards/permissions/permissions.guard.ts",
+        "../src/guards/user/user.guard.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
@@ -5275,7 +5276,8 @@
         "../src/gateway/gateway.middleware.ts",
         "../src/gateway/gateway.module.ts",
         "../src/gateway/gateway.service.ts",
-        "../src/guards/permissions/permissions.guard.ts"
+        "../src/guards/permissions/permissions.guard.ts",
+        "../src/guards/user/user.guard.ts"
       ]
     },
     "semanticDiagnosticsPerFile": []

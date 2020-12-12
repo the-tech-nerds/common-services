@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PermissionsGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
+exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
 const cache_module_1 = require("./cache/cache.module");
 Object.defineProperty(exports, "CacheModule", { enumerable: true, get: function () { return cache_module_1.CacheModule; } });
 const cache_service_1 = require("./cache/cache.service");
@@ -21,4 +21,6 @@ const fetch_service_1 = require("./fetch/fetch.service");
 Object.defineProperty(exports, "FetchService", { enumerable: true, get: function () { return fetch_service_1.FetchService; } });
 const permissions_guard_1 = require("./guards/permissions/permissions.guard");
 Object.defineProperty(exports, "PermissionsGuard", { enumerable: true, get: function () { return permissions_guard_1.PermissionsGuard; } });
+const user_guard_1 = require("./guards/user/user.guard");
+Object.defineProperty(exports, "UserGuard", { enumerable: true, get: function () { return user_guard_1.UserGuard; } });
 //# sourceMappingURL=index.js.map

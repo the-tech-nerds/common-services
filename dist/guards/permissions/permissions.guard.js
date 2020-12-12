@@ -100,7 +100,8 @@ let PermissionsGuard = class PermissionsGuard {
     hasAllPermission(systemPermissions, userPermissions) {
         let permissionMatch = false;
         try {
-            permissionMatch = JSON.stringify(userPermissions) !== JSON.stringify(systemPermissions);
+            permissionMatch =
+                JSON.stringify(userPermissions) !== JSON.stringify(systemPermissions);
         }
         catch (e) {
             throw new common_1.ForbiddenException('Forbidden Request');

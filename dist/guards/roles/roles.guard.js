@@ -27,7 +27,7 @@ let RolesGuard = class RolesGuard {
         }
         const request = context.switchToHttp().getRequest();
         const token = ((_a = request === null || request === void 0 ? void 0 : request.headers) === null || _a === void 0 ? void 0 : _a.access_token) || null;
-        const { id: userId = null, roles: rols = null, } = this.jwtService.decode(token);
+        const { id: userId = null, roles: rols = null } = this.jwtService.decode(token);
         if (!userId || !rols) {
             throw new common_1.UnauthorizedException('Unauthorized');
         }
