@@ -85,7 +85,7 @@ export class GatewayService {
     const {
       path,
       method,
-      headers,
+      headers = {},
       token: userAccessToken,
       body = undefined,
       qs = {},

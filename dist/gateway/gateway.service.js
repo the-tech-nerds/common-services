@@ -63,7 +63,7 @@ let GatewayService = class GatewayService {
             const accessToken = await this.fetchAccessTokenService.execute(accessCode, authIp, data);
             token = await this.cacheService.set(key, accessToken);
         }
-        const { path, method, headers, token: userAccessToken, body = undefined, qs = {}, } = gatewayRequest;
+        const { path, method, headers = {}, token: userAccessToken, body = undefined, qs = {}, } = gatewayRequest;
         const url = `${ip}${path}`;
         const requestHeaders = this.request.headers;
         const accessTokenFromRequestHeader = requestHeaders.access_token || undefined;
