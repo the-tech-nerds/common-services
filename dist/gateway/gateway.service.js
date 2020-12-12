@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GatewayService = void 0;
 const common_1 = require("@nestjs/common");
@@ -17,16 +20,19 @@ const fetch_service_1 = require("../fetch/fetch.service");
 const config_1 = require("@nestjs/config");
 const fetch_access_code_service_1 = require("./fetch-access-code.service");
 const fetch_access_token_service_1 = require("./fetch-access-token.service");
+const core_1 = require("@nestjs/core");
 let GatewayService = class GatewayService {
-    constructor(ipResolverService, cacheService, fetchService, configService, fetchAccessCodeService, fetchAccessTokenService) {
+    constructor(ipResolverService, cacheService, fetchService, configService, fetchAccessCodeService, fetchAccessTokenService, request) {
         this.ipResolverService = ipResolverService;
         this.cacheService = cacheService;
         this.fetchService = fetchService;
         this.configService = configService;
         this.fetchAccessCodeService = fetchAccessCodeService;
         this.fetchAccessTokenService = fetchAccessTokenService;
+        this.request = request;
     }
     prepareFetchTokenData() {
+        console.log(this.request);
         const clientId = this.configService.get('app_client_id');
         const clientSecret = this.configService.get('app_client_secret');
         if (!clientId || !clientSecret) {
@@ -68,13 +74,15 @@ let GatewayService = class GatewayService {
     }
 };
 GatewayService = __decorate([
-    common_1.Injectable(),
+    common_1.Injectable({ scope: common_1.Scope.REQUEST }),
+    __param(6, common_1.Inject(core_1.REQUEST)),
     __metadata("design:paramtypes", [ip_resolver_service_1.IpResolverService,
         __1.CacheService,
         fetch_service_1.FetchService,
         config_1.ConfigService,
         fetch_access_code_service_1.FetchAccessCodeService,
-        fetch_access_token_service_1.FetchAccessTokenService])
+        fetch_access_token_service_1.FetchAccessTokenService,
+        Request])
 ], GatewayService);
 exports.GatewayService = GatewayService;
 //# sourceMappingURL=gateway.service.js.map
