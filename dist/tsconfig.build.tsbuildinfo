@@ -1952,13 +1952,18 @@
         "affectsGlobalScope": false
       },
       "../src/decorators/user.decorator.ts": {
-        "version": "3c4766983d4c8425193c4dd5bcbc199dfee3b21c2701905cfdb653528424a65a",
+        "version": "b359f304b95cbfab56bc7882a13cdc35fb31b9fb70812912365b12d2c5fc86dc",
         "signature": "059e1bbbfd545d251d1fa5f593630b34af6a760ae56604ae532cf5a2243cc78f",
         "affectsGlobalScope": false
       },
+      "../src/enum/permission.type.ts": {
+        "version": "43d89fc7202f3c9dc06f9e2372b9e04a383f6c261ca1b6957c795d3377c2df40",
+        "signature": "5ca4a7a421c7caa2fa2750fbe055456420211be910f7ee31edd813496e6dd06e",
+        "affectsGlobalScope": false
+      },
       "../src/index.ts": {
-        "version": "dcddf878b4d7e5114593534664d7ca2cbecf5fa75ac555b9c63a59adbc6a86f7",
-        "signature": "6c6c93cc414a2eb188197c3cd1f5ce5797f334dcdfa7bdf6591f8b8bb8134f3d",
+        "version": "6480fcd680f4f592665fa03c5cbe42f8fd386bb5d2ff45e226d4ad87c6803ce1",
+        "signature": "f3d09e2d400121b0dd9f6866e6e752b5b5dd8474c98e5b4b447fdbd10f1f421a",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
@@ -3801,6 +3806,7 @@
         "../src/config/common-config.ts",
         "../src/decorators/user.decorator.ts",
         "../src/enum/permission-type.enum.ts",
+        "../src/enum/permission.type.ts",
         "../src/fetch/fetch.module.ts",
         "../src/fetch/fetch.service.ts",
         "../src/gateway/gateway.middleware.ts",
@@ -5287,6 +5293,7 @@
         "../src/config/common-config.ts",
         "../src/decorators/user.decorator.ts",
         "../src/enum/permission-type.enum.ts",
+        "../src/enum/permission.type.ts",
         "../src/fetch/fetch.module.ts",
         "../src/fetch/fetch.service.ts",
         "../src/gateway/gateway.middleware.ts",
