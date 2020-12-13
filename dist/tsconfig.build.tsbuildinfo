@@ -1962,8 +1962,8 @@
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "3512c2ddea8812868d55d3c5747b4e7c3fa9c6cc56eb8c3da1ffe7fb7418cb32",
-        "signature": "5314cb40a060d669b87ce2ffec8b1cedb1d33ffd22f9b07b3b285ee6c4eea1a7",
+        "version": "ce33b5da0386f452a9ead9106b0045397c44e4da09120af5b41b5fcce690420a",
+        "signature": "d4deb2fe01703bcd7c6848034419929c91a183b3956abde47eaed3d511c1347a",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {

@@ -11,7 +11,7 @@ import { PermissionsGuard } from './guards/permissions/permissions.guard';
 import { UserGuard } from './guards/user/user.guard';
 import { HasPermissions } from './guards/meta-data/permissions/permissions.decorator';
 import { PermissionTypeEnum } from './enum/permission-type.enum';
-import { User } from './decorators/user.decorator';
+import { User as CurrentUser } from './decorators/user.decorator';
 import PermissionTypes from './enum/permission.type';
 
 export { CacheModule, CacheService, setBootstrap, commonConfig };
@@ -26,5 +26,5 @@ export {
   HasPermissions,
   PermissionTypeEnum,
   PermissionTypes,
-  User,
+  CurrentUser,
 };
