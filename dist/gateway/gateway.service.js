@@ -51,7 +51,6 @@ let GatewayService = class GatewayService {
         };
     }
     async execute(domain, gatewayRequest) {
-        var _a;
         const ip = this.ipResolverService.resolve(domain);
         const appName = this.configService.get('app_name');
         const key = `client-access-token-${appName}`;
@@ -63,13 +62,13 @@ let GatewayService = class GatewayService {
             const accessToken = await this.fetchAccessTokenService.execute(accessCode, authIp, data);
             token = await this.cacheService.set(key, accessToken);
         }
-        const { path, method, headers = {}, token: userAccessToken, body = undefined, qs = {}, } = gatewayRequest;
+        const { path, method, headers = {}, token: userAccessToken = null, body = undefined, qs = {}, } = gatewayRequest;
         const url = `${ip}${path}`;
         const requestHeaders = this.request.headers;
         const accessTokenFromRequestHeader = requestHeaders.access_token || undefined;
         return this.fetchService.execute(url, {
             method,
-            headers: Object.assign(Object.assign({}, headers), { client_name: appName, client_access_token: token, access_token: (_a = headers.access_token) !== null && _a !== void 0 ? _a : accessTokenFromRequestHeader }),
+            headers: Object.assign(Object.assign({}, headers), { client_name: appName, client_access_token: token, access_token: userAccessToken !== null && userAccessToken !== void 0 ? userAccessToken : accessTokenFromRequestHeader, Authorization: `Bearer ${accessTokenFromRequestHeader}` }),
             body: body ? body : undefined,
             qs,
         });

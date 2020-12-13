@@ -16,4 +16,4 @@ import PermissionTypes from './enum/permission.type';
 export { CacheModule, CacheService, setBootstrap, commonConfig };
 export { FetchModule, FetchService };
 export { GatewayModule, GatewayService, GatewayMiddleware };
-export { UserGuard, PermissionsGuard, HasPermissions, PermissionTypeEnum, PermissionTypes, User };
+export { UserGuard, PermissionsGuard, HasPermissions, PermissionTypeEnum, PermissionTypes, User, };
