@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CurrentUser = exports.PermissionTypes = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
+exports.CurrentUser = exports.PermissionTypes = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commandRegistration = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
 const cache_module_1 = require("./cache/cache.module");
 Object.defineProperty(exports, "CacheModule", { enumerable: true, get: function () { return cache_module_1.CacheModule; } });
 const cache_service_1 = require("./cache/cache.service");
@@ -31,4 +31,6 @@ const user_decorator_1 = require("./decorators/user.decorator");
 Object.defineProperty(exports, "CurrentUser", { enumerable: true, get: function () { return user_decorator_1.User; } });
 const permission_type_1 = require("./enum/permission.type");
 exports.PermissionTypes = permission_type_1.default;
+const cli_1 = require("./cli");
+Object.defineProperty(exports, "commandRegistration", { enumerable: true, get: function () { return cli_1.commandRegistration; } });
 //# sourceMappingURL=index.js.map
