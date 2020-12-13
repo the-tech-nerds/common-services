@@ -6,7 +6,7 @@ const app_bootstrap_1 = require("./app.bootstrap");
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     await app_bootstrap_1.setBootstrap(app);
-    await app.listen(3000);
+    await app.listen(9000);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

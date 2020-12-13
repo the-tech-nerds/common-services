@@ -1,10 +1,17 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Inject,
+  Injectable,
+  Scope,
+} from '@nestjs/common';
 import { IpResolverService } from './ip-resolver.service';
 import { CacheService } from '..';
 import { FetchService } from '../fetch/fetch.service';
 import { ConfigService } from '@nestjs/config';
 import { FetchAccessCodeService } from './fetch-access-code.service';
 import { FetchAccessTokenService } from './fetch-access-token.service';
+import { REQUEST } from '@nestjs/core';
 
 export interface GatewayRequest {
   method?: 'POST' | 'GET' | 'PUT' | 'DELETE' | 'PATCH';
@@ -16,7 +23,7 @@ export interface GatewayRequest {
   token?: string;
 }
 
-@Injectable()
+@Injectable({ scope: Scope.REQUEST })
 export class GatewayService {
   constructor(
     private readonly ipResolverService: IpResolverService,
@@ -25,6 +32,7 @@ export class GatewayService {
     private readonly configService: ConfigService,
     private readonly fetchAccessCodeService: FetchAccessCodeService,
     private readonly fetchAccessTokenService: FetchAccessTokenService,
+    @Inject(REQUEST) private request: Request,
   ) {}
 
   prepareFetchTokenData() {
@@ -77,20 +85,24 @@ export class GatewayService {
     const {
       path,
       method,
-      headers,
-      token: userAccessToken,
+      headers = {},
+      token: userAccessToken = null,
       body = undefined,
       qs = {},
     } = gatewayRequest;
 
     const url = `${ip}${path}`;
+    const requestHeaders: any = this.request.headers;
+    const accessTokenFromRequestHeader =
+      requestHeaders.access_token || undefined;
     return this.fetchService.execute(url, {
       method,
       headers: {
         ...headers,
         client_name: appName,
         client_access_token: token,
-        user_access_token: userAccessToken,
+        access_token: userAccessToken ?? accessTokenFromRequestHeader,
+        Authorization: `Bearer ${accessTokenFromRequestHeader}`,
       },
       body: body ? body : undefined,
       qs,

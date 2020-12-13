@@ -8,6 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GatewayService = void 0;
 const common_1 = require("@nestjs/common");
@@ -17,14 +20,16 @@ const fetch_service_1 = require("../fetch/fetch.service");
 const config_1 = require("@nestjs/config");
 const fetch_access_code_service_1 = require("./fetch-access-code.service");
 const fetch_access_token_service_1 = require("./fetch-access-token.service");
+const core_1 = require("@nestjs/core");
 let GatewayService = class GatewayService {
-    constructor(ipResolverService, cacheService, fetchService, configService, fetchAccessCodeService, fetchAccessTokenService) {
+    constructor(ipResolverService, cacheService, fetchService, configService, fetchAccessCodeService, fetchAccessTokenService, request) {
         this.ipResolverService = ipResolverService;
         this.cacheService = cacheService;
         this.fetchService = fetchService;
         this.configService = configService;
         this.fetchAccessCodeService = fetchAccessCodeService;
         this.fetchAccessTokenService = fetchAccessTokenService;
+        this.request = request;
     }
     prepareFetchTokenData() {
         const clientId = this.configService.get('app_client_id');
@@ -57,24 +62,28 @@ let GatewayService = class GatewayService {
             const accessToken = await this.fetchAccessTokenService.execute(accessCode, authIp, data);
             token = await this.cacheService.set(key, accessToken);
         }
-        const { path, method, headers, token: userAccessToken, body = undefined, qs = {}, } = gatewayRequest;
+        const { path, method, headers = {}, token: userAccessToken = null, body = undefined, qs = {}, } = gatewayRequest;
         const url = `${ip}${path}`;
+        const requestHeaders = this.request.headers;
+        const accessTokenFromRequestHeader = requestHeaders.access_token || undefined;
         return this.fetchService.execute(url, {
             method,
-            headers: Object.assign(Object.assign({}, headers), { client_name: appName, client_access_token: token, user_access_token: userAccessToken }),
+            headers: Object.assign(Object.assign({}, headers), { client_name: appName, client_access_token: token, access_token: userAccessToken !== null && userAccessToken !== void 0 ? userAccessToken : accessTokenFromRequestHeader, Authorization: `Bearer ${accessTokenFromRequestHeader}` }),
             body: body ? body : undefined,
             qs,
         });
     }
 };
 GatewayService = __decorate([
-    common_1.Injectable(),
+    common_1.Injectable({ scope: common_1.Scope.REQUEST }),
+    __param(6, common_1.Inject(core_1.REQUEST)),
     __metadata("design:paramtypes", [ip_resolver_service_1.IpResolverService,
         __1.CacheService,
         fetch_service_1.FetchService,
         config_1.ConfigService,
         fetch_access_code_service_1.FetchAccessCodeService,
-        fetch_access_token_service_1.FetchAccessTokenService])
+        fetch_access_token_service_1.FetchAccessTokenService,
+        Request])
 ], GatewayService);
 exports.GatewayService = GatewayService;
 //# sourceMappingURL=gateway.service.js.map

@@ -24,7 +24,8 @@ export declare class GatewayService {
     private readonly configService;
     private readonly fetchAccessCodeService;
     private readonly fetchAccessTokenService;
-    constructor(ipResolverService: IpResolverService, cacheService: CacheService, fetchService: FetchService, configService: ConfigService, fetchAccessCodeService: FetchAccessCodeService, fetchAccessTokenService: FetchAccessTokenService);
+    private request;
+    constructor(ipResolverService: IpResolverService, cacheService: CacheService, fetchService: FetchService, configService: ConfigService, fetchAccessCodeService: FetchAccessCodeService, fetchAccessTokenService: FetchAccessTokenService, request: Request);
     prepareFetchTokenData(): {
         client_id: any;
         user_id: string;
