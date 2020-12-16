@@ -12,11 +12,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
 const app_service_1 = require("./app.service");
+const cache_service_1 = require("./cache/cache.service");
 let AppController = class AppController {
-    constructor(appService) {
+    constructor(appService, cacheService) {
         this.appService = appService;
+        this.cacheService = cacheService;
     }
     async getHello() {
+        await this.cacheService.delete('user-token-3');
         return this.appService.getHello();
     }
 };
@@ -28,7 +31,8 @@ __decorate([
 ], AppController.prototype, "getHello", null);
 AppController = __decorate([
     common_1.Controller(),
-    __metadata("design:paramtypes", [app_service_1.AppService])
+    __metadata("design:paramtypes", [app_service_1.AppService,
+        cache_service_1.CacheService])
 ], AppController);
 exports.AppController = AppController;
 //# sourceMappingURL=app.controller.js.map

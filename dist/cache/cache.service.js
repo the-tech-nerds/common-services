@@ -26,6 +26,9 @@ let CacheService = class CacheService {
     async set(key, value, ttl = 100 * 60 * 60) {
         return this.cache.set(key, value, { ttl: ttl });
     }
+    async delete(key) {
+        return this.cache.del(key);
+    }
 };
 CacheService = __decorate([
     common_1.Injectable(),
