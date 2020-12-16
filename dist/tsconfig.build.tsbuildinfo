@@ -1542,8 +1542,8 @@
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
-        "version": "51775d352f74e3d95766f5cab885342f697f64bf21284e2576533b8128c3b9f7",
-        "signature": "8294746af13edc49bfffecab37bac453ecda8158e592f86ecbbc1693a75061d3",
+        "version": "57187b64fc295f9e5243eef269181206cbd9894e1aadd04af7d5c6b238d3877b",
+        "signature": "02a1417b663f86ad3c22873cc741e28ff15ac59fe4a43938b170124375d05fb2",
         "affectsGlobalScope": false
       },
       "../src/cache/cache.module.ts": {
@@ -5356,8 +5356,7 @@
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/app.controller.ts": [
-        "../src/app.service.ts",
-        "../src/cache/cache.service.ts"
+        "../src/app.service.ts"
       ],
       "../src/cli.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
