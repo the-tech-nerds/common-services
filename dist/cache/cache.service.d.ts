@@ -4,4 +4,5 @@ export declare class CacheService {
     constructor(cache: Cache);
     get(key: any): Promise<any>;
     set(key: any, value: any, ttl?: number): Promise<any>;
+    delete(key: any): Promise<any>;
 }
