@@ -1556,11 +1556,6 @@
         "signature": "a25b8e6069b40fe7f4461e1ffe74d427c9054ea44627a48a258c4c5f14bf0c86",
         "affectsGlobalScope": false
       },
-      "../src/app.module.ts": {
-        "version": "3069e4b8ea1c242110bf838b495a81985e3c609d8eaf379200fafbc0ffaf5500",
-        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
-        "affectsGlobalScope": false
-      },
       "../node_modules/@types/yargs-parser/index.d.ts": {
         "version": "fdfbe321c556c39a2ecf791d537b999591d0849e971dd938d88f460fea0186f6",
         "signature": "fdfbe321c556c39a2ecf791d537b999591d0849e971dd938d88f460fea0186f6",
@@ -1786,9 +1781,14 @@
         "signature": "9f895353d4f2455ca7c40406a3e567bcf2bbb2d376cb38f3371dc53798ebf37a",
         "affectsGlobalScope": false
       },
+      "../src/app.module.ts": {
+        "version": "b126c36e96033d76b698a78cce2c16497fb3600585c407a56c96df7b6c9d27e6",
+        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
+        "affectsGlobalScope": false
+      },
       "../src/cli.ts": {
-        "version": "8c3978475425fccdf877c2665888de1b881f92db4f00aeeafaa881361f8365d9",
-        "signature": "9354ec87431c925c645f88150d020c4459a62da5f330ae5d8afa8f16ac174b13",
+        "version": "38ba305bb4fdb890127eaabdc7855d97cbf3e4ceb65cfa26da195f4dda201a11",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.services.ts": {
@@ -2012,8 +2012,8 @@
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "96d56c7fe4887afedef554673c9165aab5012d786b3fd714dacd75be8a8285f8",
-        "signature": "e2174d5553fd0d28c2f5ec4fb1fc2b9da7aa54cbef797d07972a08dd39108ba4",
+        "version": "63614e833e4235c3db559d98bb5edeeb8e581f69c15b50f9d28135c5726ec004",
+        "signature": "009d070b9b6b1926be3cb751a607bcc437a59ac57096c1030ea3def40d1cd8ce",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
@@ -3785,6 +3785,7 @@
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
+        "../node_modules/nestjs-command/dist/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/cache/cache.module.ts",
@@ -3802,8 +3803,9 @@
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/cli.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/nestjs-command/dist/index.d.ts"
+        "../node_modules/@nestjs/core/index.d.ts",
+        "../node_modules/nestjs-command/dist/index.d.ts",
+        "../src/app.module.ts"
       ],
       "../src/decorators/user.decorator.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -3882,7 +3884,6 @@
         "../src/app.bootstrap.ts",
         "../src/cache/cache.module.ts",
         "../src/cache/cache.service.ts",
-        "../src/cli.ts",
         "../src/config/common-config.ts",
         "../src/decorators/user.decorator.ts",
         "../src/enum/permission-type.enum.ts",
@@ -5358,9 +5359,6 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
-      "../src/cli.ts": [
-        "../node_modules/@nestjs/common/index.d.ts"
-      ],
       "../src/decorators/user.decorator.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
@@ -5407,7 +5405,6 @@
         "../src/app.bootstrap.ts",
         "../src/cache/cache.module.ts",
         "../src/cache/cache.service.ts",
-        "../src/cli.ts",
         "../src/config/common-config.ts",
         "../src/decorators/user.decorator.ts",
         "../src/enum/permission-type.enum.ts",

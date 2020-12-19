@@ -13,14 +13,14 @@ import { HasPermissions } from './guards/meta-data/permissions/permissions.decor
 import { PermissionTypeEnum } from './enum/permission-type.enum';
 import { User as CurrentUser } from './decorators/user.decorator';
 import PermissionTypes from './enum/permission.type';
-import { commandRegistration } from './cli';
+// import { commandRegistration } from './cli';
 
 export {
   CacheModule,
   CacheService,
   setBootstrap,
   commonConfig,
-  commandRegistration,
+  // commandRegistration,
 };
 
 export { FetchModule, FetchService };
