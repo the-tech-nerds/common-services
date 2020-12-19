@@ -1536,14 +1536,14 @@
         "signature": "653711fba8904aa27fd8911b63cf526e7b334e13a292da4cefdbbe179ac3f3f2",
         "affectsGlobalScope": false
       },
-      "../src/app.controller.ts": {
-        "version": "d5b4693476fe89d7289a1cd981f517633aea99f8dfb49c82af00886490c08232",
-        "signature": "02a1417b663f86ad3c22873cc741e28ff15ac59fe4a43938b170124375d05fb2",
+      "../src/cache/cache.service.ts": {
+        "version": "5432bb910a3a4f42805ecd3b7ef0446214864305a398e29fe0e5261640765fe9",
+        "signature": "17fe5d722979a4fe1244494324e4caa50e5a78d79acc30f57979954d5868af93",
         "affectsGlobalScope": false
       },
-      "../src/cache/cache.service.ts": {
-        "version": "c934e9d44b29dbd918a7050b26ef474ffef58d4ba09e9a5b2c050f269cf011f8",
-        "signature": "48a47b18db5494a0d09da31684b1d4546a246fc96829a54fc1545c81c71355aa",
+      "../src/app.controller.ts": {
+        "version": "57187b64fc295f9e5243eef269181206cbd9894e1aadd04af7d5c6b238d3877b",
+        "signature": "02a1417b663f86ad3c22873cc741e28ff15ac59fe4a43938b170124375d05fb2",
         "affectsGlobalScope": false
       },
       "../src/cache/cache.module.ts": {
@@ -1554,6 +1554,11 @@
       "../src/config/common-config.ts": {
         "version": "f951522e27ebf561a843ddae47cc2d4370113ab6d29e8f7f1e49d796d8d2002f",
         "signature": "a25b8e6069b40fe7f4461e1ffe74d427c9054ea44627a48a258c4c5f14bf0c86",
+        "affectsGlobalScope": false
+      },
+      "../src/app.module.ts": {
+        "version": "3069e4b8ea1c242110bf838b495a81985e3c609d8eaf379200fafbc0ffaf5500",
+        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/yargs-parser/index.d.ts": {
@@ -1781,14 +1786,9 @@
         "signature": "9f895353d4f2455ca7c40406a3e567bcf2bbb2d376cb38f3371dc53798ebf37a",
         "affectsGlobalScope": false
       },
-      "../src/app.module.ts": {
-        "version": "1b78168cba33a696e85f6b2b155f62c3cb4ce2a54cbefb02cccc5b1b48649244",
-        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
-        "affectsGlobalScope": false
-      },
       "../src/cli.ts": {
-        "version": "38ba305bb4fdb890127eaabdc7855d97cbf3e4ceb65cfa26da195f4dda201a11",
-        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "version": "8c3978475425fccdf877c2665888de1b881f92db4f00aeeafaa881361f8365d9",
+        "signature": "9354ec87431c925c645f88150d020c4459a62da5f330ae5d8afa8f16ac174b13",
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.services.ts": {
@@ -1832,8 +1832,8 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "379a83a845578c4fb960e66c1d7a4560e4829743a11d90ef22dd7a11077b3f0d",
-        "signature": "090277fe10b082b5e22d8f511d20b7d03ab6a582da3ae4e0ea34dc67b6110df2",
+        "version": "24753a32129558b39bd8e45d0813b7f54d9ca218d96b96c7a142cf0a0897898c",
+        "signature": "210ee8e9987f787730f956d72c8077d060499767fee6decc77d6f71c5dc3ae74",
         "affectsGlobalScope": false
       },
       "../src/fetch/fetch.module.ts": {
@@ -1891,14 +1891,154 @@
         "signature": "0632e7bbb56ee3922c86a1ff00b6559c8105b5343f538100a6030abfcd5b23bb",
         "affectsGlobalScope": false
       },
+      "../node_modules/@types/jsonwebtoken/index.d.ts": {
+        "version": "f67c920eba6ab8e4558cb9ab661d900188f101c5657e19b1e15829a1d491d46e",
+        "signature": "f67c920eba6ab8e4558cb9ab661d900188f101c5657e19b1e15829a1d491d46e",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": {
+        "version": "fc0140cf41d169b3b77e09831c9d2eed1cdb131aa34f4fa27e4c01896ec97ad6",
+        "signature": "fc0140cf41d169b3b77e09831c9d2eed1cdb131aa34f4fa27e4c01896ec97ad6",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": {
+        "version": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
+        "signature": "7c14e702387296711c1a829bc95052ff02f533d4aa27d53cc0186c795094a3a9",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": {
+        "version": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
+        "signature": "579f8828da42ae02db6915a0223d23b0da07157ff484fecdbf8a96fffa0fa4df",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": {
+        "version": "d1e16a1778a336ae49607ca0becd8688e74a020bea949047dcfcbb1bd2dc0f5a",
+        "signature": "d1e16a1778a336ae49607ca0becd8688e74a020bea949047dcfcbb1bd2dc0f5a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": {
+        "version": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
+        "signature": "a13aac535101a942283e3d00bce50f483bfa9bed6e1f8dfda33a3bb072498776",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/jwt/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "affectsGlobalScope": false
+      },
+      "../src/enum/permission-type.enum.ts": {
+        "version": "9b4513bfffcb534d81df10f324698c3091ba3fcb279e0f9797cd43c5f3fa78ff",
+        "signature": "3a2bec8b08d6403f09fcf5c524e057358c969010072dd54978b8ac386ee2d75d",
+        "affectsGlobalScope": false
+      },
+      "../src/guards/permissions/permissions.guard.ts": {
+        "version": "d6c4122c7906e37ec88c2b9daa231197ad94e634d9eb9726dfc084fe970e5239",
+        "signature": "6625ba2a0844c03d9f91b348e14d11b58761b86662f9e1bb57841af0630eb482",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts": {
+        "version": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
+        "signature": "ba63131c5e91f797736444933af16ffa42f9f8c150d859ec65f568f037a416ea",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts": {
+        "version": "142e2e1abd8603dfdeaa1c88d73003a7912aa949b3a19234fa91f729ebfa2fcc",
+        "signature": "142e2e1abd8603dfdeaa1c88d73003a7912aa949b3a19234fa91f729ebfa2fcc",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts": {
+        "version": "340a45cd77b41d8a6deda248167fa23d3dc67ec798d411bd282f7b3d555b1695",
+        "signature": "340a45cd77b41d8a6deda248167fa23d3dc67ec798d411bd282f7b3d555b1695",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts": {
+        "version": "0e9aa853b5eb2ca09e0e3e3eb94cbd1d5fb3d682ab69817d4d11fe225953fc57",
+        "signature": "0e9aa853b5eb2ca09e0e3e3eb94cbd1d5fb3d682ab69817d4d11fe225953fc57",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/dist/auth.guard.d.ts": {
+        "version": "ffa1885ad546522fa1046644db93b17de7a29191a547edeeac57391909a73846",
+        "signature": "ffa1885ad546522fa1046644db93b17de7a29191a547edeeac57391909a73846",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/dist/passport.module.d.ts": {
+        "version": "793c353144f16601da994fa4e62c09b7525836ce999c44f69c28929072ca206a",
+        "signature": "793c353144f16601da994fa4e62c09b7525836ce999c44f69c28929072ca206a",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@types/passport/index.d.ts": {
+        "version": "f640cdd17b26d4ecaf98f17d90e012b25a29676e30149ef26f02572159cb325a",
+        "signature": "f640cdd17b26d4ecaf98f17d90e012b25a29676e30149ef26f02572159cb325a",
+        "affectsGlobalScope": true
+      },
+      "../node_modules/@nestjs/passport/dist/passport/passport.serializer.d.ts": {
+        "version": "599ac4a84b7aa6a298731179ec1663a623ff8ac324cdc1dabb9c73c1259dc854",
+        "signature": "599ac4a84b7aa6a298731179ec1663a623ff8ac324cdc1dabb9c73c1259dc854",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts": {
+        "version": "100509817f7a12b93f2ca4e07c1e3fe7f73ce2cbe2d69b609df2bf35fbbe7cf8",
+        "signature": "100509817f7a12b93f2ca4e07c1e3fe7f73ce2cbe2d69b609df2bf35fbbe7cf8",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/dist/index.d.ts": {
+        "version": "585bc61f439c027640754dd26e480afa202f33e51db41ee283311a59c12c62e7",
+        "signature": "585bc61f439c027640754dd26e480afa202f33e51db41ee283311a59c12c62e7",
+        "affectsGlobalScope": false
+      },
+      "../node_modules/@nestjs/passport/index.d.ts": {
+        "version": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
+        "affectsGlobalScope": false
+      },
+      "../src/guards/user/user.guard.ts": {
+        "version": "aae0de5ce5f1a5acaaf29fc54b7caa2df949f0bad097c2b92eb5453fe0f67218",
+        "signature": "3b29dbf02b63defddc949255d97ffbd02dae9ab800692a6f72724be7e6654180",
+        "affectsGlobalScope": false
+      },
+      "../src/guards/meta-data/permissions/permissions.decorator.ts": {
+        "version": "a9599a3ec857b8e0639d5a7fa70d413a66ec7eca3609e6b5ac0995fa07b8014a",
+        "signature": "f6e9125a76729713eacdc18f6e47a7d19ef74a0327d39e94d932e53de8e54740",
+        "affectsGlobalScope": false
+      },
+      "../src/decorators/user.decorator.ts": {
+        "version": "b359f304b95cbfab56bc7882a13cdc35fb31b9fb70812912365b12d2c5fc86dc",
+        "signature": "059e1bbbfd545d251d1fa5f593630b34af6a760ae56604ae532cf5a2243cc78f",
+        "affectsGlobalScope": false
+      },
+      "../src/enum/permission.type.ts": {
+        "version": "43d89fc7202f3c9dc06f9e2372b9e04a383f6c261ca1b6957c795d3377c2df40",
+        "signature": "5ca4a7a421c7caa2fa2750fbe055456420211be910f7ee31edd813496e6dd06e",
+        "affectsGlobalScope": false
+      },
       "../src/index.ts": {
-        "version": "3e4c3113cfcb7d2adf7a8f732b53d1d5d57b882530121c5825fea401d080b54e",
-        "signature": "d90788d9a53cfe0ba7840441cf253cd20f08fa4f2af58ddef18f0ddaa846bafe",
+        "version": "96d56c7fe4887afedef554673c9165aab5012d786b3fd714dacd75be8a8285f8",
+        "signature": "e2174d5553fd0d28c2f5ec4fb1fc2b9da7aa54cbef797d07972a08dd39108ba4",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
-        "version": "e438a9a2b182b1663f5398699e1e406c550a618253a96911d621c95cc9f56903",
+        "version": "9e6b3b06e07a8f8b59c3c4e3542043bf1662e8e45c1f701ab6ef354367b5fb62",
         "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
+        "affectsGlobalScope": false
+      },
+      "../src/enum/roles-type.enum.ts": {
+        "version": "d996e5abda90561c3a4105fdf0da1263273133311369d2d5bac29ee14ab749df",
+        "signature": "c44577a2b6ca35935cbe78c0ca1c952673c7dd1945d771ee29d872c24d6c0717",
+        "affectsGlobalScope": false
+      },
+      "../src/guards/meta-data/roles/roles.decorator.ts": {
+        "version": "987493e1c29988c06083d4364f377deba622c85bec9a0d038d89ea46388cc86c",
+        "signature": "f50c3c7e32fae298d3673b12aaa7113682715aaf869692f3fdb8eab85b53ff8c",
+        "affectsGlobalScope": false
+      },
+      "../src/guards/roles/roles.guard.ts": {
+        "version": "85dbc222eef1d041013dd8c2cf47fd64f713b81ad1d0e6e028d78f6f94366645",
+        "signature": "0cf0a03bcdb26d5eb0053163aea1984be09693a3af677986cea1055899f82f39",
+        "affectsGlobalScope": false
+      },
+      "../src/strategies/jwt.strategy.ts": {
+        "version": "c1b6cd48c932ad0c809bd0efe2a380ab20bb640f6d83a0b45217dc5f93b000fd",
+        "signature": "bbec3760f8df7a3365984134ecfaecc94e0160446b294d5e348304cc77f03138",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -2844,6 +2984,64 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/auth.guard.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/index.d.ts": [
+        "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
+        "../node_modules/@nestjs/passport/dist/auth.guard.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/passport/dist/passport.module.d.ts",
+        "../node_modules/@nestjs/passport/dist/passport/passport.serializer.d.ts",
+        "../node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/passport.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/passport/passport.serializer.d.ts": [
+        "../node_modules/@types/passport/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts": [
+        "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/index.d.ts": [
+        "../node_modules/@nestjs/passport/dist/index.d.ts"
+      ],
       "../node_modules/@types/babel__core/index.d.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
         "../node_modules/@babel/types/lib/index.d.ts",
@@ -2909,6 +3107,9 @@
       ],
       "../node_modules/@types/jest/ts3.2/index.d.ts": [
         "../node_modules/@types/jest/index.d.ts"
+      ],
+      "../node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@types/node/base.d.ts": [
         "../node_modules/@types/node/assert.d.ts",
@@ -3067,6 +3268,10 @@
       ],
       "../node_modules/@types/node/zlib.d.ts": [
         "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/passport/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/http.d.ts"
       ],
       "../node_modules/@types/serve-static/index.d.ts": [
         "../node_modules/@types/mime/index.d.ts",
@@ -3574,12 +3779,12 @@
       ],
       "../src/app.controller.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/app.service.ts"
+        "../src/app.service.ts",
+        "../src/cache/cache.service.ts"
       ],
       "../src/app.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
-        "../node_modules/nestjs-command/dist/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/cache/cache.module.ts",
@@ -3597,9 +3802,11 @@
         "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/cli.ts": [
-        "../node_modules/@nestjs/core/index.d.ts",
-        "../node_modules/nestjs-command/dist/index.d.ts",
-        "../src/app.module.ts"
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/nestjs-command/dist/index.d.ts"
+      ],
+      "../src/decorators/user.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/fetch/fetch.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -3637,6 +3844,7 @@
       "../src/gateway/gateway.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../node_modules/@nestjs/config/index.d.ts",
+        "../node_modules/@nestjs/core/index.d.ts",
         "../src/fetch/fetch.service.ts",
         "../src/gateway/fetch-access-code.service.ts",
         "../src/gateway/fetch-access-token.service.ts",
@@ -3647,21 +3855,55 @@
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/gateway/gateway.services.ts"
       ],
+      "../src/guards/meta-data/permissions/permissions.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/guards/meta-data/roles/roles.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/guards/permissions/permissions.guard.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/core/index.d.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../src/cache/cache.service.ts",
+        "../src/enum/permission-type.enum.ts"
+      ],
+      "../src/guards/roles/roles.guard.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/core/index.d.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../src/enum/roles-type.enum.ts"
+      ],
+      "../src/guards/user/user.guard.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts"
+      ],
       "../src/index.ts": [
         "../src/app.bootstrap.ts",
         "../src/cache/cache.module.ts",
         "../src/cache/cache.service.ts",
+        "../src/cli.ts",
         "../src/config/common-config.ts",
+        "../src/decorators/user.decorator.ts",
+        "../src/enum/permission-type.enum.ts",
+        "../src/enum/permission.type.ts",
         "../src/fetch/fetch.module.ts",
         "../src/fetch/fetch.service.ts",
         "../src/gateway/gateway.middleware.ts",
         "../src/gateway/gateway.module.ts",
-        "../src/gateway/gateway.service.ts"
+        "../src/gateway/gateway.service.ts",
+        "../src/guards/meta-data/permissions/permissions.decorator.ts",
+        "../src/guards/permissions/permissions.guard.ts",
+        "../src/guards/user/user.guard.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.bootstrap.ts",
         "../src/app.module.ts"
+      ],
+      "../src/strategies/jwt.strategy.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -4322,6 +4564,64 @@
       "../node_modules/@nestjs/core/services/reflector.service.d.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
       ],
+      "../node_modules/@nestjs/jwt/dist/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts",
+        "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/dist/jwt.service.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/interfaces/jwt-module-options.interface.d.ts",
+        "../node_modules/@types/jsonwebtoken/index.d.ts",
+        "../node_modules/@types/node/index.d.ts"
+      ],
+      "../node_modules/@nestjs/jwt/index.d.ts": [
+        "../node_modules/@nestjs/jwt/dist/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/auth.guard.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/index.d.ts": [
+        "../node_modules/@nestjs/passport/dist/abstract.strategy.d.ts",
+        "../node_modules/@nestjs/passport/dist/auth.guard.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts",
+        "../node_modules/@nestjs/passport/dist/passport.module.d.ts",
+        "../node_modules/@nestjs/passport/dist/passport/passport.serializer.d.ts",
+        "../node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts": [
+        "../node_modules/@nestjs/common/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts": [
+        "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/type.interface.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/passport.module.d.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/passport/dist/interfaces/auth-module.options.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/passport/passport.serializer.d.ts": [
+        "../node_modules/@types/passport/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/dist/passport/passport.strategy.d.ts": [
+        "../node_modules/@nestjs/passport/dist/interfaces/index.d.ts"
+      ],
+      "../node_modules/@nestjs/passport/index.d.ts": [
+        "../node_modules/@nestjs/passport/dist/index.d.ts"
+      ],
       "../node_modules/@types/babel__core/index.d.ts": [
         "../node_modules/@babel/parser/typings/babel-parser.d.ts",
         "../node_modules/@babel/types/lib/index.d.ts",
@@ -4387,6 +4687,9 @@
       ],
       "../node_modules/@types/jest/ts3.2/index.d.ts": [
         "../node_modules/@types/jest/index.d.ts"
+      ],
+      "../node_modules/@types/jsonwebtoken/index.d.ts": [
+        "../node_modules/@types/node/index.d.ts"
       ],
       "../node_modules/@types/node/base.d.ts": [
         "../node_modules/@types/node/assert.d.ts",
@@ -4545,6 +4848,10 @@
       ],
       "../node_modules/@types/node/zlib.d.ts": [
         "../node_modules/@types/node/stream.d.ts"
+      ],
+      "../node_modules/@types/passport/index.d.ts": [
+        "../node_modules/@types/express/index.d.ts",
+        "../node_modules/@types/node/http.d.ts"
       ],
       "../node_modules/@types/serve-static/index.d.ts": [
         "../node_modules/@types/mime/index.d.ts",
@@ -5051,6 +5358,12 @@
       "../src/app.controller.ts": [
         "../src/app.service.ts"
       ],
+      "../src/cli.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/decorators/user.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
       "../src/gateway/fetch-access-code.service.ts": [
         "../src/fetch/fetch.service.ts"
       ],
@@ -5070,16 +5383,43 @@
         "../src/gateway/ip-resolver.service.ts",
         "../src/index.ts"
       ],
+      "../src/guards/meta-data/permissions/permissions.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/guards/meta-data/roles/roles.decorator.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/guards/permissions/permissions.guard.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/core/index.d.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts",
+        "../src/cache/cache.service.ts"
+      ],
+      "../src/guards/roles/roles.guard.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@nestjs/core/index.d.ts",
+        "../node_modules/@nestjs/jwt/index.d.ts"
+      ],
+      "../src/guards/user/user.guard.ts": [
+        "../node_modules/@nestjs/passport/index.d.ts"
+      ],
       "../src/index.ts": [
         "../src/app.bootstrap.ts",
         "../src/cache/cache.module.ts",
         "../src/cache/cache.service.ts",
+        "../src/cli.ts",
         "../src/config/common-config.ts",
+        "../src/decorators/user.decorator.ts",
+        "../src/enum/permission-type.enum.ts",
+        "../src/enum/permission.type.ts",
         "../src/fetch/fetch.module.ts",
         "../src/fetch/fetch.service.ts",
         "../src/gateway/gateway.middleware.ts",
         "../src/gateway/gateway.module.ts",
-        "../src/gateway/gateway.service.ts"
+        "../src/gateway/gateway.service.ts",
+        "../src/guards/meta-data/permissions/permissions.decorator.ts",
+        "../src/guards/permissions/permissions.guard.ts",
+        "../src/guards/user/user.guard.ts"
       ]
     },
     "semanticDiagnosticsPerFile": []
