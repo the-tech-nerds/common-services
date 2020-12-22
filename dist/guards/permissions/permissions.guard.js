@@ -33,7 +33,10 @@ let PermissionsGuard = class PermissionsGuard {
             if (!token) {
                 throw new common_1.UnauthorizedException('Unauthorized');
             }
-            const { id: userId = null, permissions: perms = null, } = this.jwtService.decode(token);
+            const { id: userId = null, permissions: perms = null, roles: roles = [], } = this.jwtService.decode(token);
+            const superAdminRoleIndex = roles.findIndex(role => (role === null || role === void 0 ? void 0 : role.toLowerCase()) === 'super admin');
+            if (superAdminRoleIndex != -1)
+                return true;
             if (!userId || !perms) {
                 throw new common_1.UnauthorizedException('Unauthorized');
             }

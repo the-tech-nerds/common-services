@@ -1932,7 +1932,7 @@
         "affectsGlobalScope": false
       },
       "../src/guards/permissions/permissions.guard.ts": {
-        "version": "d6c4122c7906e37ec88c2b9daa231197ad94e634d9eb9726dfc084fe970e5239",
+        "version": "b22200ff625430e61466ae3da21dea58acfdcbfa8e027075264782f3fa499855",
         "signature": "6625ba2a0844c03d9f91b348e14d11b58761b86662f9e1bb57841af0630eb482",
         "affectsGlobalScope": false
       },
