@@ -44,7 +44,7 @@ export class PermissionsGuard implements CanActivate {
       const superAdminRoleIndex = roles.findIndex(
         role => role?.toLowerCase() === 'super admin',
       );
-      if (roles && superAdminRoleIndex != -1) return true;
+      if (superAdminRoleIndex != -1) return true;
 
       if (!userId || !perms) {
         throw new UnauthorizedException('Unauthorized');
