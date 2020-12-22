@@ -40,7 +40,12 @@ export class PermissionsGuard implements CanActivate {
         permissions: perms = null,
         roles: roles = [],
       } = this.jwtService.decode(token) as any;
-      if (roles && roles.included('Super Admin')) return true;
+
+      const superAdminRoleIndex = roles.findIndex(
+        role => role?.toLowerCase() === 'super admin',
+      );
+      if (roles && superAdminRoleIndex != -1) return true;
+
       if (!userId || !perms) {
         throw new UnauthorizedException('Unauthorized');
       }
