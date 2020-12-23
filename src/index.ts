@@ -14,7 +14,6 @@ import { PermissionTypeEnum } from './enum/permission-type.enum';
 import { User as CurrentUser } from './decorators/user.decorator';
 import PermissionTypes from './enum/permission.type';
 import { ApiResponseService } from './api-response/api-response.service';
-import { ResponseModel } from './models/response';
 import { ApiResponseModule } from './api-response/api-response.module';
 // import { commandRegistration } from './cli';
 
@@ -39,4 +38,4 @@ export {
   CurrentUser,
 };
 
-export { ApiResponseModule, ApiResponseService, ResponseModel };
+export { ApiResponseModule, ApiResponseService };

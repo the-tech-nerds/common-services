@@ -2012,13 +2012,8 @@
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.service.ts": {
-        "version": "f4c2a9e55480ec21be1e37f6e5846a79991269033ddd5cbede1e7670563c1e7d",
-        "signature": "829ebef69e94e62e799adece3640eec8483994570515a802e85cd6eddcc51999",
-        "affectsGlobalScope": false
-      },
-      "../src/models/response.d.ts": {
-        "version": "c6f4a9e27871087504ae96a540f9ed815a8f7e90ddfeb9740fa2f6a53e2c0762",
-        "signature": "c6f4a9e27871087504ae96a540f9ed815a8f7e90ddfeb9740fa2f6a53e2c0762",
+        "version": "6ef8520ad40cfccb989972565d27554427b05a90e957ed79686a97b734376f9c",
+        "signature": "c957ddfe56bde29ea6ee1c375b0b2ccd4522f6d6966e3dd2075d4d30ef60ac52",
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.module.ts": {
@@ -2027,8 +2022,8 @@
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "f8010baff32b40a70407162579608f0870690739fb6e4ca8eae207c993192b10",
-        "signature": "5bb2529e9c26668442da455b8f804d188335dfacacd0886b68165aa36b432dfb",
+        "version": "fa33e5ff9e57b4970c275e575b7ef1ab597de823e5bcf1aa4fb1bd2aada6b552",
+        "signature": "7af610abbd39f239a5d32e74434a72ea68fa5d4f91884314d8f2469474a4f288",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
@@ -3798,8 +3793,7 @@
       ],
       "../src/api-response/api-response.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/express/index.d.ts",
-        "../src/index.ts"
+        "../node_modules/@types/express/index.d.ts"
       ],
       "../src/api-response/response.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -3929,8 +3923,7 @@
         "../src/gateway/gateway.service.ts",
         "../src/guards/meta-data/permissions/permissions.decorator.ts",
         "../src/guards/permissions/permissions.guard.ts",
-        "../src/guards/user/user.guard.ts",
-        "../src/models/response.d.ts"
+        "../src/guards/user/user.guard.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
@@ -5389,8 +5382,7 @@
         "../node_modules/rxjs/internal/types.d.ts"
       ],
       "../src/api-response/api-response.service.ts": [
-        "../node_modules/@types/express/index.d.ts",
-        "../src/index.ts"
+        "../node_modules/@types/express/index.d.ts"
       ],
       "../src/app.bootstrap.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -5457,8 +5449,7 @@
         "../src/gateway/gateway.service.ts",
         "../src/guards/meta-data/permissions/permissions.decorator.ts",
         "../src/guards/permissions/permissions.guard.ts",
-        "../src/guards/user/user.guard.ts",
-        "../src/models/response.d.ts"
+        "../src/guards/user/user.guard.ts"
       ]
     },
     "semanticDiagnosticsPerFile": []

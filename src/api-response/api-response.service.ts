@@ -1,6 +1,12 @@
 import { Response } from 'express';
 import { Injectable } from '@nestjs/common';
-import { ResponseModel } from '..';
+
+interface ResponseModel {
+  message: string[] | string;
+  status: string;
+  code: number;
+  data: any;
+}
 
 @Injectable()
 export class ApiResponseService {
