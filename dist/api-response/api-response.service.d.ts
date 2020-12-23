@@ -1,5 +1,10 @@
 import { Response } from 'express';
-import { ResponseModel } from '..';
+interface ResponseModel {
+    message: string[] | string;
+    status: string;
+    code: number;
+    data: any;
+}
 export declare class ApiResponseService {
     response(message: string[] | string, status: string, code: number, data: any[] | any, res: Response): Response<ResponseModel>;
     successResponse(message: string[] | string, data: any, res: Response): Response<ResponseModel>;
@@ -9,3 +14,4 @@ export declare class ApiResponseService {
     forbiddenError(message: string[] | string, res: Response): Response<ResponseModel>;
     internalServerError(message: string[] | string, res: Response): Response<ResponseModel>;
 }
+export {};
