@@ -1,22 +1,16 @@
 declare const _default: {
     PERMISSION: {
         GET: string;
-        CREATE: string;
-        EDIT: string;
         UPDATE: string;
-        DELETE: string;
     };
     PERMISSION_CATEGORY: {
         GET: string;
-        CREATE: string;
-        EDIT: string;
         UPDATE: string;
-        DELETE: string;
     };
     ROLE: {
         GET: string;
         CREATE: string;
-        EDIT: string;
+        DETAILS: string;
         UPDATE: string;
         DELETE: string;
         PERMISSION_ASSIGN: string;
@@ -24,10 +18,10 @@ declare const _default: {
     USER: {
         GET: string;
         CREATE: string;
-        EDIT: string;
+        DETAILS: string;
         UPDATE: string;
         DELETE: string;
-        PERMISSION_ASSIGN: string;
+        ROLE_ASSIGN: string;
     };
 };
 export default _default;
