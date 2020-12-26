@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApiResponseService = exports.ApiResponseModule = exports.CurrentUser = exports.PermissionTypes = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
+exports.UploadService = exports.UploadModule = exports.ApiResponseService = exports.ApiResponseModule = exports.CurrentUser = exports.PermissionTypes = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
 const cache_module_1 = require("./cache/cache.module");
 Object.defineProperty(exports, "CacheModule", { enumerable: true, get: function () { return cache_module_1.CacheModule; } });
 const cache_service_1 = require("./cache/cache.service");
@@ -35,4 +35,8 @@ const api_response_service_1 = require("./api-response/api-response.service");
 Object.defineProperty(exports, "ApiResponseService", { enumerable: true, get: function () { return api_response_service_1.ApiResponseService; } });
 const api_response_module_1 = require("./api-response/api-response.module");
 Object.defineProperty(exports, "ApiResponseModule", { enumerable: true, get: function () { return api_response_module_1.ApiResponseModule; } });
+const upload_module_1 = require("./upload/upload.module");
+Object.defineProperty(exports, "UploadModule", { enumerable: true, get: function () { return upload_module_1.UploadModule; } });
+const upload_service_1 = require("./upload/upload.service");
+Object.defineProperty(exports, "UploadService", { enumerable: true, get: function () { return upload_service_1.UploadService; } });
 //# sourceMappingURL=index.js.map
