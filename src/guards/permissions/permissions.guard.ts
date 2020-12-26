@@ -42,7 +42,7 @@ export class PermissionsGuard implements CanActivate {
       } = this.jwtService.decode(token) as any;
 
       const superAdminRoleIndex = roles.findIndex(
-        role => role?.toLowerCase() === 'super admin',
+        role => role?.name?.toLowerCase() === 'super admin',
       );
       if (superAdminRoleIndex != -1) return true;
 
