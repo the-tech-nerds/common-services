@@ -4,8 +4,8 @@ exports.UploadService = void 0;
 const aws_sdk_1 = require("aws-sdk");
 class UploadService {
     async upload(file, bucketName = 'kfc-user-profile') {
-        const { fileName } = file;
-        await this.uploadS3(file.buffer, bucketName, fileName);
+        const { originalname } = file;
+        await this.uploadS3(file.buffer, bucketName, originalname);
     }
     async uploadS3(file, bucket, name) {
         const s3 = await this.getS3();
