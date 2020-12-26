@@ -8,7 +8,7 @@ export class UploadService {
     acl = 'public-read',
   ) {
     const extension = file.originalname.split('.');
-    const newFileName = fileName + extension[extension.length - 1];
+    const newFileName = fileName + '.' + extension[extension.length - 1];
     return this.uploadS3(file.buffer, bucketName, newFileName, acl);
   }
 
