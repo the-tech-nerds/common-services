@@ -5,7 +5,7 @@ const aws_sdk_1 = require("aws-sdk");
 class UploadService {
     async upload(file, fileName, bucketName = 'kfc-user-profile', acl = 'public-read') {
         const extension = file.originalname.split('.');
-        const newFileName = fileName + extension[extension.length - 1];
+        const newFileName = fileName + '.' + extension[extension.length - 1];
         return this.uploadS3(file.buffer, bucketName, newFileName, acl);
     }
     async uploadS3(file, bucket, name, acl) {
