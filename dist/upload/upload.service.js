@@ -3,9 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UploadService = void 0;
 const aws_sdk_1 = require("aws-sdk");
 class UploadService {
-    async upload(file, bucketName = 'kfc-user-profile', acl = 'public-read') {
-        const { originalname } = file;
-        return this.uploadS3(file.buffer, bucketName, originalname, acl);
+    async upload(file, fileName, bucketName = 'kfc-user-profile', acl = 'public-read') {
+        const extension = file.originalname.split('.');
+        const newFileName = fileName + extension[extension.length - 1];
+        return this.uploadS3(file.buffer, bucketName, newFileName, acl);
     }
     async uploadS3(file, bucket, name, acl) {
         const s3 = await this.getS3();
@@ -13,7 +14,7 @@ class UploadService {
             Bucket: bucket,
             Key: String(name),
             Body: file,
-            ACL: acl
+            ACL: acl,
         };
         return new Promise((resolve, reject) => {
             s3.upload(params, (err, data) => {
