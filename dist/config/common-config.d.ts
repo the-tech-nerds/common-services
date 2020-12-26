@@ -7,5 +7,7 @@ declare const _default: () => {
     redis_global_port: string;
     api_rate_limit_time: string;
     api_rate_limit_max: string;
+    aws_access_key: string;
+    aws_secret_key: string;
 };
 export default _default;

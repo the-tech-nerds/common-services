@@ -7,4 +7,6 @@ export default () => ({
   redis_global_port: process.env.REDIS_GLOBAL_PORT,
   api_rate_limit_time: process.env.API_RATE_LIMIT_TIME,
   api_rate_limit_max: process.env.API_RATE_LIMIT_MAX,
+  aws_access_key: process.env.AWS_ACCESS_KEY_ID,
+  aws_secret_key: process.env.AWS_SECRET_ACCESS_KEY,
 });

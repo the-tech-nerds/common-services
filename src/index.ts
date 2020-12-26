@@ -15,6 +15,8 @@ import { User as CurrentUser } from './decorators/user.decorator';
 import PermissionTypes from './enum/permission.type';
 import { ApiResponseService } from './api-response/api-response.service';
 import { ApiResponseModule } from './api-response/api-response.module';
+import { UploadModule } from './upload/upload.module';
+import { UploadService } from './upload/upload.service';
 // import { commandRegistration } from './cli';
 
 export {
@@ -39,3 +41,5 @@ export {
 };
 
 export { ApiResponseModule, ApiResponseService };
+
+export { UploadModule, UploadService };
