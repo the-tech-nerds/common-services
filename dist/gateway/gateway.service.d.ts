@@ -4,6 +4,7 @@ import { FetchService } from '../fetch/fetch.service';
 import { ConfigService } from '@nestjs/config';
 import { FetchAccessCodeService } from './fetch-access-code.service';
 import { FetchAccessTokenService } from './fetch-access-token.service';
+import { CustomLoggerService } from '../logger/customLogger.service';
 export interface GatewayRequest {
     method?: 'POST' | 'GET' | 'PUT' | 'DELETE' | 'PATCH';
     path?: string;
@@ -24,8 +25,9 @@ export declare class GatewayService {
     private readonly configService;
     private readonly fetchAccessCodeService;
     private readonly fetchAccessTokenService;
+    private readonly loggerService;
     private request;
-    constructor(ipResolverService: IpResolverService, cacheService: CacheService, fetchService: FetchService, configService: ConfigService, fetchAccessCodeService: FetchAccessCodeService, fetchAccessTokenService: FetchAccessTokenService, request: Request);
+    constructor(ipResolverService: IpResolverService, cacheService: CacheService, fetchService: FetchService, configService: ConfigService, fetchAccessCodeService: FetchAccessCodeService, fetchAccessTokenService: FetchAccessTokenService, loggerService: CustomLoggerService, request: Request);
     prepareFetchTokenData(): {
         client_id: any;
         user_id: string;

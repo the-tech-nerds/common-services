@@ -5,6 +5,7 @@ import { CacheModule } from '..';
 import { FetchModule } from '../fetch/fetch.module';
 import { FetchAccessCodeService } from './fetch-access-code.service';
 import { FetchAccessTokenService } from './fetch-access-token.service';
+import { CustomLoggerService } from '../logger/customLogger.service';
 
 @Module({
   imports: [HttpModule, CacheModule, FetchModule],
@@ -13,6 +14,7 @@ import { FetchAccessTokenService } from './fetch-access-token.service';
     IpResolverService,
     FetchAccessCodeService,
     FetchAccessTokenService,
+    CustomLoggerService,
   ],
   exports: [GatewayService, IpResolverService],
 })

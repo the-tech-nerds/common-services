@@ -14,6 +14,7 @@ const __1 = require("..");
 const fetch_module_1 = require("../fetch/fetch.module");
 const fetch_access_code_service_1 = require("./fetch-access-code.service");
 const fetch_access_token_service_1 = require("./fetch-access-token.service");
+const customLogger_service_1 = require("../logger/customLogger.service");
 let GatewayModule = class GatewayModule {
 };
 GatewayModule = __decorate([
@@ -24,6 +25,7 @@ GatewayModule = __decorate([
             ip_resolver_service_1.IpResolverService,
             fetch_access_code_service_1.FetchAccessCodeService,
             fetch_access_token_service_1.FetchAccessTokenService,
+            customLogger_service_1.CustomLoggerService,
         ],
         exports: [gateway_service_1.GatewayService, ip_resolver_service_1.IpResolverService],
     })
