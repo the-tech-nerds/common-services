@@ -1831,9 +1831,19 @@
         "signature": "528e9dc984fe1d55292159849c61ac154c5b19082ae2156866dacafea08a00f1",
         "affectsGlobalScope": false
       },
+      "../node_modules/moment/ts3.1-typings/moment.d.ts": {
+        "version": "f97edc4d3b4dd0b32766e9633086497565c37657fb591cc84a35864db4bc2fc5",
+        "signature": "f97edc4d3b4dd0b32766e9633086497565c37657fb591cc84a35864db4bc2fc5",
+        "affectsGlobalScope": false
+      },
+      "../src/logger/customlogger.service.ts": {
+        "version": "e20a0684209d5253c717a76befe46274b8b40e4155fdf8a3ef9ea4ac308c1776",
+        "signature": "fc70d7a83b7f7b10214d751e0c3df1d1ea069b97f188586bd0e384575ee69074",
+        "affectsGlobalScope": false
+      },
       "../src/gateway/gateway.service.ts": {
-        "version": "24753a32129558b39bd8e45d0813b7f54d9ca218d96b96c7a142cf0a0897898c",
-        "signature": "e4876e620a5cff0ea262de5fb2f6ad2a8a4a3f5ce5b3c25528760e1f7fa21ceb",
+        "version": "8620211b7ea2fd43582cdb9b8eaf750ce6badf9a827a29a09a3db5cab6231eb9",
+        "signature": "4a3f82e9afd8c4e06b1994178991a3b61cf7ea2c43e42cb00cfcccb537fcb718",
         "affectsGlobalScope": false
       },
       "../src/fetch/fetch.module.ts": {
@@ -1842,7 +1852,7 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.module.ts": {
-        "version": "4258773f57fea5be5f76429cdeb2e61e5c569147ce82e779514ad40a61b4be77",
+        "version": "bc0fe0530b08c006259def54504b0f641434b9d9ae7271631f3290e6e3f0f250",
         "signature": "f63561963ff9b5bf0d172e75ab4db4e4f5de0a69959ada03219b94e32a181b29",
         "affectsGlobalScope": false
       },
@@ -3532,7 +3542,7 @@
         "affectsGlobalScope": false
       },
       "../src/upload/upload.service.ts": {
-        "version": "5832c9f1142c0ff947ee063c6080b4cc59767f4bd299832d9666ab096cd02469",
+        "version": "27b7edaeb9659cdfc2c85a2b275efcd7960c9313916d1141a3157a0d3da3809e",
         "signature": "16975ec53a14f6da647cbe2268c41de35dc479ab93c376258ebc4d32a30f63d8",
         "affectsGlobalScope": false
       },
@@ -7649,7 +7659,8 @@
         "../src/gateway/fetch-access-token.service.ts",
         "../src/gateway/gateway.service.ts",
         "../src/gateway/ip-resolver.service.ts",
-        "../src/index.ts"
+        "../src/index.ts",
+        "../src/logger/customlogger.service.ts"
       ],
       "../src/gateway/gateway.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -7659,7 +7670,8 @@
         "../src/gateway/fetch-access-code.service.ts",
         "../src/gateway/fetch-access-token.service.ts",
         "../src/gateway/ip-resolver.service.ts",
-        "../src/index.ts"
+        "../src/index.ts",
+        "../src/logger/customlogger.service.ts"
       ],
       "../src/gateway/ip-resolver.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -7708,6 +7720,11 @@
         "../src/guards/user/user.guard.ts",
         "../src/upload/upload.module.ts",
         "../src/upload/upload.service.ts"
+      ],
+      "../src/logger/customlogger.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../node_modules/@types/node/fs.d.ts",
+        "../node_modules/moment/ts3.1-typings/moment.d.ts"
       ],
       "../src/main.ts": [
         "../node_modules/@nestjs/core/index.d.ts",
@@ -11464,7 +11481,8 @@
         "../src/gateway/fetch-access-code.service.ts",
         "../src/gateway/fetch-access-token.service.ts",
         "../src/gateway/ip-resolver.service.ts",
-        "../src/index.ts"
+        "../src/index.ts",
+        "../src/logger/customlogger.service.ts"
       ],
       "../src/guards/meta-data/permissions/permissions.decorator.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -11506,6 +11524,9 @@
         "../src/guards/user/user.guard.ts",
         "../src/upload/upload.module.ts",
         "../src/upload/upload.service.ts"
+      ],
+      "../src/logger/customlogger.service.ts": [
+        "../node_modules/@nestjs/common/index.d.ts"
       ],
       "../src/upload/upload.service.ts": [
         "../node_modules/aws-sdk/index.d.ts"

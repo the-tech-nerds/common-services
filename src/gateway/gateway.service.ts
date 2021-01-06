@@ -12,6 +12,7 @@ import { ConfigService } from '@nestjs/config';
 import { FetchAccessCodeService } from './fetch-access-code.service';
 import { FetchAccessTokenService } from './fetch-access-token.service';
 import { REQUEST } from '@nestjs/core';
+import { CustomLoggerService } from '../logger/customLogger.service';
 
 export interface GatewayRequest {
   method?: 'POST' | 'GET' | 'PUT' | 'DELETE' | 'PATCH';
@@ -32,6 +33,7 @@ export class GatewayService {
     private readonly configService: ConfigService,
     private readonly fetchAccessCodeService: FetchAccessCodeService,
     private readonly fetchAccessTokenService: FetchAccessTokenService,
+    private readonly loggerService: CustomLoggerService,
     @Inject(REQUEST) private request: Request,
   ) {}
 
@@ -82,30 +84,39 @@ export class GatewayService {
       token = await this.cacheService.set(key, accessToken);
     }
 
-    const {
-      path,
-      method,
-      headers = {},
-      token: userAccessToken = null,
-      body = undefined,
-      qs = {},
-    } = gatewayRequest;
+    try {
+      const {
+        path,
+        method,
+        headers = {},
+        token: userAccessToken = null,
+        body = undefined,
+        qs = {},
+      } = gatewayRequest;
 
-    const url = `${ip}${path}`;
-    const requestHeaders: any = this.request.headers;
-    const accessTokenFromRequestHeader =
-      requestHeaders.access_token || undefined;
-    return this.fetchService.execute(url, {
-      method,
-      headers: {
-        ...headers,
-        client_name: appName,
-        client_access_token: token,
-        access_token: userAccessToken ?? accessTokenFromRequestHeader,
-        Authorization: `Bearer ${accessTokenFromRequestHeader}`,
-      },
-      body: body ? body : undefined,
-      qs,
-    });
+      const url = `${ip}${path}`;
+      const requestHeaders: any = this.request.headers;
+      const accessTokenFromRequestHeader =
+        requestHeaders.access_token || undefined;
+      return this.fetchService.execute(url, {
+        method,
+        headers: {
+          ...headers,
+          client_name: appName,
+          client_access_token: token,
+          access_token: userAccessToken ?? accessTokenFromRequestHeader,
+          Authorization: `Bearer ${accessTokenFromRequestHeader}`,
+        },
+        body: body ? body : undefined,
+        qs,
+      });
+    } catch (e) {
+      this.loggerService.error(
+        `From Service ${domain}, path : ${
+          gatewayRequest.path
+        }. Message :: ${e.toString()}`,
+      );
+      throw e;
+    }
   }
 }
