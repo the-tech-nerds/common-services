@@ -1,5 +1,6 @@
 import { Response } from 'express';
 import { Injectable } from '@nestjs/common';
+import { CustomLoggerService } from '../logger/customLogger.service';
 
 interface ResponseModel {
   message: string[] | string;
@@ -10,6 +11,8 @@ interface ResponseModel {
 
 @Injectable()
 export class ApiResponseService {
+  constructor(protected readonly loggerService: CustomLoggerService) {}
+
   response(
     message: string[] | string,
     status: string,
@@ -87,6 +90,7 @@ export class ApiResponseService {
     message: string[] | string,
     res: Response,
   ): Response<ResponseModel> {
+    this.loggerService.error(message[0]);
     return res.status(500).json({
       message,
       status: 'failure',

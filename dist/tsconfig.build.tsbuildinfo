@@ -1837,12 +1837,12 @@
         "affectsGlobalScope": false
       },
       "../src/logger/customlogger.service.ts": {
-        "version": "e20a0684209d5253c717a76befe46274b8b40e4155fdf8a3ef9ea4ac308c1776",
+        "version": "bed81640edc7556cf4bc98698dcb4b487a63f884058631d0542a51f83395c0c4",
         "signature": "fc70d7a83b7f7b10214d751e0c3df1d1ea069b97f188586bd0e384575ee69074",
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "8620211b7ea2fd43582cdb9b8eaf750ce6badf9a827a29a09a3db5cab6231eb9",
+        "version": "ffb573f3d7dab315d7a65f61e4b1f94ae15f29cc395a27b8f8c6d3e18b62105d",
         "signature": "4a3f82e9afd8c4e06b1994178991a3b61cf7ea2c43e42cb00cfcccb537fcb718",
         "affectsGlobalScope": false
       },
@@ -2022,8 +2022,8 @@
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.service.ts": {
-        "version": "fa6bc3b25684ab68b80080d199aeca7110330ed5f72d461ea161b83d51e5814d",
-        "signature": "c957ddfe56bde29ea6ee1c375b0b2ccd4522f6d6966e3dd2075d4d30ef60ac52",
+        "version": "d98170df89c95ea2e0e2f26848add5e2e4c65b1381b00bb50b66b074cf4c77d4",
+        "signature": "f66182bf90f127adf4964ed319bd78816bc3a27398264405316c2b64b4fee707",
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.module.ts": {
@@ -7586,7 +7586,8 @@
       ],
       "../src/api-response/api-response.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/express/index.d.ts"
+        "../node_modules/@types/express/index.d.ts",
+        "../src/logger/customlogger.service.ts"
       ],
       "../src/api-response/response.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -11453,7 +11454,8 @@
         "../node_modules/rxjs/internal/types.d.ts"
       ],
       "../src/api-response/api-response.service.ts": [
-        "../node_modules/@types/express/index.d.ts"
+        "../node_modules/@types/express/index.d.ts",
+        "../src/logger/customlogger.service.ts"
       ],
       "../src/app.bootstrap.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
