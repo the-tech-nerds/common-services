@@ -4,7 +4,7 @@ exports.default = {
     auth: {
         local: 'http://localhost:8081',
         dev: null,
-        prod: 'app.svc.cluster.asdasdd:/',
+        prod: 'auth',
     },
     product: {
         local: 'http://localhost:8082',

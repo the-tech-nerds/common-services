@@ -65,7 +65,10 @@ export class GatewayService {
   }
 
   async execute(domain, gatewayRequest: GatewayRequest) {
-    const ip = this.ipResolverService.resolve(domain);
+    const ip = this.ipResolverService.resolve(
+      domain,
+      this.configService.get('environment'),
+    );
     const appName = this.configService.get('app_name');
     const key = `client-access-token-${appName}`;
     let token = await this.cacheService.get(key);
