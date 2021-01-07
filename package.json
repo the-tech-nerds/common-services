@@ -1,9 +1,8 @@
 {
-  "name": "common-services",
-  "version": "0.0.1",
+  "name": "@the-tech-nerds/common-services",
+  "version": "0.0.4",
   "description": "",
   "author": "",
-  "private": true,
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -99,6 +98,9 @@
     },
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/the-tech-nerds"
   },
   "husky": {
     "hooks": {
