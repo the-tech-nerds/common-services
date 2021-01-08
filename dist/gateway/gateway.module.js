@@ -11,7 +11,7 @@ const common_1 = require("@nestjs/common");
 const gateway_service_1 = require("./gateway.service");
 const ip_resolver_service_1 = require("./ip-resolver.service");
 const __1 = require("..");
-const fetch_module_1 = require("../fetch/fetch.module");
+const __2 = require("..");
 const fetch_access_code_service_1 = require("./fetch-access-code.service");
 const fetch_access_token_service_1 = require("./fetch-access-token.service");
 const customLogger_service_1 = require("../logger/customLogger.service");
@@ -19,7 +19,7 @@ let GatewayModule = class GatewayModule {
 };
 GatewayModule = __decorate([
     common_1.Module({
-        imports: [common_1.HttpModule, __1.CacheModule, fetch_module_1.FetchModule],
+        imports: [common_1.HttpModule, __1.CacheModule, __2.FetchModule],
         providers: [
             gateway_service_1.GatewayService,
             ip_resolver_service_1.IpResolverService,

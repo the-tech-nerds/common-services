@@ -1842,17 +1842,12 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "ffb573f3d7dab315d7a65f61e4b1f94ae15f29cc395a27b8f8c6d3e18b62105d",
+        "version": "d40aa8e07b84c947b0fd24483abd89519e9378a35dd6778d0f893b16d76f3921",
         "signature": "4a3f82e9afd8c4e06b1994178991a3b61cf7ea2c43e42cb00cfcccb537fcb718",
         "affectsGlobalScope": false
       },
-      "../src/fetch/fetch.module.ts": {
-        "version": "713816822b6d3aa336002e9c2f3c945f99edd139b06963bad50588b5c0086d0c",
-        "signature": "7891499e36f235bc465db2f3d0ba1f400f62e9131534d8db7ca14f17c1646ab7",
-        "affectsGlobalScope": false
-      },
       "../src/gateway/gateway.module.ts": {
-        "version": "bc0fe0530b08c006259def54504b0f641434b9d9ae7271631f3290e6e3f0f250",
+        "version": "b96dd649a1116cdc8202c9c54feac56ea291d97d51b8192b3113d060ace8a3b1",
         "signature": "f63561963ff9b5bf0d172e75ab4db4e4f5de0a69959ada03219b94e32a181b29",
         "affectsGlobalScope": false
       },
@@ -1899,6 +1894,11 @@
       "../src/gateway/gateway.middleware.ts": {
         "version": "c52911381c3d714b4b080f908201664ecfc82afb294ad4081fd3bfb1e5a23937",
         "signature": "3abca0396e71548206f2cc5d9170982e416046af6e17d4e6a7e7d712798a6e98",
+        "affectsGlobalScope": false
+      },
+      "../src/fetch/fetch.module.ts": {
+        "version": "713816822b6d3aa336002e9c2f3c945f99edd139b06963bad50588b5c0086d0c",
+        "signature": "7891499e36f235bc465db2f3d0ba1f400f62e9131534d8db7ca14f17c1646ab7",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/jsonwebtoken/index.d.ts": {
@@ -2022,8 +2022,8 @@
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.service.ts": {
-        "version": "d98170df89c95ea2e0e2f26848add5e2e4c65b1381b00bb50b66b074cf4c77d4",
-        "signature": "f66182bf90f127adf4964ed319bd78816bc3a27398264405316c2b64b4fee707",
+        "version": "fa6bc3b25684ab68b80080d199aeca7110330ed5f72d461ea161b83d51e5814d",
+        "signature": "c957ddfe56bde29ea6ee1c375b0b2ccd4522f6d6966e3dd2075d4d30ef60ac52",
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.module.ts": {
@@ -7586,8 +7586,7 @@
       ],
       "../src/api-response/api-response.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@types/express/index.d.ts",
-        "../src/logger/customlogger.service.ts"
+        "../node_modules/@types/express/index.d.ts"
       ],
       "../src/api-response/response.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -7655,7 +7654,6 @@
       ],
       "../src/gateway/gateway.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../src/fetch/fetch.module.ts",
         "../src/gateway/fetch-access-code.service.ts",
         "../src/gateway/fetch-access-token.service.ts",
         "../src/gateway/gateway.service.ts",
@@ -11454,8 +11452,7 @@
         "../node_modules/rxjs/internal/types.d.ts"
       ],
       "../src/api-response/api-response.service.ts": [
-        "../node_modules/@types/express/index.d.ts",
-        "../src/logger/customlogger.service.ts"
+        "../node_modules/@types/express/index.d.ts"
       ],
       "../src/app.bootstrap.ts": [
         "../node_modules/@nestjs/common/index.d.ts"

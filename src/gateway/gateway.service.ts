@@ -112,9 +112,7 @@ export class GatewayService {
       });
     } catch (e) {
       this.loggerService.error(
-        `From Service ${domain}, path : ${
-          gatewayRequest.path
-        }. Message :: ${e.toString()}`,
+        `From Service ${domain}. Response :: ${e.toString()}`,
       );
       throw e;
     }
