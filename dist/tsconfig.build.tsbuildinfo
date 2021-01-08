@@ -1842,12 +1842,17 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "d40aa8e07b84c947b0fd24483abd89519e9378a35dd6778d0f893b16d76f3921",
+        "version": "2dd3a3254bc41483ab517839d1ecb9a954d6faea26ac3d166f0549484b38ab69",
         "signature": "4a3f82e9afd8c4e06b1994178991a3b61cf7ea2c43e42cb00cfcccb537fcb718",
         "affectsGlobalScope": false
       },
+      "../src/fetch/fetch.module.ts": {
+        "version": "713816822b6d3aa336002e9c2f3c945f99edd139b06963bad50588b5c0086d0c",
+        "signature": "7891499e36f235bc465db2f3d0ba1f400f62e9131534d8db7ca14f17c1646ab7",
+        "affectsGlobalScope": false
+      },
       "../src/gateway/gateway.module.ts": {
-        "version": "b96dd649a1116cdc8202c9c54feac56ea291d97d51b8192b3113d060ace8a3b1",
+        "version": "bc0fe0530b08c006259def54504b0f641434b9d9ae7271631f3290e6e3f0f250",
         "signature": "f63561963ff9b5bf0d172e75ab4db4e4f5de0a69959ada03219b94e32a181b29",
         "affectsGlobalScope": false
       },
@@ -1894,11 +1899,6 @@
       "../src/gateway/gateway.middleware.ts": {
         "version": "c52911381c3d714b4b080f908201664ecfc82afb294ad4081fd3bfb1e5a23937",
         "signature": "3abca0396e71548206f2cc5d9170982e416046af6e17d4e6a7e7d712798a6e98",
-        "affectsGlobalScope": false
-      },
-      "../src/fetch/fetch.module.ts": {
-        "version": "713816822b6d3aa336002e9c2f3c945f99edd139b06963bad50588b5c0086d0c",
-        "signature": "7891499e36f235bc465db2f3d0ba1f400f62e9131534d8db7ca14f17c1646ab7",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/jsonwebtoken/index.d.ts": {
@@ -7654,6 +7654,7 @@
       ],
       "../src/gateway/gateway.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
+        "../src/fetch/fetch.module.ts",
         "../src/gateway/fetch-access-code.service.ts",
         "../src/gateway/fetch-access-token.service.ts",
         "../src/gateway/gateway.service.ts",

@@ -2,7 +2,7 @@ import { HttpModule, Module } from '@nestjs/common';
 import { GatewayService } from './gateway.service';
 import { IpResolverService } from './ip-resolver.service';
 import { CacheModule } from '..';
-import { FetchModule } from '..';
+import { FetchModule } from '../fetch/fetch.module';
 import { FetchAccessCodeService } from './fetch-access-code.service';
 import { FetchAccessTokenService } from './fetch-access-token.service';
 import { CustomLoggerService } from '../logger/customLogger.service';
