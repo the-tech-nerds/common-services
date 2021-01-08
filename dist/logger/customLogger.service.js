@@ -11,34 +11,44 @@ class CustomLoggerService {
         this.logPath = logPath;
     }
     log(message) {
+        this.checkDir();
         fs.writeFile(`${this.logPath}log-${this.currentDate}.txt`, `LOG: Time: ${this.currentTime} :: ${message}`, err => {
             if (err) {
             }
         });
     }
     error(message) {
+        this.checkDir();
         fs.writeFile(`${this.logPath}error-${this.currentDate}.txt`, `ERROR: Time: ${this.currentTime} :: ${message}`, err => {
             if (err) {
             }
         });
     }
     warn(message) {
+        this.checkDir();
         fs.writeFile(`${this.logPath}warning-${this.currentDate}.txt`, `WARNING: Time: ${this.currentTime} :: ${message}`, err => {
             if (err) {
             }
         });
     }
     debug(message) {
+        this.checkDir();
         fs.writeFile(`${this.logPath}debug-${this.currentDate}.txt`, `DEBUG: Time: ${this.currentTime} :: ${message}`, err => {
             if (err) {
             }
         });
     }
     verbose(message) {
+        this.checkDir();
         fs.writeFile(`${this.logPath}verbos-${this.currentDate}.txt`, `VERBOSE: Time: ${this.currentTime} :: ${message}`, err => {
             if (err) {
             }
         });
+    }
+    checkDir() {
+        if (!fs.existsSync(this.logPath)) {
+            fs.mkdirSync(this.logPath);
+        }
     }
 }
 exports.CustomLoggerService = CustomLoggerService;
