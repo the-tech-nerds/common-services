@@ -10,6 +10,7 @@ export class CustomLoggerService implements LoggerService {
     private readonly logPath = path.join(__dirname, '../../../../logs/'),
   ) {}
   log(message: string) {
+    this.checkDir();
     fs.writeFile(
       `${this.logPath}log-${this.currentDate}.txt`,
       `LOG: Time: ${this.currentTime} :: ${message}`,
@@ -23,6 +24,7 @@ export class CustomLoggerService implements LoggerService {
   }
 
   error(message: string) {
+    this.checkDir();
     fs.writeFile(
       `${this.logPath}error-${this.currentDate}.txt`,
       `ERROR: Time: ${this.currentTime} :: ${message}`,
@@ -36,6 +38,7 @@ export class CustomLoggerService implements LoggerService {
   }
 
   warn(message: string) {
+    this.checkDir();
     fs.writeFile(
       `${this.logPath}warning-${this.currentDate}.txt`,
       `WARNING: Time: ${this.currentTime} :: ${message}`,
@@ -49,6 +52,7 @@ export class CustomLoggerService implements LoggerService {
   }
 
   debug(message: string) {
+    this.checkDir();
     fs.writeFile(
       `${this.logPath}debug-${this.currentDate}.txt`,
       `DEBUG: Time: ${this.currentTime} :: ${message}`,
@@ -62,6 +66,7 @@ export class CustomLoggerService implements LoggerService {
   }
 
   verbose(message: string) {
+    this.checkDir();
     fs.writeFile(
       `${this.logPath}verbos-${this.currentDate}.txt`,
       `VERBOSE: Time: ${this.currentTime} :: ${message}`,
@@ -72,5 +77,11 @@ export class CustomLoggerService implements LoggerService {
         }
       },
     );
+  }
+
+  checkDir() {
+    if (!fs.existsSync(this.logPath)) {
+      fs.mkdirSync(this.logPath);
+    }
   }
 }

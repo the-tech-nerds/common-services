@@ -9,4 +9,5 @@ export declare class CustomLoggerService implements LoggerService {
     warn(message: string): void;
     debug(message: string): void;
     verbose(message: string): void;
+    checkDir(): void;
 }
