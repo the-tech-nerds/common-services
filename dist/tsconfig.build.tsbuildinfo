@@ -1837,7 +1837,7 @@
         "affectsGlobalScope": false
       },
       "../src/logger/customlogger.service.ts": {
-        "version": "f5a81650ebb0233ee059543d51f655f23bc5d07b6d30179062d0642b6d19da68",
+        "version": "4a3616560489766b858c4806efc63ceb3d099d843bbb1f6ac12aeae4472ae8b2",
         "signature": "23972bb75fcd9412548c882b48a01e981e6b3f44e4723d80686eaad687bc2119",
         "affectsGlobalScope": false
       },

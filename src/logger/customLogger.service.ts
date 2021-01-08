@@ -1,7 +1,7 @@
 import { LoggerService } from '@nestjs/common';
 import * as fs from 'fs';
 import moment = require('moment');
-import path from 'path';
+import path = require('path');
 
 export class CustomLoggerService implements LoggerService {
   constructor(
