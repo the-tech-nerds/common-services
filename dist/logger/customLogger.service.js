@@ -3,9 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomLoggerService = void 0;
 const fs = require("fs");
 const moment = require("moment");
-const path_1 = require("path");
+const path = require("path");
 class CustomLoggerService {
-    constructor(currentDate = moment().format('YYYY-MM-DD'), currentTime = moment().format('YYYY-MM-DD hh:mm:ss a'), logPath = path_1.default.join(__dirname, '../../../../logs/')) {
+    constructor(currentDate = moment().format('YYYY-MM-DD'), currentTime = moment().format('YYYY-MM-DD hh:mm:ss a'), logPath = path.join(__dirname, '../../../../logs/')) {
         this.currentDate = currentDate;
         this.currentTime = currentTime;
         this.logPath = logPath;
