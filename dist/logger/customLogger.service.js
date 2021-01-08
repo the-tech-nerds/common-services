@@ -5,7 +5,7 @@ const fs = require("fs");
 const moment = require("moment");
 const path = require("path");
 class CustomLoggerService {
-    constructor(currentDate = moment().format('YYYY-MM-DD'), currentTime = moment().format('YYYY-MM-DD hh:mm:ss a'), logPath = path.join(__dirname, '../../../../logs/')) {
+    constructor(currentDate = moment().format('YYYY-MM-DD'), currentTime = moment().format('YYYY-MM-DD hh:mm:ss a'), logPath = path.join(__dirname, '../../../../../logs/')) {
         this.currentDate = currentDate;
         this.currentTime = currentTime;
         this.logPath = logPath;

@@ -7,8 +7,9 @@ export class CustomLoggerService implements LoggerService {
   constructor(
     private readonly currentDate = moment().format('YYYY-MM-DD'),
     private readonly currentTime = moment().format('YYYY-MM-DD hh:mm:ss a'),
-    private readonly logPath = path.join(__dirname, '../../../../logs/'),
+    private readonly logPath = path.join(__dirname, '../../../../../logs/'),
   ) {}
+
   log(message: string) {
     this.checkDir();
     fs.writeFile(
