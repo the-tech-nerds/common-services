@@ -1,13 +1,18 @@
 import { LoggerService } from '@nestjs/common';
 import * as fs from 'fs';
 import moment = require('moment');
+import path from 'path';
 
 export class CustomLoggerService implements LoggerService {
-  constructor(private readonly currentDate = moment().format('YYYY-MM-DD')) {}
+  constructor(
+    private readonly currentDate = moment().format('YYYY-MM-DD'),
+    private readonly currentTime = moment().format('YYYY-MM-DD hh:mm:ss a'),
+    private readonly logPath = path.join(__dirname, '../../../../logs/'),
+  ) {}
   log(message: string) {
     fs.writeFile(
-      `./logs/log-${this.currentDate}.txt`,
-      `LOG: ${message}`,
+      `${this.logPath}log-${this.currentDate}.txt`,
+      `LOG: Time: ${this.currentTime} :: ${message}`,
       err => {
         // Rest of your code
         if (err) {
@@ -19,8 +24,8 @@ export class CustomLoggerService implements LoggerService {
 
   error(message: string) {
     fs.writeFile(
-      `./logs/error-${this.currentDate}.txt`,
-      `ERROR: ${message}`,
+      `${this.logPath}error-${this.currentDate}.txt`,
+      `ERROR: Time: ${this.currentTime} :: ${message}`,
       err => {
         // Rest of your code
         if (err) {
@@ -32,8 +37,8 @@ export class CustomLoggerService implements LoggerService {
 
   warn(message: string) {
     fs.writeFile(
-      `./logs/warning-${this.currentDate}.txt`,
-      `WARNING: ${message}`,
+      `${this.logPath}warning-${this.currentDate}.txt`,
+      `WARNING: Time: ${this.currentTime} :: ${message}`,
       err => {
         // Rest of your code
         if (err) {
@@ -45,8 +50,8 @@ export class CustomLoggerService implements LoggerService {
 
   debug(message: string) {
     fs.writeFile(
-      `./logs/debug-${this.currentDate}.txt`,
-      `DEBUG: ${message}`,
+      `${this.logPath}debug-${this.currentDate}.txt`,
+      `DEBUG: Time: ${this.currentTime} :: ${message}`,
       err => {
         // Rest of your code
         if (err) {
@@ -58,8 +63,8 @@ export class CustomLoggerService implements LoggerService {
 
   verbose(message: string) {
     fs.writeFile(
-      `./logs/verbos-${this.currentDate}.txt`,
-      `VERBOSE: ${message}`,
+      `${this.logPath}verbos-${this.currentDate}.txt`,
+      `VERBOSE: Time: ${this.currentTime} :: ${message}`,
       err => {
         // Rest of your code
         if (err) {
