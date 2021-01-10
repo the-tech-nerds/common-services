@@ -1,1 +1,0 @@
-{"version":3,"file":"fetch.module.js","sourceRoot":"","sources":["../../src/fetch/fetch.module.ts"],"names":[],"mappings":";;;;;;;;;AAAA,2CAAgD;AAChD,mDAA+C;AAO/C,IAAa,WAAW,GAAxB,MAAa,WAAW;CAAG,CAAA;AAAd,WAAW;IALvB,eAAM,EAAE;IACR,eAAM,CAAC;QACN,SAAS,EAAE,CAAC,4BAAY,CAAC;QACzB,OAAO,EAAE,CAAC,4BAAY,CAAC;KACxB,CAAC;GACW,WAAW,CAAG;AAAd,kCAAW"}
