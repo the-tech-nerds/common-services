@@ -33,15 +33,18 @@ let GatewayService = class GatewayService {
         this.loggerService = loggerService;
         this.request = request;
     }
-    prepareFetchTokenData() {
+    prepareFetchTokenData(authIp) {
         const clientId = this.configService.get('app_client_id');
         const clientSecret = this.configService.get('app_client_secret');
         if (!clientId || !clientSecret) {
             throw new common_1.HttpException('Client id and client secret are required', common_1.HttpStatus.BAD_REQUEST);
         }
+        if (!authIp) {
+            throw new common_1.HttpException('Auth Service Ip is required', common_1.HttpStatus.BAD_REQUEST);
+        }
         const userId = '1';
         const responseType = 'code';
-        const redirectUri = 'http://localhost:8081/api/v1/authorization/oauth/token';
+        const redirectUri = `${authIp}/api/v1/authorization/oauth/token`;
         const grantType = 'authorization_code';
         return {
             client_id: clientId,
@@ -53,13 +56,13 @@ let GatewayService = class GatewayService {
         };
     }
     async execute(domain, gatewayRequest) {
-        const ip = this.ipResolverService.resolve(domain, this.configService.get('environment'));
+        const ip = this.ipResolverService.resolve(domain, process.env.ENV);
         const appName = this.configService.get('app_name');
         const key = `client-access-token-${appName}`;
         let token = await this.cacheService.get(key);
         if (!token) {
             const authIp = await this.ipResolverService.resolve('auth');
-            const data = this.prepareFetchTokenData();
+            const data = this.prepareFetchTokenData(authIp);
             const accessCode = await this.fetchAccessCodeService.execute(authIp, data);
             const accessToken = await this.fetchAccessTokenService.execute(accessCode, authIp, data);
             token = await this.cacheService.set(key, accessToken);

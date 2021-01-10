@@ -1842,8 +1842,8 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "73d36154bc015ece0354642956d34c7ebac879da896d115164e6db758d320f18",
-        "signature": "f7046530575f5ae0011fc0413488ea947943da3d02097d36f6a05af6283807ae",
+        "version": "f74e6f871d7e09c5cbd9fe6d89553adea258fc8ff6b29f89d551ae006db91216",
+        "signature": "744f278da00c6b7630a121b908d64257947f8a0bfc4d0244beeb245d4dd04549",
         "affectsGlobalScope": false
       },
       "../src/fetch/fetch.module.ts": {

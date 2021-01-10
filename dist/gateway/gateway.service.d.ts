@@ -28,7 +28,7 @@ export declare class GatewayService {
     private readonly loggerService;
     private request;
     constructor(ipResolverService: IpResolverService, cacheService: CacheService, fetchService: FetchService, configService: ConfigService, fetchAccessCodeService: FetchAccessCodeService, fetchAccessTokenService: FetchAccessTokenService, loggerService: CustomLoggerService, request: Request);
-    prepareFetchTokenData(): {
+    prepareFetchTokenData(authIp: any): {
         client_id: any;
         user_id: string;
         response_type: string;
