@@ -87,6 +87,7 @@ export class ApiResponseService {
     message: string[] | string,
     res: Response,
   ): Response<ResponseModel> {
+    message = 'Something went wrong. Please try again later.';
     return res.status(500).json({
       message,
       status: 'failure',
