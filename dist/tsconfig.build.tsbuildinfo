@@ -2022,7 +2022,7 @@
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.service.ts": {
-        "version": "cc0f23f75afef6958cd44c30793277504f0707fd40e05c3f5fc3741abd345cc1",
+        "version": "121436e6e7a9d0d49782a914cd90d6702810fdceb25160a9f2010f32c8ebb6de",
         "signature": "c957ddfe56bde29ea6ee1c375b0b2ccd4522f6d6966e3dd2075d4d30ef60ac52",
         "affectsGlobalScope": false
       },
