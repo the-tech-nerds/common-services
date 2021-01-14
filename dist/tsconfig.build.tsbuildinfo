@@ -1837,7 +1837,7 @@
         "affectsGlobalScope": false
       },
       "../src/logger/customlogger.service.ts": {
-        "version": "7c8fbfe52b2e514339630a1e89da2a863d66d9c851362ece777941f3d6d67708",
+        "version": "fe40717d3d0c8ca1ecdb0aaac3cdd958e4d843ac99cb898b3e75d94852efb765",
         "signature": "5965597333cc97422a7aa2d96ea0e8113711e7593d12aad9154a304c6f656736",
         "affectsGlobalScope": false
       },
@@ -2022,7 +2022,7 @@
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.service.ts": {
-        "version": "fa6bc3b25684ab68b80080d199aeca7110330ed5f72d461ea161b83d51e5814d",
+        "version": "cc0f23f75afef6958cd44c30793277504f0707fd40e05c3f5fc3741abd345cc1",
         "signature": "c957ddfe56bde29ea6ee1c375b0b2ccd4522f6d6966e3dd2075d4d30ef60ac52",
         "affectsGlobalScope": false
       },
