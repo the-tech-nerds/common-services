@@ -63,6 +63,7 @@ export class ApiResponseService {
     message: string[] | string,
     res: Response,
   ): Response<ResponseModel> {
+    message = ['Sorry! You are not authorized to perform this action'];
     return res.status(401).json({
       message,
       status: 'Unauthorized',
@@ -75,6 +76,7 @@ export class ApiResponseService {
     message: string[] | string,
     res: Response,
   ): Response<ResponseModel> {
+    message = ['Sorry! You do not have permission to perform this action'];
     return res.status(403).json({
       message,
       status: 'Forbidden',
@@ -87,6 +89,7 @@ export class ApiResponseService {
     message: string[] | string,
     res: Response,
   ): Response<ResponseModel> {
+    message = ['Something went wrong. Please try again later.'];
     return res.status(500).json({
       message,
       status: 'failure',

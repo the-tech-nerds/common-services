@@ -104,7 +104,8 @@ export class GatewayService {
       const requestHeaders: any = this.request.headers;
       const accessTokenFromRequestHeader =
         requestHeaders.access_token || undefined;
-      return this.fetchService.execute(url, {
+
+      const fetchedResponse = await this.fetchService.execute(url, {
         method,
         headers: {
           ...headers,
@@ -116,11 +117,11 @@ export class GatewayService {
         body: body ? body : undefined,
         qs,
       });
+
+      return fetchedResponse;
     } catch (e) {
       this.loggerService.error(
-        `From Service ${domain}, path : ${
-          gatewayRequest.path
-        }. Message :: ${e.toString()}`,
+        `Service Name: ${domain}. Response :: ${e.toString()}`,
       );
       throw e;
     }

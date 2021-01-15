@@ -72,15 +72,16 @@ let GatewayService = class GatewayService {
             const url = `${ip}${path}`;
             const requestHeaders = this.request.headers;
             const accessTokenFromRequestHeader = requestHeaders.access_token || undefined;
-            return this.fetchService.execute(url, {
+            const fetchedResponse = await this.fetchService.execute(url, {
                 method,
                 headers: Object.assign(Object.assign({}, headers), { client_name: appName, client_access_token: token, access_token: userAccessToken !== null && userAccessToken !== void 0 ? userAccessToken : accessTokenFromRequestHeader, Authorization: `Bearer ${accessTokenFromRequestHeader}` }),
                 body: body ? body : undefined,
                 qs,
             });
+            return fetchedResponse;
         }
         catch (e) {
-            this.loggerService.error(`From Service ${domain}, path : ${gatewayRequest.path}. Message :: ${e.toString()}`);
+            this.loggerService.error(`Service Name: ${domain}. Response :: ${e.toString()}`);
             throw e;
         }
     }

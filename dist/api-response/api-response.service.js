@@ -42,6 +42,7 @@ let ApiResponseService = class ApiResponseService {
         });
     }
     unAuthorizedError(message, res) {
+        message = ['Sorry! You are not authorized to perform this action'];
         return res.status(401).json({
             message,
             status: 'Unauthorized',
@@ -50,6 +51,7 @@ let ApiResponseService = class ApiResponseService {
         });
     }
     forbiddenError(message, res) {
+        message = ['Sorry! You do not have permission to perform this action'];
         return res.status(403).json({
             message,
             status: 'Forbidden',
@@ -58,6 +60,7 @@ let ApiResponseService = class ApiResponseService {
         });
     }
     internalServerError(message, res) {
+        message = ['Something went wrong. Please try again later.'];
         return res.status(500).json({
             message,
             status: 'failure',
