@@ -9,5 +9,6 @@ declare const _default: () => {
     api_rate_limit_max: string;
     aws_access_key: string;
     aws_secret_key: string;
+    env: string;
 };
 export default _default;

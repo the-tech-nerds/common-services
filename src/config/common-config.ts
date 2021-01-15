@@ -9,4 +9,5 @@ export default () => ({
   api_rate_limit_max: process.env.API_RATE_LIMIT_MAX,
   aws_access_key: process.env.AWS_ACCESS_KEY_ID,
   aws_secret_key: process.env.AWS_SECRET_ACCESS_KEY,
+  env: process.env.ENV,
 });
