@@ -8,7 +8,7 @@ export class UserGuard extends AuthGuard('jwt') {
     super();
   }
 
-  canActivate(context: ExecutionContext): Promise<boolean> {
+  canActivate(context: ExecutionContext): boolean | Promise<boolean> {
     console.log(context);
     return true;
   }
