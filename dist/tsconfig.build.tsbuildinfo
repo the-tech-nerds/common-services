@@ -2002,8 +2002,8 @@
         "affectsGlobalScope": false
       },
       "../src/guards/user/user.guard.ts": {
-        "version": "0789872f4f108696264deaa3f413d2117b1239050d5bc53d39f734c860f68bf2",
-        "signature": "00ac5cd1810bd630299c8d7f339323aa42ef5f9e4954e0b35d2ee6d2e4a48ec2",
+        "version": "9ae19c5a80bb35e947cb09a62e8042c5f46a74e1e81cacf5cf126fb90003dc4f",
+        "signature": "3b29dbf02b63defddc949255d97ffbd02dae9ab800692a6f72724be7e6654180",
         "affectsGlobalScope": false
       },
       "../src/guards/meta-data/permissions/permissions.decorator.ts": {
@@ -7698,8 +7698,7 @@
       ],
       "../src/guards/user/user.guard.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/passport/index.d.ts",
-        "../src/index.ts"
+        "../node_modules/@nestjs/passport/index.d.ts"
       ],
       "../src/index.ts": [
         "../src/api-response/api-response.module.ts",
@@ -11504,9 +11503,7 @@
         "../node_modules/@nestjs/jwt/index.d.ts"
       ],
       "../src/guards/user/user.guard.ts": [
-        "../node_modules/@nestjs/common/index.d.ts",
-        "../node_modules/@nestjs/passport/index.d.ts",
-        "../src/index.ts"
+        "../node_modules/@nestjs/passport/index.d.ts"
       ],
       "../src/index.ts": [
         "../src/api-response/api-response.module.ts",
