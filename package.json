@@ -1,12 +1,13 @@
 {
   "name": "@the-tech-nerds/common-services",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "author": "",
   "license": "UNLICENSED",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "prepare": "npm run build",
     "prebuild": "rimraf dist",
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",

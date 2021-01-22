@@ -72,6 +72,13 @@ let GatewayService = class GatewayService {
             const url = `${ip}${path}`;
             const requestHeaders = this.request.headers;
             const accessTokenFromRequestHeader = requestHeaders.access_token || undefined;
+            const userId = requestHeaders.user_id || null;
+            if (accessTokenFromRequestHeader && userId) {
+                const token = await this.cacheService.get(`user-token-${userId}`);
+                if (token !== accessTokenFromRequestHeader) {
+                    throw new common_1.UnauthorizedException();
+                }
+            }
             const fetchedResponse = await this.fetchService.execute(url, {
                 method,
                 headers: Object.assign(Object.assign({}, headers), { client_name: appName, client_access_token: token, access_token: userAccessToken !== null && userAccessToken !== void 0 ? userAccessToken : accessTokenFromRequestHeader, Authorization: `Bearer ${accessTokenFromRequestHeader}` }),
