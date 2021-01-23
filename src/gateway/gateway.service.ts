@@ -4,6 +4,7 @@ import {
   Inject,
   Injectable,
   Scope,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { IpResolverService } from './ip-resolver.service';
 import { CacheService } from '..';
@@ -104,6 +105,15 @@ export class GatewayService {
       const requestHeaders: any = this.request.headers;
       const accessTokenFromRequestHeader =
         requestHeaders.access_token || undefined;
+      const userId = requestHeaders.user_id || null;
+
+      if (accessTokenFromRequestHeader && userId) {
+        const token = await this.cacheService.get(`user-token-${userId}`);
+
+        if (token !== accessTokenFromRequestHeader) {
+          throw new UnauthorizedException();
+        }
+      }
 
       const fetchedResponse = await this.fetchService.execute(url, {
         method,
