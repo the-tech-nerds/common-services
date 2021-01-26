@@ -11,5 +11,10 @@ exports.default = {
         dev: null,
         prod: 'http://product-service.default.svc.cluster.local:3000',
     },
+    notification: {
+        local: 'http://localhost:9001',
+        dev: null,
+        prod: 'http://notification-service.default.svc.cluster.local:3000',
+    },
 };
 //# sourceMappingURL=gateway.services.js.map
