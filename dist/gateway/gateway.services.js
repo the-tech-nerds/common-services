@@ -12,7 +12,7 @@ exports.default = {
         prod: 'http://product-service.default.svc.cluster.local:3000',
     },
     notification: {
-        local: 'http://localhost:8083',
+        local: 'http://localhost:9001',
         dev: null,
         prod: 'http://notification-service.default.svc.cluster.local:3000',
     },

@@ -1792,7 +1792,7 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.services.ts": {
-        "version": "e7b46da7b4294c123bea8423b172705a9c38fea6718fe077971613ad32843472",
+        "version": "5cb0609a4eb858c89bb15dce1dfdd9c6da7e54bddfa4df00a07cf9aafcde53cf",
         "signature": "73c798702affb1baf1c2a58208c99aca0b41f38cb60275f07ae293b511a21a54",
         "affectsGlobalScope": false
       },
@@ -3551,9 +3551,14 @@
         "signature": "b5e94c01a086c2c0bdc1098fa2e4b7b1003a2cd5116062d4ed00cd2a8fbd84fb",
         "affectsGlobalScope": false
       },
+      "../src/notification/email-notification.ts": {
+        "version": "9e9b29e6d40665ab09a47bb5db653e54edcbd03bbffa11944ae72c4ac91cc9e9",
+        "signature": "bf6507ae9c08915911d03517eae5b2cd941ed5fad53c47903c027f57f2b3fd58",
+        "affectsGlobalScope": false
+      },
       "../src/index.ts": {
-        "version": "ee6a5cc75129ca2de0f4c0ecd6796ceb4de900fdc278709c1a3c9dcbe7ab88a4",
-        "signature": "acbe68ad0a1ad560d020eb3cbff1fbe579849718519e8b83dfdf44f31bf48a62",
+        "version": "f7fc99590630b8e2e568309668313fa0f4613c0a39a2dff72c82a7a97de2e72d",
+        "signature": "7cb7685e5653d99653206da7c004a473465e6a3af2b0b09e257b9cef3d16c740",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
@@ -7718,6 +7723,7 @@
         "../src/guards/meta-data/permissions/permissions.decorator.ts",
         "../src/guards/permissions/permissions.guard.ts",
         "../src/guards/user/user.guard.ts",
+        "../src/notification/email-notification.ts",
         "../src/upload/upload.module.ts",
         "../src/upload/upload.service.ts"
       ],
@@ -7731,6 +7737,9 @@
         "../node_modules/@nestjs/core/index.d.ts",
         "../src/app.bootstrap.ts",
         "../src/app.module.ts"
+      ],
+      "../src/notification/email-notification.ts": [
+        "../src/gateway/gateway.service.ts"
       ],
       "../src/strategies/jwt.strategy.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -11523,11 +11532,15 @@
         "../src/guards/meta-data/permissions/permissions.decorator.ts",
         "../src/guards/permissions/permissions.guard.ts",
         "../src/guards/user/user.guard.ts",
+        "../src/notification/email-notification.ts",
         "../src/upload/upload.module.ts",
         "../src/upload/upload.service.ts"
       ],
       "../src/logger/customLogger.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
+      ],
+      "../src/notification/email-notification.ts": [
+        "../src/gateway/gateway.service.ts"
       ],
       "../src/upload/upload.service.ts": [
         "../node_modules/aws-sdk/index.d.ts"
