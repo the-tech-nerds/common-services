@@ -9,5 +9,10 @@ declare const _default: {
         dev: any;
         prod: string;
     };
+    notification: {
+        local: string;
+        dev: any;
+        prod: string;
+    };
 };
 export default _default;
