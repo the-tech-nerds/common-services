@@ -3552,13 +3552,18 @@
         "affectsGlobalScope": false
       },
       "../src/notification/email-notification.ts": {
-        "version": "9e9b29e6d40665ab09a47bb5db653e54edcbd03bbffa11944ae72c4ac91cc9e9",
+        "version": "5a5ceaa26ca24576a6e3f548f47523acd0cb9bc2a7828cf5292519577f52143b",
         "signature": "bf6507ae9c08915911d03517eae5b2cd941ed5fad53c47903c027f57f2b3fd58",
         "affectsGlobalScope": false
       },
+      "../src/notification/notification.module.ts": {
+        "version": "030a648548d00f5214a99bb5bcfdaa907644df7b60c426eb40654aba59ee5f02",
+        "signature": "0a9137fd1f6cc95a03dc750636d3c795b2a8f1c060aec6c4bd1eb1a55dce802e",
+        "affectsGlobalScope": false
+      },
       "../src/index.ts": {
-        "version": "f7fc99590630b8e2e568309668313fa0f4613c0a39a2dff72c82a7a97de2e72d",
-        "signature": "7cb7685e5653d99653206da7c004a473465e6a3af2b0b09e257b9cef3d16c740",
+        "version": "ab0218c91be4fe2ae274b22e0819a434bd864f3b5742b9fa1df28868062393bc",
+        "signature": "723d4115d46c09b8a8c6c117173819952040ce5c2002730011ab03b33de1e3e8",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
@@ -7724,6 +7729,7 @@
         "../src/guards/permissions/permissions.guard.ts",
         "../src/guards/user/user.guard.ts",
         "../src/notification/email-notification.ts",
+        "../src/notification/notification.module.ts",
         "../src/upload/upload.module.ts",
         "../src/upload/upload.service.ts"
       ],
@@ -7739,7 +7745,13 @@
         "../src/app.module.ts"
       ],
       "../src/notification/email-notification.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
         "../src/gateway/gateway.service.ts"
+      ],
+      "../src/notification/notification.module.ts": [
+        "../node_modules/@nestjs/common/index.d.ts",
+        "../src/gateway/gateway.service.ts",
+        "../src/notification/email-notification.ts"
       ],
       "../src/strategies/jwt.strategy.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
@@ -11533,6 +11545,7 @@
         "../src/guards/permissions/permissions.guard.ts",
         "../src/guards/user/user.guard.ts",
         "../src/notification/email-notification.ts",
+        "../src/notification/notification.module.ts",
         "../src/upload/upload.module.ts",
         "../src/upload/upload.service.ts"
       ],

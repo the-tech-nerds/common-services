@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common';
 import { GatewayService } from '../gateway/gateway.service';
 
 export interface EmailNotificationRequest {
@@ -16,7 +17,7 @@ export interface EmailNotificationRequest {
   delivery_status?: string;
   attachments?: string;
 }
-
+@Injectable()
 export class EmailNotification {
   constructor(private readonly gatewayService: GatewayService) {}
 

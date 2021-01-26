@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailNotification = exports.UploadService = exports.UploadModule = exports.ApiResponseService = exports.ApiResponseModule = exports.CurrentUser = exports.PermissionTypes = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
+exports.EmailNotification = exports.NotificationModule = exports.UploadService = exports.UploadModule = exports.ApiResponseService = exports.ApiResponseModule = exports.CurrentUser = exports.PermissionTypes = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
 const cache_module_1 = require("./cache/cache.module");
 Object.defineProperty(exports, "CacheModule", { enumerable: true, get: function () { return cache_module_1.CacheModule; } });
 const cache_service_1 = require("./cache/cache.service");
@@ -41,4 +41,6 @@ const upload_service_1 = require("./upload/upload.service");
 Object.defineProperty(exports, "UploadService", { enumerable: true, get: function () { return upload_service_1.UploadService; } });
 const email_notification_1 = require("./notification/email-notification");
 Object.defineProperty(exports, "EmailNotification", { enumerable: true, get: function () { return email_notification_1.EmailNotification; } });
+const notification_module_1 = require("./notification/notification.module");
+Object.defineProperty(exports, "NotificationModule", { enumerable: true, get: function () { return notification_module_1.NotificationModule; } });
 //# sourceMappingURL=index.js.map
