@@ -61,7 +61,7 @@ let GatewayService = class GatewayService {
         const key = `client-access-token-${appName}`;
         let token = await this.cacheService.get(key);
         if (!token) {
-            const authIp = await this.ipResolverService.resolve('auth');
+            const authIp = await this.ipResolverService.resolve('auth', process.env.ENV);
             const data = this.prepareFetchTokenData(authIp);
             const accessCode = await this.fetchAccessCodeService.execute(authIp, data);
             const accessToken = await this.fetchAccessTokenService.execute(accessCode, authIp, data);

@@ -14,6 +14,7 @@ const cache_module_1 = require("./cache/cache.module");
 const config_1 = require("@nestjs/config");
 const common_config_1 = require("./config/common-config");
 const nestjs_command_1 = require("nestjs-command");
+const index_1 = require("./index");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -26,6 +27,7 @@ AppModule = __decorate([
                 envFilePath: '.common.env',
             }),
             nestjs_command_1.CommandModule,
+            index_1.NotificationModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
