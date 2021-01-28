@@ -5,6 +5,7 @@ import { CacheModule } from './cache/cache.module';
 import { ConfigModule } from '@nestjs/config';
 import commonConfig from './config/common-config';
 import { CommandModule } from 'nestjs-command';
+import { NotificationModule } from './index';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { CommandModule } from 'nestjs-command';
       envFilePath: '.common.env',
     }),
     CommandModule,
+    NotificationModule,
   ],
   controllers: [AppController],
   providers: [AppService],

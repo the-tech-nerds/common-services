@@ -9,15 +9,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationModule = void 0;
 const common_1 = require("@nestjs/common");
 const email_notification_1 = require("./email-notification");
-const gateway_service_1 = require("../gateway/gateway.service");
+const __1 = require("..");
 let NotificationModule = class NotificationModule {
 };
 NotificationModule = __decorate([
     common_1.Module({
-        imports: [gateway_service_1.GatewayService],
-        providers: [
-            email_notification_1.EmailNotification,
+        imports: [
+            __1.GatewayModule,
         ],
+        providers: [email_notification_1.EmailNotification],
         exports: [email_notification_1.EmailNotification],
     })
 ], NotificationModule);

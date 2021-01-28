@@ -1781,19 +1781,9 @@
         "signature": "9f895353d4f2455ca7c40406a3e567bcf2bbb2d376cb38f3371dc53798ebf37a",
         "affectsGlobalScope": false
       },
-      "../src/app.module.ts": {
-        "version": "b126c36e96033d76b698a78cce2c16497fb3600585c407a56c96df7b6c9d27e6",
-        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
-        "affectsGlobalScope": false
-      },
-      "../src/cli.ts": {
-        "version": "38ba305bb4fdb890127eaabdc7855d97cbf3e4ceb65cfa26da195f4dda201a11",
-        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
-        "affectsGlobalScope": false
-      },
       "../src/gateway/gateway.services.ts": {
-        "version": "5cb0609a4eb858c89bb15dce1dfdd9c6da7e54bddfa4df00a07cf9aafcde53cf",
-        "signature": "73c798702affb1baf1c2a58208c99aca0b41f38cb60275f07ae293b511a21a54",
+        "version": "fe5a07d6b6b6dd8556aa2ce91b2a05f7c447a82c879e127c9d59830d0d18ce0a",
+        "signature": "7f358c6c53d69d7a49833255db31ba2bc59e78cb4784d2da8debb25f8202d062",
         "affectsGlobalScope": false
       },
       "../src/gateway/ip-resolver.service.ts": {
@@ -1842,7 +1832,7 @@
         "affectsGlobalScope": false
       },
       "../src/gateway/gateway.service.ts": {
-        "version": "a7e4344b4f32bc6885f122b3f4ae44ba1069d043e15c646675e079b7e6858fe1",
+        "version": "586757f65b3e3d8ae0cb3a56cae7d59109f140ffbea49773e592c91cf95c0fe5",
         "signature": "744f278da00c6b7630a121b908d64257947f8a0bfc4d0244beeb245d4dd04549",
         "affectsGlobalScope": false
       },
@@ -3557,13 +3547,23 @@
         "affectsGlobalScope": false
       },
       "../src/notification/notification.module.ts": {
-        "version": "030a648548d00f5214a99bb5bcfdaa907644df7b60c426eb40654aba59ee5f02",
+        "version": "5274ece0570ae07edc4391e02ecfa7d88db6397ca6b0006bc7eb85620c23a83e",
         "signature": "0a9137fd1f6cc95a03dc750636d3c795b2a8f1c060aec6c4bd1eb1a55dce802e",
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
         "version": "ab0218c91be4fe2ae274b22e0819a434bd864f3b5742b9fa1df28868062393bc",
         "signature": "723d4115d46c09b8a8c6c117173819952040ce5c2002730011ab03b33de1e3e8",
+        "affectsGlobalScope": false
+      },
+      "../src/app.module.ts": {
+        "version": "c214e53259f5cba48445c559fa735886e26f1167ea2a430dfb572e65d04a8e7c",
+        "signature": "b82491e2990291580288c5602d4c017238977749d52b17391f0e45d9a29be644",
+        "affectsGlobalScope": false
+      },
+      "../src/cli.ts": {
+        "version": "38ba305bb4fdb890127eaabdc7855d97cbf3e4ceb65cfa26da195f4dda201a11",
+        "signature": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881",
         "affectsGlobalScope": false
       },
       "../src/main.ts": {
@@ -7617,7 +7617,8 @@
         "../src/app.controller.ts",
         "../src/app.service.ts",
         "../src/cache/cache.module.ts",
-        "../src/config/common-config.ts"
+        "../src/config/common-config.ts",
+        "../src/index.ts"
       ],
       "../src/app.service.ts": [
         "../node_modules/@nestjs/common/index.d.ts"
@@ -7751,6 +7752,7 @@
       "../src/notification/notification.module.ts": [
         "../node_modules/@nestjs/common/index.d.ts",
         "../src/gateway/gateway.service.ts",
+        "../src/index.ts",
         "../src/notification/email-notification.ts"
       ],
       "../src/strategies/jwt.strategy.ts": [

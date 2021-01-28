@@ -1,17 +1,17 @@
 declare const _default: {
     auth: {
         local: string;
-        dev: any;
+        dev: string;
         prod: string;
     };
     product: {
         local: string;
-        dev: any;
+        dev: string;
         prod: string;
     };
     notification: {
         local: string;
-        dev: any;
+        dev: string;
         prod: string;
     };
 };
