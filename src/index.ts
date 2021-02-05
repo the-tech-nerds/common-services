@@ -18,6 +18,7 @@ import { ApiResponseModule } from './api-response/api-response.module';
 import { UploadModule } from './upload/upload.module';
 import { UploadService } from './upload/upload.service';
 import { EmailNotification } from './notification/email-notification';
+import { SmsNotification } from './notification/sms-notification';
 import { NotificationModule } from './notification/notification.module';
 
 export {
@@ -44,4 +45,4 @@ export {
 export { ApiResponseModule, ApiResponseService };
 
 export { UploadModule, UploadService };
-export { NotificationModule, EmailNotification };
+export { NotificationModule, EmailNotification, SmsNotification };
