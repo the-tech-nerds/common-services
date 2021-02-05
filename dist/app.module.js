@@ -27,7 +27,7 @@ AppModule = __decorate([
                 envFilePath: '.common.env',
             }),
             nestjs_command_1.CommandModule,
-            index_1.NotificationModule
+            index_1.NotificationModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

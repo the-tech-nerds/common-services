@@ -14,9 +14,7 @@ let NotificationModule = class NotificationModule {
 };
 NotificationModule = __decorate([
     common_1.Module({
-        imports: [
-            __1.GatewayModule,
-        ],
+        imports: [__1.GatewayModule],
         providers: [email_notification_1.EmailNotification],
         exports: [email_notification_1.EmailNotification],
     })

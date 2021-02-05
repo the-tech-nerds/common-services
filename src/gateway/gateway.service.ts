@@ -76,7 +76,7 @@ export class GatewayService {
     const appName = this.configService.get('app_name');
     const key = `client-access-token-${appName}`;
     let token = await this.cacheService.get(key);
-    if (!token) {
+    if (!token && appName !== 'auth') {
       const authIp = await this.ipResolverService.resolve(
         'auth',
         process.env.ENV,
