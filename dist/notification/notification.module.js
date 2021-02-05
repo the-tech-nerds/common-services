@@ -10,15 +10,14 @@ exports.NotificationModule = void 0;
 const common_1 = require("@nestjs/common");
 const email_notification_1 = require("./email-notification");
 const __1 = require("..");
+const sms_notification_1 = require("./sms-notification");
 let NotificationModule = class NotificationModule {
 };
 NotificationModule = __decorate([
     common_1.Module({
-        imports: [
-            __1.GatewayModule,
-        ],
-        providers: [email_notification_1.EmailNotification],
-        exports: [email_notification_1.EmailNotification],
+        imports: [__1.GatewayModule],
+        providers: [email_notification_1.EmailNotification, sms_notification_1.SmsNotification],
+        exports: [email_notification_1.EmailNotification, sms_notification_1.SmsNotification],
     })
 ], NotificationModule);
 exports.NotificationModule = NotificationModule;
