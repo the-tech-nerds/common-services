@@ -2007,7 +2007,7 @@
         "affectsGlobalScope": false
       },
       "../src/enum/permission.type.ts": {
-        "version": "34425c73348fd4f23b4e826407e860cf6ddd5f87566de393f19bf3e68df6d86d",
+        "version": "04b126cb2fbd5b13bb9ca18d1d29df874c41581f46ee97340ed96bbf944012b7",
         "signature": "a7586235c9bfeb176058d012d91354128ad186e4004600d8797b4b24f573d111",
         "affectsGlobalScope": false
       },

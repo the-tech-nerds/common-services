@@ -18,12 +18,12 @@ exports.default = {
         PERMISSION_ASSIGN: 'permissions assign in role',
     },
     USER: {
-        GET: 'User get',
-        CREATE: 'User create',
-        DETAILS: 'User details',
-        UPDATE: 'User update',
-        DELETE: 'User delete',
-        ROLE_ASSIGN: 'Roles assign in user',
+        GET: 'user get',
+        CREATE: 'user create',
+        DETAILS: 'user details',
+        UPDATE: 'user update',
+        DELETE: 'user delete',
+        ROLE_ASSIGN: 'roles assign in user',
     },
     UNIT: {
         GET: 'Unit get',
