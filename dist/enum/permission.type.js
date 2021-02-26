@@ -46,6 +46,13 @@ exports.default = {
         UPDATE: 'Brand update',
         DELETE: 'Brand delete',
     },
+    SHOP: {
+        GET: 'Shop get',
+        CREATE: 'Shop create',
+        DETAILS: 'Shop details',
+        UPDATE: 'Shop update',
+        DELETE: 'Shop delete',
+    },
     PASSWROD_RESET: {
         UPDATE: 'Password reset',
     },

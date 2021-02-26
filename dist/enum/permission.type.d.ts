@@ -44,6 +44,13 @@ declare const _default: {
         UPDATE: string;
         DELETE: string;
     };
+    SHOP: {
+        GET: string;
+        CREATE: string;
+        DETAILS: string;
+        UPDATE: string;
+        DELETE: string;
+    };
     PASSWROD_RESET: {
         UPDATE: string;
     };

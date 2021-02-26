@@ -2007,8 +2007,8 @@
         "affectsGlobalScope": false
       },
       "../src/enum/permission.type.ts": {
-        "version": "04b126cb2fbd5b13bb9ca18d1d29df874c41581f46ee97340ed96bbf944012b7",
-        "signature": "a7586235c9bfeb176058d012d91354128ad186e4004600d8797b4b24f573d111",
+        "version": "28a96754faa9f834c936edb9afe6ad505aabcc8cc01bc726761f9b0d6e0e08da",
+        "signature": "d30050252bdfcc505ab7ab3b66b108235a5fabb054cc2566a4caa18c3bacd0cf",
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.service.ts": {
@@ -3556,9 +3556,14 @@
         "signature": "0a9137fd1f6cc95a03dc750636d3c795b2a8f1c060aec6c4bd1eb1a55dce802e",
         "affectsGlobalScope": false
       },
+      "../src/strategies/jwt.strategy.ts": {
+        "version": "c1b6cd48c932ad0c809bd0efe2a380ab20bb640f6d83a0b45217dc5f93b000fd",
+        "signature": "bbec3760f8df7a3365984134ecfaecc94e0160446b294d5e348304cc77f03138",
+        "affectsGlobalScope": false
+      },
       "../src/index.ts": {
-        "version": "c7bf1c613be2e89513772db5eb90b5d20447d2375386b32b6ba6cc3e1815f06e",
-        "signature": "98645ba5a701607e4fbe5bbd0320f6b7c6f489d549c7a81d04e3a358db407833",
+        "version": "4bdecbda048b93aa41d00a972626e8960b192a4d6beb5d1ad23e0987428e5d23",
+        "signature": "3768730b2ab23a097cdd908f11a2421a98c5d2f5138b5063ecd11b7aff9747da",
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
@@ -3594,11 +3599,6 @@
       "../src/guards/roles/roles.guard.ts": {
         "version": "85dbc222eef1d041013dd8c2cf47fd64f713b81ad1d0e6e028d78f6f94366645",
         "signature": "0cf0a03bcdb26d5eb0053163aea1984be09693a3af677986cea1055899f82f39",
-        "affectsGlobalScope": false
-      },
-      "../src/strategies/jwt.strategy.ts": {
-        "version": "c1b6cd48c932ad0c809bd0efe2a380ab20bb640f6d83a0b45217dc5f93b000fd",
-        "signature": "bbec3760f8df7a3365984134ecfaecc94e0160446b294d5e348304cc77f03138",
         "affectsGlobalScope": false
       },
       "../node_modules/@types/anymatch/index.d.ts": {
@@ -7736,6 +7736,7 @@
         "../src/notification/email-notification.ts",
         "../src/notification/notification.module.ts",
         "../src/notification/sms-notification.ts",
+        "../src/strategies/jwt.strategy.ts",
         "../src/upload/upload.module.ts",
         "../src/upload/upload.service.ts"
       ],
@@ -11558,6 +11559,7 @@
         "../src/notification/email-notification.ts",
         "../src/notification/notification.module.ts",
         "../src/notification/sms-notification.ts",
+        "../src/strategies/jwt.strategy.ts",
         "../src/upload/upload.module.ts",
         "../src/upload/upload.service.ts"
       ],

@@ -20,6 +20,7 @@ import { UploadService } from './upload/upload.service';
 import { EmailNotification } from './notification/email-notification';
 import { SmsNotification } from './notification/sms-notification';
 import { NotificationModule } from './notification/notification.module';
+import { JwtStrategy } from './strategies/jwt.strategy';
 
 export {
   CacheModule,
@@ -40,6 +41,7 @@ export {
   PermissionTypeEnum,
   PermissionTypes,
   CurrentUser,
+  JwtStrategy,
 };
 
 export { ApiResponseModule, ApiResponseService };
