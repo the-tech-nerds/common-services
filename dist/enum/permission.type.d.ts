@@ -23,5 +23,36 @@ declare const _default: {
         DELETE: string;
         ROLE_ASSIGN: string;
     };
+    UNIT: {
+        GET: string;
+        CREATE: string;
+        DETAILS: string;
+        UPDATE: string;
+        DELETE: string;
+    };
+    SUPPLIER: {
+        GET: string;
+        CREATE: string;
+        DETAILS: string;
+        UPDATE: string;
+        DELETE: string;
+    };
+    BRAND: {
+        GET: string;
+        CREATE: string;
+        DETAILS: string;
+        UPDATE: string;
+        DELETE: string;
+    };
+    SHOP: {
+        GET: string;
+        CREATE: string;
+        DETAILS: string;
+        UPDATE: string;
+        DELETE: string;
+    };
+    PASSWROD_RESET: {
+        UPDATE: string;
+    };
 };
 export default _default;

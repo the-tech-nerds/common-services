@@ -20,7 +20,7 @@ import { UploadService } from './upload/upload.service';
 import { EmailNotification } from './notification/email-notification';
 import { SmsNotification } from './notification/sms-notification';
 import { NotificationModule } from './notification/notification.module';
-import { JwtStrategy } from "./strategies/jwt.strategy";
+import { JwtStrategy } from './strategies/jwt.strategy';
 export { CacheModule, CacheService, setBootstrap, commonConfig, };
 export { FetchModule, FetchService };
 export { GatewayModule, GatewayService, GatewayMiddleware };
