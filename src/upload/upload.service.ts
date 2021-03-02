@@ -1,32 +1,52 @@
+import { SaveFileService } from './save-file.service';
+import { Injectable } from '@nestjs/common';
 import { S3 } from 'aws-sdk';
+import { v4 as uuid } from 'uuid';
 
+@Injectable()
 export class UploadService {
+  constructor(private saveFileService: SaveFileService) {}
   async upload(
     file,
-    fileName,
-    bucketName = 'kfc-user-profile',
+    fileName = null,
+    folder,
+    type,
+    bucketName = 'khan-fresh-corner',
     acl = 'public-read',
   ) {
     const extension = file.originalname.split('.');
-    const newFileName = fileName + '.' + extension[extension.length - 1];
-    return this.uploadS3(file.buffer, bucketName, newFileName, acl);
+    const newFileName = !fileName
+      ? uuid()
+      : fileName + '.' + extension[extension.length - 1];
+    return this.uploadS3(
+      file.buffer,
+      bucketName,
+      folder,
+      type,
+      newFileName,
+      acl,
+    );
   }
 
-  async uploadS3(file, bucket, name, acl) {
+  async uploadS3(file, bucket, folder, type, name, acl) {
     const s3 = await this.getS3();
     const params = {
       Bucket: bucket,
-      Key: String(name),
+      Key: `${folder}/${name}`,
       Body: file,
       ACL: acl,
     };
 
     return new Promise((resolve, reject) => {
-      s3.upload(params, (err, data) => {
+      s3.upload(params, async (err, data) => {
         if (err) {
           reject(err.message);
         }
-        resolve(data);
+        const res = await this.saveFileService.execute({
+          url: data.Location,
+          type: type,
+        });
+        resolve(res);
       });
     });
   }

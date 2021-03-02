@@ -8,14 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UploadModule = void 0;
 const common_1 = require("@nestjs/common");
+const save_file_service_1 = require("./save-file.service");
 const upload_service_1 = require("./upload.service");
 let UploadModule = class UploadModule {
 };
 UploadModule = __decorate([
     common_1.Global(),
     common_1.Module({
-        providers: [upload_service_1.UploadService],
-        exports: [upload_service_1.UploadService],
+        providers: [upload_service_1.UploadService, save_file_service_1.SaveFileService],
+        exports: [upload_service_1.UploadService, save_file_service_1.SaveFileService],
     })
 ], UploadModule);
 exports.UploadModule = UploadModule;
