@@ -20,7 +20,9 @@ let UploadService = class UploadService {
     }
     async upload(file, fileName = null, folder, type, bucketName = 'khan-fresh-corner', acl = 'public-read') {
         const extension = file.originalname.split('.');
-        const newFileName = !fileName ? uuid_1.v4() : fileName + '.' + extension[extension.length - 1];
+        const newFileName = !fileName
+            ? uuid_1.v4()
+            : `${fileName}.${extension[extension.length - 1]}`;
         return this.uploadS3(file.buffer, bucketName, folder, type, newFileName, acl);
     }
     async uploadS3(file, bucket, folder, type, name, acl) {
@@ -38,7 +40,7 @@ let UploadService = class UploadService {
                 }
                 const res = await this.saveFileService.execute({
                     url: data.Location,
-                    type: type
+                    type: type,
                 });
                 resolve(res);
             });

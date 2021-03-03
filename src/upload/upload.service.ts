@@ -7,17 +7,17 @@ import { v4 as uuid } from 'uuid';
 export class UploadService {
   constructor(private saveFileService: SaveFileService) {}
   async upload(
-    file,
-    fileName = null,
-    folder,
-    type,
+    file: any,
+    fileName: string = null,
+    folder: string,
+    type: string,
     bucketName = 'khan-fresh-corner',
     acl = 'public-read',
   ) {
     const extension = file.originalname.split('.');
     const newFileName = !fileName
       ? uuid()
-      : fileName + '.' + extension[extension.length - 1];
+      : `${fileName}.${extension[extension.length - 1]}`;
     return this.uploadS3(
       file.buffer,
       bucketName,
