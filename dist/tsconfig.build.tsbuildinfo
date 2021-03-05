@@ -2007,8 +2007,8 @@
         "affectsGlobalScope": false
       },
       "../src/enum/permission.type.ts": {
-        "version": "8c75e5ec413631d256c3ca3bc3a9d1722bed467f4dcbca083da8ead09db4d44a",
-        "signature": "ca8ccb68277c1ee8bfdc35bd948dcfffc234f4310fcb7284aa491555d7f38457",
+        "version": "9810c99ae860c6f816a2d9f46b600371e3fc19356b5e86805c3f0b4cf52a54a2",
+        "signature": "375578ffe12a5c910e3eab27a572531b8c17bedfb75ed6598e15f2d76fe12332",
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.service.ts": {
