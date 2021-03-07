@@ -8,7 +8,7 @@ export class UploadService {
   constructor(private saveFileService: SaveFileService) {}
   async upload(
     file: any,
-    fileName: string = null,
+    fileName: any = undefined,
     folder: string,
     type: string,
     bucketName = 'khan-fresh-corner',

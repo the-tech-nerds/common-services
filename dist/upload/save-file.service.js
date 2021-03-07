@@ -12,7 +12,7 @@ const typeorm_1 = require("typeorm");
 let SaveFileService = class SaveFileService {
     async execute(model) {
         const connection = typeorm_1.getManager();
-        const { url = "", type = "" } = model;
+        const { url = '', type = '' } = model;
         const sql = `insert into file_storage (url,type) values('${url}', '${type}')`;
         const file = await connection.query(sql);
         return file;

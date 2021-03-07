@@ -18,7 +18,7 @@ let UploadService = class UploadService {
     constructor(saveFileService) {
         this.saveFileService = saveFileService;
     }
-    async upload(file, fileName = null, folder, type, bucketName = 'khan-fresh-corner', acl = 'public-read') {
+    async upload(file, fileName = undefined, folder, type, bucketName = 'khan-fresh-corner', acl = 'public-read') {
         const extension = file.originalname.split('.');
         const newFileName = !fileName
             ? uuid_1.v4()
