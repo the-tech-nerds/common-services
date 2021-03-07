@@ -1467,8 +1467,8 @@
         "affectsGlobalScope": false
       },
       "../src/app.bootstrap.ts": {
-        "version": "5ca54b1185a5e8d4c4a026408a71bd171913a9c87f79fa71464e76a8786732ef",
-        "signature": "4a6895d8a4237c535113d0e8ffa95fd2c5658559b26a21599a6cc8503f5f15fd",
+        "version": "896e8bb55e6f4feefb9432b3afbd4be7fc93677d2811a4a1d519944d34df8f81",
+        "signature": "90607484cb21a5f372e596a74b5de1eec1ce916369e14f1ccbf2bb196f9dbcaa",
         "affectsGlobalScope": false
       },
       "../src/app.service.ts": {
@@ -2007,8 +2007,8 @@
         "affectsGlobalScope": false
       },
       "../src/enum/permission.type.ts": {
-        "version": "28a96754faa9f834c936edb9afe6ad505aabcc8cc01bc726761f9b0d6e0e08da",
-        "signature": "d30050252bdfcc505ab7ab3b66b108235a5fabb054cc2566a4caa18c3bacd0cf",
+        "version": "faf4dc2c8181c2a63d2fa6280adf667ff1bf96e581a725ea16983aff20420d6c",
+        "signature": "10cab26f1a2a8daacade020f628be83e62766ff54771222e354c3f6d52da8c91",
         "affectsGlobalScope": false
       },
       "../src/api-response/api-response.service.ts": {
