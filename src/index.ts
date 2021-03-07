@@ -21,6 +21,7 @@ import { EmailNotification } from './notification/email-notification';
 import { SmsNotification } from './notification/sms-notification';
 import { NotificationModule } from './notification/notification.module';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { SaveFileService } from './upload/save-file.service';
 
 export {
   CacheModule,
@@ -46,5 +47,5 @@ export {
 
 export { ApiResponseModule, ApiResponseService };
 
-export { UploadModule, UploadService };
+export { UploadModule, UploadService, SaveFileService };
 export { NotificationModule, EmailNotification, SmsNotification };
