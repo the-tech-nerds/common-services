@@ -21,6 +21,8 @@ import { EmailNotification } from './notification/email-notification';
 import { SmsNotification } from './notification/sms-notification';
 import { NotificationModule } from './notification/notification.module';
 import { JwtStrategy } from './strategies/jwt.strategy';
+import { Paginate, PaginateQuery } from './pagination/decorator';
+import { paginate, Paginated } from './pagination/paginate';
 import { SaveFileService } from './upload/save-file.service';
 
 export {
@@ -49,3 +51,5 @@ export { ApiResponseModule, ApiResponseService };
 
 export { UploadModule, UploadService, SaveFileService };
 export { NotificationModule, EmailNotification, SmsNotification };
+
+export { Paginate, PaginateQuery, paginate, Paginated };
