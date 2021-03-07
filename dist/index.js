@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SmsNotification = exports.EmailNotification = exports.NotificationModule = exports.UploadService = exports.UploadModule = exports.ApiResponseService = exports.ApiResponseModule = exports.JwtStrategy = exports.CurrentUser = exports.PermissionTypes = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
+exports.Paginated = exports.paginate = exports.Paginate = exports.SmsNotification = exports.EmailNotification = exports.NotificationModule = exports.UploadService = exports.UploadModule = exports.ApiResponseService = exports.ApiResponseModule = exports.JwtStrategy = exports.CurrentUser = exports.PermissionTypes = exports.PermissionTypeEnum = exports.HasPermissions = exports.PermissionsGuard = exports.UserGuard = exports.GatewayMiddleware = exports.GatewayService = exports.GatewayModule = exports.FetchService = exports.FetchModule = exports.commonConfig = exports.setBootstrap = exports.CacheService = exports.CacheModule = void 0;
 const cache_module_1 = require("./cache/cache.module");
 Object.defineProperty(exports, "CacheModule", { enumerable: true, get: function () { return cache_module_1.CacheModule; } });
 const cache_service_1 = require("./cache/cache.service");
@@ -47,4 +47,9 @@ const notification_module_1 = require("./notification/notification.module");
 Object.defineProperty(exports, "NotificationModule", { enumerable: true, get: function () { return notification_module_1.NotificationModule; } });
 const jwt_strategy_1 = require("./strategies/jwt.strategy");
 Object.defineProperty(exports, "JwtStrategy", { enumerable: true, get: function () { return jwt_strategy_1.JwtStrategy; } });
+const decorator_1 = require("./pagination/decorator");
+Object.defineProperty(exports, "Paginate", { enumerable: true, get: function () { return decorator_1.Paginate; } });
+const paginate_1 = require("./pagination/paginate");
+Object.defineProperty(exports, "paginate", { enumerable: true, get: function () { return paginate_1.paginate; } });
+Object.defineProperty(exports, "Paginated", { enumerable: true, get: function () { return paginate_1.Paginated; } });
 //# sourceMappingURL=index.js.map
