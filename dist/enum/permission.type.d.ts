@@ -23,6 +23,20 @@ declare const _default: {
         DELETE: string;
         ROLE_ASSIGN: string;
     };
+    PRODUCT: {
+        GET: string;
+        CREATE: string;
+        DETAILS: string;
+        UPDATE: string;
+        DELETE: string;
+    };
+    PRODUCT_CATEGORY: {
+        GET: string;
+        CREATE: string;
+        DETAILS: string;
+        UPDATE: string;
+        DELETE: string;
+    };
     UNIT: {
         GET: string;
         CREATE: string;

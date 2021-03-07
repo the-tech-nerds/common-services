@@ -23,6 +23,20 @@ export default {
     DELETE: 'user delete',
     ROLE_ASSIGN: 'roles assign in user',
   },
+  PRODUCT: {
+    GET: 'Product get',
+    CREATE: 'Product create',
+    DETAILS: 'Product details',
+    UPDATE: 'Product update',
+    DELETE: 'Product delete',
+  },
+  PRODUCT_CATEGORY: {
+    GET: 'Product category get',
+    CREATE: 'Product category create',
+    DETAILS: 'Product category details',
+    UPDATE: 'Product category update',
+    DELETE: 'Product category delete',
+  },
   UNIT: {
     GET: 'Unit get',
     CREATE: 'Unit create',
