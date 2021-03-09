@@ -16,7 +16,7 @@ export class UploadService {
   ) {
     const extension = file.originalname.split('.');
     const newFileName = !fileName
-      ? uuid()
+      ? `${uuid()}.${extension[extension.length - 1]}`
       : `${fileName}.${extension[extension.length - 1]}`;
     return this.uploadS3(
       file.buffer,
@@ -46,7 +46,11 @@ export class UploadService {
           url: data.Location,
           type: type,
         });
-        resolve(res);
+        resolve({
+          id: res.insertId,
+          url: data.Location,
+          type,
+        });
       });
     });
   }
