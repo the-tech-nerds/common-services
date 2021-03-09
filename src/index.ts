@@ -23,7 +23,7 @@ import { NotificationModule } from './notification/notification.module';
 import { JwtStrategy } from './strategies/jwt.strategy';
 import { Paginate, PaginateQuery } from './pagination/decorator';
 import { paginate, Paginated } from './pagination/paginate';
-import { SaveFileService } from './upload/save-file.service';
+import { FileService } from './upload/file.service';
 
 export {
   CacheModule,
@@ -49,7 +49,7 @@ export {
 
 export { ApiResponseModule, ApiResponseService };
 
-export { UploadModule, UploadService, SaveFileService };
+export { UploadModule, UploadService, FileService };
 export { NotificationModule, EmailNotification, SmsNotification };
 
 export { Paginate, PaginateQuery, paginate, Paginated };
