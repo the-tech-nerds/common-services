@@ -13,7 +13,7 @@ export class FileService {
   }
   async delete(id: number): Promise<any> {
     const connection = getManager();
-    const sql = `delete from file_storage where id ='${id}`;
+    const sql = `delete from file_storage where id =${id}`;
     const result = await connection.query(sql);
     return result;
   }
