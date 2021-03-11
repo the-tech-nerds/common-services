@@ -6,8 +6,8 @@ import { FileStorage } from './model/file-storage.model';
 export class FileService {
   async save(model: FileStorage): Promise<any> {
     const connection = getManager();
-    const { url = '', type = '' } = model;
-    const sql = `insert into file_storage (url,type) values('${url}', '${type}')`;
+    const { url = '', type = '', type_id = 0 } = model;
+    const sql = `insert into file_storage (url,type, type_id) values('${url}', '${type}', '${type_id}')`;
     const file = await connection.query(sql);
     return file;
   }

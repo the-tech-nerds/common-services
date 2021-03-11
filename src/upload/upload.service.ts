@@ -11,6 +11,7 @@ export class UploadService {
     fileName: any = undefined,
     folder: string,
     type: string,
+    type_id = 0,
     bucketName = 'khan-fresh-corner',
     acl = 'public-read',
   ) {
@@ -23,12 +24,13 @@ export class UploadService {
       bucketName,
       folder,
       type,
+      type_id,
       newFileName,
       acl,
     );
   }
 
-  async uploadS3(file, bucket, folder, type, name, acl) {
+  async uploadS3(file, bucket, folder, type, type_id, name, acl) {
     const s3 = await this.getS3();
     const params = {
       Bucket: bucket,
@@ -45,6 +47,7 @@ export class UploadService {
         const res = await this.fileService.save({
           url: data.Location,
           type: type,
+          type_id: type_id
         });
         resolve({
           id: res.insertId,
