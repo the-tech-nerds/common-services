@@ -47,7 +47,7 @@ export class UploadService {
         const res = await this.fileService.save({
           url: data.Location,
           type: type,
-          type_id: type_id
+          type_id: type_id,
         });
         resolve({
           id: res.insertId,
