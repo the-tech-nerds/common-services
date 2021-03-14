@@ -62,8 +62,6 @@ export async function paginate<T>(
   const limit = query.limit || config.defaultLimit || 20;
   const sortBy = [] as SortBy<T>;
   const { search } = query;
-  // const { path } = query;
-  console.log(page, limit);
 
   function isEntityKey(
     sortableColumns: Column<T>[],
@@ -125,10 +123,14 @@ export async function paginate<T>(
   let minimum = 0,
     maximum = 0,
     totalCount = 0;
+
   if (hasPageQuery) {
+    const uniqueRow = `${tableName}.id`;
     const { min, max, count } = await countQueryBuilder
       .where(where)
-      .select(`min(id) as min, max(id) as max, COUNT(${tableName}.id) as count`)
+      .select(
+        `min(${uniqueRow}) as min, max(${uniqueRow}) as max, COUNT(${uniqueRow}) as count`,
+      )
       .getRawOne();
     minimum = min;
     maximum = max;
@@ -164,7 +166,9 @@ export async function paginate<T>(
 
   const buildLink = (p: number): string =>
     `${hasPageQuery ? `?page=${p}` : '?'}${options}`;
+
   const totalPages = Math.ceil(totalCount / limit);
+
   const results: Paginated<T> = {
     results: data,
     meta: {
@@ -182,7 +186,13 @@ export async function paginate<T>(
           ? undefined
           : buildLink(1)
         : buildLink(page),
-      previous: page <= 1 ? undefined : `${buildLink(page - 1)}`,
+      previous: hasPageQuery
+        ? page <= 1
+          ? undefined
+          : `${buildLink(page - 1)}`
+        : prevCursor
+        ? `${buildLink(page + 1)}&previousCursor=${prevCursor}`
+        : undefined,
       current: hasPageQuery ? buildLink(page) : undefined,
       next: hasPageQuery
         ? page + 1 > totalPages

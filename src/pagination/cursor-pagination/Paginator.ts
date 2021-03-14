@@ -162,11 +162,17 @@ export default class Paginator<Entity> {
       );
     }
 
-    builder.where(new Brackets(qb => qb.where(this.where)));
+    builder.andWhere(
+      new Brackets(qb => {
+        qb.where(this.where);
 
-    if (cursorQuery) {
-      builder.andWhere(cursorQuery);
-    }
+        if (cursorQuery) {
+          qb.andWhere(cursorQuery);
+        }
+
+        return qb;
+      }),
+    );
 
     builder.take(this.limit + 1);
     builder.orderBy(this.buildOrder());
