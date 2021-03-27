@@ -24,6 +24,7 @@ import { JwtStrategy } from './strategies/jwt.strategy';
 import { Paginate, PaginateQuery } from './pagination/decorator';
 import { paginate, Paginated } from './pagination/paginate';
 import { FileService } from './upload/file.service';
+import { ShopTypes } from './enum/shop-type.enum';
 
 export {
   CacheModule,
@@ -43,6 +44,7 @@ export {
   HasPermissions,
   PermissionTypeEnum,
   PermissionTypes,
+  ShopTypes,
   CurrentUser,
   JwtStrategy,
 };
