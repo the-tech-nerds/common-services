@@ -22,6 +22,7 @@ import {
   encodeByType,
   decodeByType,
   pascalToUnderscore,
+  fixParameterOrder,
 } from './utils';
 
 export type Order = 'ASC' | 'DESC';
@@ -105,14 +106,6 @@ export default class Paginator<Entity> {
 
   public setPage(page: number): void {
     this.page = page;
-  }
-
-  private fixParameterOrder(parameters: ObjectLiteral) {
-    return [
-      ...parameters.slice(0, this.where.length),
-      ...parameters.slice(this.where.length, parameters.length - 1),
-      parameters[parameters.length - 1],
-    ];
   }
 
   public async paginate(
@@ -239,7 +232,7 @@ export default class Paginator<Entity> {
 
     const rawResults = await queryRunner.query(
       query,
-      this.fixParameterOrder(parameters),
+      fixParameterOrder(parameters, this.where),
     );
     const relationIdLoader = new RelationIdLoader(
       connection,

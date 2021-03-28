@@ -11,6 +11,7 @@ import { performance } from 'perf_hooks';
 import { ServiceUnavailableException } from '@nestjs/common';
 import { PaginateQuery } from './decorator';
 import { buildPaginator } from './cursor-pagination';
+import { fixParameterOrder } from './cursor-pagination/utils';
 
 type Column<T> = Extract<keyof T, string>;
 type Order<T> = [Column<T>, 'ASC' | 'DESC'];
@@ -137,10 +138,11 @@ export async function paginate<T>(
       );
 
     const [query, params] = countQueryBuilder.getQueryAndParameters();
-    const [{ min, max, count }] = await queryRunner.query(query, params);
-    console.log(performance.now() - t1);
-    // const { min, max, count } =
-    //   .getRawOne();
+    const [{ min, max, count }] = await queryRunner.query(
+      query,
+      fixParameterOrder(params, where),
+    );
+
     minimum = Number(min);
     maximum = Number(max);
     totalCount = Number(count);
