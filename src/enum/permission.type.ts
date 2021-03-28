@@ -37,6 +37,13 @@ export default {
     UPDATE: 'Product category update',
     DELETE: 'Product category delete',
   },
+  INVENTORY: {
+    GET: 'Inventory get',
+    CREATE: 'Inventory create',
+    DETAILS: 'Inventory details',
+    UPDATE: 'Inventory update',
+    DELETE: 'Inventory delete',
+  },
   UNIT: {
     GET: 'Unit get',
     CREATE: 'Unit create',
