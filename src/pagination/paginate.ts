@@ -1,15 +1,17 @@
+/* eslint-disable */
 import {
   Repository,
   FindConditions,
   SelectQueryBuilder,
   Like,
   ObjectLiteral,
-  getManager,
+  getConnection,
 } from 'typeorm';
 import { performance } from 'perf_hooks';
 import { ServiceUnavailableException } from '@nestjs/common';
 import { PaginateQuery } from './decorator';
 import { buildPaginator } from './cursor-pagination';
+import { fixParameterOrder } from './cursor-pagination/utils';
 
 type Column<T> = Extract<keyof T, string>;
 type Order<T> = [Column<T>, 'ASC' | 'DESC'];
@@ -54,7 +56,7 @@ export async function paginate<T>(
   config: PaginateConfig<T>,
 ): Promise<Paginated<T>> {
   const t1 = performance.now();
-  console.log(query);
+
   const hasPageQuery = query.page !== undefined;
   let page = query.page || 1;
   let prevCursor = query.prevCursor || undefined;
@@ -62,8 +64,6 @@ export async function paginate<T>(
   const limit = query.limit || config.defaultLimit || 20;
   const sortBy = [] as SortBy<T>;
   const { search } = query;
-  // const { path } = query;
-  console.log(page, limit);
 
   function isEntityKey(
     sortableColumns: Column<T>[],
@@ -97,7 +97,10 @@ export async function paginate<T>(
 
   let queryBuilder: SelectQueryBuilder<T>;
 
-  const tableName = getManager().getRepository(entity).metadata.tableName;
+  const connection = getConnection();
+  const queryRunner = connection.createQueryRunner('slave');
+
+  const { tableName } = connection.getRepository(entity).metadata;
 
   if (repo instanceof Repository) {
     queryBuilder = repo.createQueryBuilder(tableName);
@@ -120,19 +123,29 @@ export async function paginate<T>(
     }
   }
 
-  const countQueryBuilder: SelectQueryBuilder<T> = queryBuilder.clone();
+  let countQueryBuilder: SelectQueryBuilder<T> = queryBuilder.clone();
 
-  let minimum = 0,
-    maximum = 0,
-    totalCount = 0;
+  let minimum = 0;
+  let maximum = 0;
+  let totalCount = 0;
+
   if (hasPageQuery) {
-    const { min, max, count } = await countQueryBuilder
+    const uniqueRow = `${tableName}.id`;
+    countQueryBuilder = countQueryBuilder
       .where(where)
-      .select(`min(id) as min, max(id) as max, COUNT(${tableName}.id) as count`)
-      .getRawOne();
-    minimum = min;
-    maximum = max;
-    totalCount = count;
+      .select(
+        `min(${uniqueRow}) as min, max(${uniqueRow}) as max, COUNT(${uniqueRow}) as count`,
+      );
+
+    const [query, params] = countQueryBuilder.getQueryAndParameters();
+    const [{ min, max, count }] = await queryRunner.query(
+      query,
+      fixParameterOrder(params, where),
+    );
+
+    minimum = Number(min);
+    maximum = Number(max);
+    totalCount = Number(count);
   }
 
   const convertedQueryBuilder = <SelectQueryBuilder<any>>queryBuilder;
@@ -140,14 +153,15 @@ export async function paginate<T>(
   const order = <any>sortBy[0][1];
 
   const paginator = buildPaginator({
-    entity: entity,
+    entity,
     paginationKeys: sortByColumns,
+    queryRunner: queryRunner,
     query: {
-      limit: limit,
-      order: order,
+      limit,
+      order,
       afterCursor: nextCursor ?? undefined,
       beforeCursor: prevCursor ?? undefined,
-      where: where,
+      where,
       page: hasPageQuery ? page : null,
       min: Number(minimum),
       max: Number(maximum),
@@ -155,6 +169,8 @@ export async function paginate<T>(
   });
 
   const { data, cursor } = await paginator.paginate(convertedQueryBuilder);
+  queryRunner.release();
+
   prevCursor = cursor.beforeCursor ?? undefined;
   nextCursor = cursor.afterCursor ?? undefined;
 
@@ -164,7 +180,9 @@ export async function paginate<T>(
 
   const buildLink = (p: number): string =>
     `${hasPageQuery ? `?page=${p}` : '?'}${options}`;
+
   const totalPages = Math.ceil(totalCount / limit);
+
   const results: Paginated<T> = {
     results: data,
     meta: {
@@ -182,7 +200,13 @@ export async function paginate<T>(
           ? undefined
           : buildLink(1)
         : buildLink(page),
-      previous: page <= 1 ? undefined : `${buildLink(page - 1)}`,
+      previous: hasPageQuery
+        ? page <= 1
+          ? undefined
+          : `${buildLink(page - 1)}`
+        : prevCursor
+        ? `${buildLink(page + 1)}&previousCursor=${prevCursor}`
+        : undefined,
       current: hasPageQuery ? buildLink(page) : undefined,
       next: hasPageQuery
         ? page + 1 > totalPages

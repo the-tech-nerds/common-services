@@ -5,7 +5,16 @@ import {
   SelectQueryBuilder,
   WhereExpression,
   ObjectLiteral,
+  QueryRunner,
+  getConnection,
 } from 'typeorm';
+
+import { RelationIdLoader } from 'typeorm/query-builder/relation-id/RelationIdLoader';
+import { RelationIdMetadataToAttributeTransformer } from 'typeorm/query-builder/relation-id/RelationIdMetadataToAttributeTransformer';
+import { RelationCountLoader } from 'typeorm/query-builder/relation-count/RelationCountLoader';
+import { RelationCountMetadataToAttributeTransformer } from 'typeorm/query-builder/relation-count/RelationCountMetadataToAttributeTransformer';
+import { RawSqlResultsToEntityTransformer } from '../raw-sql-results-to-entity';
+import { QueryResultCacheOptions } from 'typeorm/cache/QueryResultCacheOptions';
 
 import {
   atob,
@@ -13,6 +22,7 @@ import {
   encodeByType,
   decodeByType,
   pascalToUnderscore,
+  fixParameterOrder,
 } from './utils';
 
 export type Order = 'ASC' | 'DESC';
@@ -59,6 +69,7 @@ export default class Paginator<Entity> {
   public constructor(
     private entity: ObjectType<Entity>,
     private paginationKeys: Extract<keyof Entity, string>[],
+    private queryRunner: QueryRunner | null = getConnection().createQueryRunner(),
   ) {}
 
   public setAlias(alias: string): void {
@@ -100,7 +111,8 @@ export default class Paginator<Entity> {
   public async paginate(
     builder: SelectQueryBuilder<Entity>,
   ): Promise<PagingResult<Entity>> {
-    const entities = await this.appendPagingQuery(builder).getMany();
+    const entities: Entity[] = await this.runQueryAndGenerateEntities(builder);
+
     const hasMore = entities.length > this.limit;
 
     if (hasMore) {
@@ -162,17 +174,117 @@ export default class Paginator<Entity> {
       );
     }
 
-    builder.where(new Brackets(qb => qb.where(this.where)));
+    builder.andWhere(
+      new Brackets(qb => {
+        qb.where(this.where);
 
-    if (cursorQuery) {
-      builder.andWhere(cursorQuery);
-    }
+        if (cursorQuery) {
+          qb.andWhere(cursorQuery);
+        }
 
-    builder.take(this.limit + 1);
+        return qb;
+      }),
+    );
+
+    builder.limit(this.limit + 1);
     builder.orderBy(this.buildOrder());
-    builder.cache(60 * 5 * 1000);
 
     return builder;
+  }
+
+  private async runQueryAndGenerateEntities(
+    builder: SelectQueryBuilder<Entity>,
+  ): Promise<Entity[]> {
+    const builderWithPagingQuery = this.appendPagingQuery(builder);
+    const [query, parameters]: [
+      string,
+      any,
+    ] = builderWithPagingQuery.getQueryAndParameters();
+    const { connection, expressionMap } = builderWithPagingQuery;
+    const queryRunner = this.queryRunner || getConnection().createQueryRunner();
+    const queryId = query + ' -- PARAMETERS: ' + JSON.stringify(parameters);
+    const cacheOptions =
+      typeof connection.options.cache === 'object'
+        ? connection.options.cache
+        : {};
+    let savedQueryResultCacheOptions:
+      | QueryResultCacheOptions
+      | undefined = undefined;
+
+    if (connection.queryResultCache) {
+      savedQueryResultCacheOptions = await connection.queryResultCache.getFromCache(
+        {
+          identifier: expressionMap.cacheId,
+          query: queryId,
+          duration:
+            expressionMap.cacheDuration ||
+            cacheOptions.duration ||
+            1000 * 60 * 20,
+        },
+        queryRunner,
+      );
+      if (
+        savedQueryResultCacheOptions &&
+        !connection.queryResultCache.isExpired(savedQueryResultCacheOptions)
+      )
+        return JSON.parse(savedQueryResultCacheOptions.result);
+    }
+
+    const rawResults = await queryRunner.query(
+      query,
+      fixParameterOrder(parameters, this.where),
+    );
+    const relationIdLoader = new RelationIdLoader(
+      connection,
+      queryRunner,
+      expressionMap.relationIdAttributes,
+    );
+    const relationCountLoader = new RelationCountLoader(
+      connection,
+      queryRunner,
+      expressionMap.relationCountAttributes,
+    );
+    const relationIdMetadataTransformer = new RelationIdMetadataToAttributeTransformer(
+      expressionMap,
+    );
+    relationIdMetadataTransformer.transform();
+    const relationCountMetadataTransformer = new RelationCountMetadataToAttributeTransformer(
+      expressionMap,
+    );
+    relationCountMetadataTransformer.transform();
+
+    const rawRelationIdResults = await relationIdLoader.load(rawResults);
+    const rawRelationCountResults = await relationCountLoader.load(rawResults);
+    const transformer = new RawSqlResultsToEntityTransformer(
+      expressionMap,
+      connection.driver,
+      rawRelationIdResults,
+      rawRelationCountResults,
+      queryRunner,
+    );
+    const entities = transformer.transform(
+      rawResults,
+      expressionMap.mainAlias!,
+    );
+
+    if (connection.queryResultCache) {
+      connection.queryResultCache.storeInCache(
+        {
+          identifier: expressionMap.cacheId,
+          query: queryId,
+          time: new Date().getTime(),
+          duration:
+            expressionMap.cacheDuration ||
+            cacheOptions.duration ||
+            1000 * 60 * 20,
+          result: JSON.stringify(entities),
+        },
+        savedQueryResultCacheOptions,
+        queryRunner,
+      );
+    }
+
+    return entities;
   }
 
   private buildCursorQuery(where: WhereExpression, cursors: CursorParam): void {

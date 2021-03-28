@@ -119,7 +119,7 @@ export class GatewayService {
           throw new UnauthorizedException();
         }
       }
-
+      const query = ((this.request as any) || {}).query || null;
       const fetchedResponse = await this.fetchService.execute(url, {
         method,
         headers: {
@@ -130,7 +130,15 @@ export class GatewayService {
           Authorization: `Bearer ${accessTokenFromRequestHeader}`,
         },
         body: body ? body : undefined,
-        qs,
+        qs: {
+          ...qs,
+          page: query.page || undefined,
+          limit: query.limit || undefined,
+          nextCursor: query.nextCursor || undefined,
+          previousCursor: query.previousCursor || undefined,
+          search: query.search || undefined,
+          sortBy: query.sortBy || undefined,
+        },
         contentType,
       });
 

@@ -1,3 +1,5 @@
+import { ObjectLiteral } from 'typeorm';
+
 export function atob(value: string): string {
   return Buffer.from(value, 'base64').toString();
 }
@@ -83,4 +85,15 @@ export function camelOrPascalToUnderscore(str: string): string {
 
 export function pascalToUnderscore(str: string): string {
   return camelOrPascalToUnderscore(str);
+}
+
+export function fixParameterOrder(
+  parameters: ObjectLiteral,
+  where: ObjectLiteral[],
+): ObjectLiteral[] {
+  return [
+    ...parameters.slice(0, where.length),
+    ...parameters.slice(where.length, parameters.length - 1),
+    parameters[parameters.length - 1],
+  ];
 }
