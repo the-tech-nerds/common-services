@@ -23,6 +23,7 @@ export interface GatewayRequest {
   body?: any;
   userId?: number;
   token?: string;
+  contentType?: 'JSON' | 'FILE';
 }
 
 @Injectable({ scope: Scope.REQUEST })
@@ -102,6 +103,7 @@ export class GatewayService {
         token: userAccessToken = null,
         body = undefined,
         qs = {},
+        contentType = 'JSON',
       } = gatewayRequest;
 
       const url = `${ip}${path}`;
@@ -137,6 +139,7 @@ export class GatewayService {
           search: query.search || undefined,
           sortBy: query.sortBy || undefined,
         },
+        contentType,
       });
 
       return fetchedResponse;

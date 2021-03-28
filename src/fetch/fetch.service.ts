@@ -12,6 +12,7 @@ export interface Request {
   domain?: string;
   hosts?: string;
   token?: string;
+  contentType?: 'JSON' | 'FILE';
 }
 
 export class FetchService {
@@ -24,6 +25,7 @@ export class FetchService {
       userId: reqUserId = 0,
       token: optionToken = '',
       domain = '',
+      contentType = 'JSON',
     } = request || {};
 
     if (!path) {
@@ -48,15 +50,18 @@ export class FetchService {
     if (process.env.NODE_ENV === 'development') {
       startTime = Date.now();
     }
-
+    const content_type =
+      contentType == 'JSON'
+        ? { 'Content-Type': 'application/json', userId: `${reqUserId}` }
+        : { userId: `${reqUserId}` };
     const resp = await fetch(url, {
       method,
-      headers: {
-        'Content-Type': 'application/json',
-        userId: `${reqUserId}`,
-        ...requestHeaders,
-      },
-      body: body ? JSON.stringify(body) : undefined,
+      headers: Object.assign(content_type, requestHeaders),
+      body: body
+        ? contentType == 'JSON'
+          ? JSON.stringify(body)
+          : body
+        : undefined,
       cache: 'no-cache',
       redirect: 'follow',
       referrer: domain.length ? domain : 'no-referrer',
