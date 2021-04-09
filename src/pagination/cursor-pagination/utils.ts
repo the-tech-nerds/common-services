@@ -92,8 +92,7 @@ export function fixParameterOrder(
   where: ObjectLiteral[],
 ): ObjectLiteral[] {
   return [
+    ...parameters.slice(where.length, parameters.length),
     ...parameters.slice(0, where.length),
-    ...parameters.slice(where.length, parameters.length - 1),
-    parameters[parameters.length - 1],
   ];
 }
