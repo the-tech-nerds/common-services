@@ -174,17 +174,13 @@ export default class Paginator<Entity> {
       );
     }
 
-    builder.andWhere(
-      new Brackets(qb => {
-        qb.where(this.where);
+    if (this.where.length > 0) {
+      builder.andWhere(new Brackets(qb => qb.where(this.where)));
+    }
 
-        if (cursorQuery) {
-          qb.andWhere(cursorQuery);
-        }
-
-        return qb;
-      }),
-    );
+    if (cursorQuery) {
+      builder.andWhere(new Brackets(qb => qb.andWhere(cursorQuery)));
+    }
 
     builder.limit(this.limit + 1);
     builder.orderBy(this.buildOrder());
@@ -219,7 +215,7 @@ export default class Paginator<Entity> {
           duration:
             expressionMap.cacheDuration ||
             cacheOptions.duration ||
-            1000 * 60 * 20,
+            1000 * 60 * 10,
         },
         queryRunner,
       );
