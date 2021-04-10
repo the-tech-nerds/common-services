@@ -175,18 +175,16 @@ export default class Paginator<Entity> {
     }
 
     if (this.where.length > 0) {
-      builder.andWhere(
-        new Brackets(qb => qb.where(this.where))
-      );
+      builder.andWhere(new Brackets(qb => qb.where(this.where)));
     }
 
     if (cursorQuery) {
-      builder.andWhere(new Brackets(qb => qb.andWhere(cursorQuery)))
+      builder.andWhere(new Brackets(qb => qb.andWhere(cursorQuery)));
     }
 
     builder.limit(this.limit + 1);
     builder.orderBy(this.buildOrder());
-  
+
     return builder;
   }
 
@@ -227,7 +225,7 @@ export default class Paginator<Entity> {
       )
         return JSON.parse(savedQueryResultCacheOptions.result);
     }
-    
+
     const rawResults = await queryRunner.query(
       query,
       fixParameterOrder(parameters, this.where),
