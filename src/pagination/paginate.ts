@@ -2,7 +2,6 @@ import {
   Repository,
   FindConditions,
   SelectQueryBuilder,
-  // Like,
   ObjectLiteral,
   getConnection,
   Brackets,
