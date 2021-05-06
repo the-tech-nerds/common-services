@@ -1,11 +1,11 @@
-/* eslint-disable */
 import {
   Repository,
   FindConditions,
   SelectQueryBuilder,
-  Like,
+  // Like,
   ObjectLiteral,
   getConnection,
+  Brackets,
 } from 'typeorm';
 import { performance } from 'perf_hooks';
 import { ServiceUnavailableException } from '@nestjs/common';
@@ -118,9 +118,16 @@ export async function paginate<T>(
 
   const where: ObjectLiteral[] = [];
   if (search && config.searchableColumns) {
-    for (const column of config.searchableColumns) {
-      where.push({ [column]: Like(`%${search}%`), ...config.where });
-    }
+    const whereConditions = new Brackets(qb => {
+      for (const column of config.searchableColumns) {
+        if (qb) {
+          const searchValue = `%${query.search}%`;
+          qb = qb.orWhere(`${column} like :searchValue`, { searchValue });
+        }
+      }
+      return qb;
+    });
+    queryBuilder.andWhere(whereConditions);
   }
 
   let countQueryBuilder: SelectQueryBuilder<T> = queryBuilder.clone();

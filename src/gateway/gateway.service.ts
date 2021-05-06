@@ -136,8 +136,8 @@ export class GatewayService {
           limit: query.limit || undefined,
           nextCursor: query.nextCursor || undefined,
           previousCursor: query.previousCursor || undefined,
-          search: query.search || undefined,
-          sortBy: query.sortBy || undefined,
+          search: query.search || qs.search || undefined,
+          sortBy: query.sortBy || qs.sortBy || undefined,
         },
         contentType,
       });
