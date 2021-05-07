@@ -146,8 +146,8 @@ export default class Paginator<Entity> {
   }
 
   private appendPagingQuery(
-    builder: SelectQueryBuilder<Entity>,
-  ): SelectQueryBuilder<Entity> {
+    builder: SelectQueryBuilder<any>,
+  ): SelectQueryBuilder<any> {
     const cursors: CursorParam = {};
 
     if (this.hasAfterCursor()) {
@@ -175,7 +175,7 @@ export default class Paginator<Entity> {
     }
 
     if (this.where.length > 0) {
-      builder.andWhere(new Brackets(qb => qb.where(this.where)));
+      builder.where(new Brackets(qb => qb.where(this.where)));
     }
 
     if (cursorQuery) {
