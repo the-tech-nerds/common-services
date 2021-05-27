@@ -20,7 +20,7 @@ export class UploadService {
       ? `${uuid()}.${extension[extension.length - 1]}`
       : `${fileName}.${extension[extension.length - 1]}`;
     return this.uploadS3(
-      file.buffer,
+      file,
       bucketName,
       folder,
       type,
@@ -35,7 +35,8 @@ export class UploadService {
     const params = {
       Bucket: bucket,
       Key: `${folder}/${name}`,
-      Body: file,
+      Body: file.buffer,
+      ContentType: file.mimetype,
       ACL: acl,
     };
 
