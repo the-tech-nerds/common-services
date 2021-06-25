@@ -25,14 +25,12 @@ import { Paginate, PaginateQuery } from './pagination/decorator';
 import { paginate, Paginated } from './pagination/paginate';
 import { FileService } from './upload/file.service';
 import { ShopTypes } from './enum/shop-type.enum';
+import { CRUDEvent } from './events/crud.event';
+import { EventTypes } from './events/event-types.enum';
+import { EventsModule } from './events/events.module';
+import { Microservices } from './events/microservices.enum';
 
-export {
-  CacheModule,
-  CacheService,
-  setBootstrap,
-  commonConfig,
-  // commandRegistration,
-};
+export { CacheModule, CacheService, setBootstrap, commonConfig };
 
 export { FetchModule, FetchService };
 
@@ -55,3 +53,9 @@ export { UploadModule, UploadService, FileService };
 export { NotificationModule, EmailNotification, SmsNotification };
 
 export { Paginate, PaginateQuery, paginate, Paginated };
+
+// Enums and modules
+export { EventsModule, EventTypes, Microservices };
+
+// Events
+export { CRUDEvent };
