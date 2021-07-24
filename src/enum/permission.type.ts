@@ -72,6 +72,21 @@ export default {
     UPDATE: 'Shop update',
     DELETE: 'Shop delete',
   },
+  DISCOUNT: {
+    GET: 'discount get',
+    CREATE: 'discount create',
+    DETAILS: 'discount details',
+    ASSIGN: 'discount assign',
+    UPDATE: 'discount update',
+    DELETE: 'discount delete',
+  },
+  ORDER: {
+    GET: 'order get',
+    CREATE: 'order create',
+    DETAILS: 'order details',
+    UPDATE: 'order update',
+    DELETE: 'order delete',
+  },
   PASSWROD_RESET: {
     UPDATE: 'Password reset',
   },
